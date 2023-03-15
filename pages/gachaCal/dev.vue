@@ -1374,7 +1374,7 @@ import "~/assets/css/gacha.css";
 import toolApi from "@/api/tool";
 import cookie from "js-cookie";
 // import * as echarts from "echarts";
-import echarts from "static/js/echarts.min.js";
+// import echarts from "static/js/echarts.min.js";
 
 export default {
   layout: "defaultGacha",

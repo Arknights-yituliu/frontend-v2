@@ -25,6 +25,20 @@ module.exports = {
         href: "https://unpkg.com/element-ui/lib/theme-chalk/index.css",
       },
     ],
+    script: [
+      {
+        src: "https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js",
+        body: true,
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js",
+        body: true,
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js",
+        body: true,
+      },
+    ],
   },
 
   loading: { color: "#3B8070" },
@@ -44,6 +58,9 @@ module.exports = {
           exclude: /(node_modules)/,
         });
       }
+      config.externals = {
+        axios: "axios",
+      };
     },
     vendor: ["element-ui"],
     // transpile: [/^element-ui/],

@@ -114,7 +114,7 @@
 
 <script>
 import toolApi from "@/api/tool";
-import echarts from "static/js/echarts.min.js";
+// import echarts from "static/js/echarts.min.js";
 
 let myChart = "";
 let myChart_bar = "";

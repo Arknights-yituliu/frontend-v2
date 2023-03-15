@@ -97,7 +97,7 @@
 <script>
 import itemCostR6 from "static/bar/itemCostR6";
 import "./R6.css";
-import echarts from "static/js/echarts.min.js";
+// import echarts from "static/js/echarts.min.js";
 import charImageUrl from "static/bar/charImageUrl.json";
 
 let apCostContent = [];

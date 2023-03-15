@@ -359,7 +359,7 @@
                   ></div>
                 </td>
                 <td class="popup_orundum_c3" style="width: 120px">
-                  <div>{{ getEfficiency(stage.lMDCost) }}w</div>
+                  <div>{{ getEfficiency(stage.lmdcost) }}w</div>
                   <div
                     style="margin-bottom: -8px"
                     :class="getSpriteImg(4001, 5)"

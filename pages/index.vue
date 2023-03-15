@@ -12,7 +12,6 @@
   </div>
 </template>
 
-
 <script>
 import stage from "@/pages/module/stage.vue";
 import storeVue from "@/pages/module/store.vue";
@@ -58,7 +57,4 @@ export default {
 };
 </script>
 
-
-
-<style>
-</style>
+<style></style>

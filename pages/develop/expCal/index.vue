@@ -1,367 +1,357 @@
 <template>
   <div :class="ligthOrDark(1)">
     <div class="calculator_area">
-    <div class="calculator_input_area">
-      <table class="calculator_input_table">
-        <tr>
-          <td><div class="calculator_input_title">选择星级</div></td>
-          <td colspan="2">
-            <div class="calculator_downMenu_area">
-              <el-dropdown trigger="click">
-                <span
-                  class="
-                    calculator_downMenu_border
-                    calculator_downMenu_rarity_word_size
-                  "
-                >
-                  {{ rarity_word }}
-                  <i class="el-icon-arrow-down el-icon--right"></i>
-                </span>
+      <div class="calculator_input_area">
+        <table class="calculator_input_table">
+          <tr>
+            <td><div class="calculator_input_title">选择星级</div></td>
+            <td colspan="2">
+              <div class="calculator_downMenu_area">
+                <el-dropdown trigger="click">
+                  <span
+                    class="calculator_downMenu_border calculator_downMenu_rarity_word_size"
+                  >
+                    {{ rarity_word }}
+                    <i class="el-icon-arrow-down el-icon--right"></i>
+                  </span>
 
-                <el-dropdown-menu
-                  slot="dropdown"
-                  class="calculator_downMenu_rarity_item_size"
+                  <el-dropdown-menu
+                    slot="dropdown"
+                    class="calculator_downMenu_rarity_item_size"
+                  >
+                    <el-dropdown-item>
+                      <div
+                        @click="checkRarity(2)"
+                        class="calculator_downMenu_rarity_word_size"
+                      >
+                        二星
+                      </div></el-dropdown-item
+                    >
+                    <el-dropdown-item>
+                      <div
+                        @click="checkRarity(3)"
+                        class="calculator_downMenu_rarity_word_size"
+                      >
+                        三星
+                      </div></el-dropdown-item
+                    >
+                    <el-dropdown-item>
+                      <div
+                        @click="checkRarity(4)"
+                        class="calculator_downMenu_rarity_word_size"
+                      >
+                        四星
+                      </div></el-dropdown-item
+                    >
+                    <el-dropdown-item>
+                      <div
+                        @click="checkRarity(5)"
+                        class="calculator_downMenu_rarity_word_size"
+                      >
+                        五星
+                      </div></el-dropdown-item
+                    >
+                    <el-dropdown-item>
+                      <div
+                        @click="checkRarity(6)"
+                        class="calculator_downMenu_rarity_word_size"
+                      >
+                        六星
+                      </div></el-dropdown-item
+                    >
+                  </el-dropdown-menu>
+                </el-dropdown>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><div class="calculator_input_title">当前</div></td>
+            <td><div class="calculator_input_evo">精英等级</div></td>
+            <td>
+              <div class="calculator_input_level_num">
+                <el-input-number
+                  v-model="nowEvoLevel"
+                  @input="computeValue()"
+                  :min="0"
+                  :max="2"
+                  label="精英等级"
                 >
-                  <el-dropdown-item>
-                    <div
-                      @click="checkRarity(2)"
-                      class="calculator_downMenu_rarity_word_size"
-                    >
-                      二星
-                    </div></el-dropdown-item
-                  >
-                  <el-dropdown-item>
-                    <div
-                      @click="checkRarity(3)"
-                      class="calculator_downMenu_rarity_word_size"
-                    >
-                      三星
-                    </div></el-dropdown-item
-                  >
-                  <el-dropdown-item>
-                    <div
-                      @click="checkRarity(4)"
-                      class="calculator_downMenu_rarity_word_size"
-                    >
-                      四星
-                    </div></el-dropdown-item
-                  >
-                  <el-dropdown-item>
-                    <div
-                      @click="checkRarity(5)"
-                      class="calculator_downMenu_rarity_word_size"
-                    >
-                      五星
-                    </div></el-dropdown-item
-                  >
-                  <el-dropdown-item>
-                    <div
-                      @click="checkRarity(6)"
-                      class="calculator_downMenu_rarity_word_size"
-                    >
-                      六星
-                    </div></el-dropdown-item
-                  >
-                </el-dropdown-menu>
-              </el-dropdown>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><div class="calculator_input_title">当前</div></td>
-          <td><div class="calculator_input_evo">精英等级</div></td>
-          <td>
-            <div class="calculator_input_level_num">
-              <el-input-number
-                v-model="nowEvoLevel"
-                @input="computeValue()"
-                :min="0"
-                :max="2"
-                label="精英等级"
-              >
-              </el-input-number>
-            </div>
-          </td>
-          <td><div class="calculator_input_evo">当前等级</div></td>
-          <td>
-            <div>
+                </el-input-number>
+              </div>
+            </td>
+            <td><div class="calculator_input_evo">当前等级</div></td>
+            <td>
+              <div>
+                <el-input
+                  @input="computeValue()"
+                  class="calculator_input_level"
+                  v-model="nowLevel"
+                  placeholder=""
+                ></el-input>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><div class="calculator_input_title">目标</div></td>
+            <td><div class="calculator_input_evo">精英等级</div></td>
+
+            <td>
+              <div class="calculator_input_level_num">
+                <el-input-number
+                  v-model="targetEvoLevel"
+                  @input="computeValue()"
+                  :min="0"
+                  :max="2"
+                  label="精英等级"
+                >
+                </el-input-number>
+              </div>
+            </td>
+            <td>
+              <div class="calculator_input_evo">目标等级</div>
+            </td>
+            <td>
+              <div>
+                <el-input
+                  @input="computeValue()"
+                  class="calculator_input_level"
+                  v-model="targetLevel"
+                  placeholder=""
+                ></el-input>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><div class="calculator_input_title">已有资源</div></td>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/高级作战记录.png"
+                alt=""
+              />
+            </td>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/中级作战记录.png"
+                alt=""
+              />
+            </td>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/初级作战记录.png"
+                alt=""
+              />
+            </td>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/基础作战记录.png"
+                alt=""
+              />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
               <el-input
                 @input="computeValue()"
-                class="calculator_input_level"
-                v-model="nowLevel"
-                placeholder=""
+                class="calculator_existGoods_input_size"
+                v-model="item_exp_4"
+                placeholder="数量"
               ></el-input>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><div class="calculator_input_title">目标</div></td>
-          <td><div class="calculator_input_evo">精英等级</div></td>
-
-          <td>
-            <div class="calculator_input_level_num">
-              <el-input-number
-                v-model="targetEvoLevel"
-                @input="computeValue()"
-                :min="0"
-                :max="2"
-                label="精英等级"
-              >
-              </el-input-number>
-            </div>
-          </td>
-          <td>
-            <div class="calculator_input_evo">目标等级</div>
-          </td>
-          <td>
-            <div>
+            </td>
+            <td>
               <el-input
                 @input="computeValue()"
-                class="calculator_input_level"
-                v-model="targetLevel"
+                class="calculator_existGoods_input_size"
+                v-model="item_exp_3"
+                placeholder="数量"
+              ></el-input>
+            </td>
+            <td>
+              <el-input
+                @input="computeValue()"
+                class="calculator_existGoods_input_size"
+                v-model="item_exp_2"
+                placeholder="数量"
+              ></el-input>
+            </td>
+            <td>
+              <el-input
+                @input="computeValue()"
+                class="calculator_existGoods_input_size"
+                v-model="item_exp_1"
+                placeholder="数量"
+              ></el-input>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/龙门币.png"
+                alt=""
+              />
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <el-input
+                @input="computeValue()"
+                class="calculator_existGoods_input_size_Lmb"
+                v-model="item_gold"
                 placeholder=""
               ></el-input>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><div class="calculator_input_title">已有资源</div></td>
-          <td>
-            <img
-              class="result_img_size"
-              src="/img/materials/高级作战记录.png"
-              alt=""
-            />
-          </td>
-          <td>
-            <img
-              class="result_img_size"
-              src="/img/materials/中级作战记录.png"
-              alt=""
-            />
-          </td>
-          <td>
-            <img
-              class="result_img_size"
-              src="/img/materials/初级作战记录.png"
-              alt=""
-            />
-          </td>
-          <td>
-            <img
-              class="result_img_size"
-              src="/img/materials/基础作战记录.png"
-              alt=""
-            />
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <el-input
-              @input="computeValue()"
-              class="calculator_existGoods_input_size"
-              v-model="item_exp_4"
-              placeholder="数量"
-            ></el-input>
-          </td>
-          <td>
-            <el-input
-              @input="computeValue()"
-              class="calculator_existGoods_input_size"
-              v-model="item_exp_3"
-              placeholder="数量"
-            ></el-input>
-          </td>
-          <td>
-            <el-input
-              @input="computeValue()"
-              class="calculator_existGoods_input_size"
-              v-model="item_exp_2"
-              placeholder="数量"
-            ></el-input>
-          </td>
-          <td>
-            <el-input
-              @input="computeValue()"
-              class="calculator_existGoods_input_size"
-              v-model="item_exp_1"
-              placeholder="数量"
-            ></el-input>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <img
+            </td>
+          </tr>
+          <tr>
+            <td><div class="calculator_input_title">基建产能</div></td>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/中级作战记录.png"
+                alt=""
+              />
+            </td>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/龙门币.png"
+                alt=""
+              />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <el-input
+                @input="computeValue()"
+                class="calculator_existGoods_input_size"
+                v-model="jijian_expSum"
+                placeholder="数量"
+              ></el-input>
+            </td>
+            <td>
+              <el-input
+                @input="computeValue()"
+                class="calculator_existGoods_input_size"
+                v-model="jijian_goldSum"
+                placeholder="数量"
+              ></el-input>
+            </td>
+          </tr>
+        </table>
+      </div>
 
-              class="result_img_size"
-              src="/img/materials/龙门币.png"
-              alt=""
-            />
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <el-input
-              @input="computeValue()"
-              class="calculator_existGoods_input_size_Lmb"
-              v-model="item_gold"
-              placeholder=""
-            ></el-input>
-          </td>
-        </tr>
-        <tr>
-          <td><div class="calculator_input_title">基建产能</div></td>
-          <td>
-            <img
+      <div class="calculator_result_area">
+        <table class="calculator_result_word_size_2" border="0">
+          <tr>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/声望.png"
+                alt=""
+              />
+            </td>
 
-              class="result_img_size"
-              src="/img/materials/中级作战记录.png"
-              alt=""
-            />
-          </td>
-          <td>
-            <img
+            <td>
+              需求为
 
-              class="result_img_size"
-              src="/img/materials/龙门币.png"
-              alt=""
-            />
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <el-input
-              @input="computeValue()"
-              class="calculator_existGoods_input_size"
-              v-model="jijian_expSum"
-              placeholder="数量"
-            ></el-input>
-          </td>
-          <td>
-            <el-input
-              @input="computeValue()"
-              class="calculator_existGoods_input_size"
-              v-model="jijian_goldSum"
-              placeholder="数量"
-            ></el-input>
-          </td>
-        </tr>
-      </table>
-    </div>
+              <a class="result_cost_color">{{ expResult }}</a
+              >经验
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              刷<a class="result_cost_color">LS-6</a>副本 次数：<a
+                class="result_cost_color"
+                >{{ expStageNum }}</a
+              >次
+            </td>
+          </tr>
 
-    <div class="calculator_result_area">
-      <table class="calculator_result_word_size_2" border="0">
-        <tr>
-          <td>
-            <img
+          <tr>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/理智.png"
+                alt=""
+              />
+            </td>
+            <td>
+              消耗 为<a class="result_cost_color">{{ expReasonCost }}</a>
+              &emsp;需要
 
-              class="result_img_size"
-              src="/img/materials/声望.png"
-              alt=""
-            />
-          </td>
+              <a class="result_cost_color">{{ daySum_exp }}</a
+              >天
+            </td>
+          </tr>
 
-          <td>需求为
+          <tr>
+            <td colspan="2">
+              基建+LS-6需要
+              <a class="result_cost_color">{{ daySum_exp_Jijian }}</a
+              >天
+            </td>
+          </tr>
+          <tr style="height: 10px"></tr>
+          <tr>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/龙门币.png"
+                alt=""
+              />
+            </td>
+            <td>
+              需求为 <a class="result_cost_color">{{ goldResult }}</a
+              >龙门币
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              刷<a class="result_cost_color">CE-6</a>副本 次数：
+              <a class="result_cost_color">{{ goldStageNum }}</a
+              >次
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="result_img_size"
+                src="/img/materials/理智.png"
+                alt=""
+              />
+            </td>
+            <td>
+              消耗 为 <a class="result_cost_color">{{ goldReasonCost }}</a
+              >&emsp; 需要
 
-            <a class="result_cost_color">{{ expResult }}</a
-            >经验
+              <a class="result_cost_color">{{ daySum_gold }}</a
+              >天
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              基建+CE-6需要
+              <a class="result_cost_color">{{ daySum_gold_Jijian }}</a
+              >天
+            </td>
+          </tr>
+        </table>
+      </div>
 
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">刷<a class="result_cost_color">LS-6</a>副本
-
-            次数：<a class="result_cost_color">{{ expStageNum }}</a
-            >次
-          </td>
-        </tr>
-
-        <tr>
-
-          <td>
-            <img
-
-              class="result_img_size"
-              src="/img/materials/理智.png"
-              alt=""
-            />
-          </td>
-         <td>消耗
-            为<a class="result_cost_color">{{ expReasonCost }}</a> &emsp;需要
-
-            <a class="result_cost_color">{{ daySum_exp }}</a
-            >天
-          </td>
-        </tr>
-
-        <tr>
-          <td colspan="2">
-            基建+LS-6需要
-            <a class="result_cost_color">{{ daySum_exp_Jijian }}</a
-            >天
-          </td>
-        </tr>
-        <tr style="height: 10px"></tr>
-        <tr>
-          <td>
-            <img
-
-              class="result_img_size"
-              src="/img/materials/龙门币.png"
-              alt=""
-            />
-          </td>
-          <td>需求为
-            <a class="result_cost_color">{{ goldResult }}</a
-            >龙门币
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">刷<a class="result_cost_color">CE-6</a>副本
-            次数： <a class="result_cost_color">{{ goldStageNum }}</a
-            >次
-          </td>
-        </tr>
-        <tr>
-
-          <td>
-            <img
-
-              class="result_img_size"
-              src="/img/materials/理智.png"
-              alt=""
-            />
-          </td>
-          <td>消耗
-            为 <a class="result_cost_color">{{ goldReasonCost }}</a
-            >&emsp; 需要
-
-            <a class="result_cost_color">{{ daySum_gold }}</a
-            >天
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            基建+CE-6需要
-            <a class="result_cost_color">{{ daySum_gold_Jijian }}</a
-            >天
-          </td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- <a  v-for="(item, index) in AllData"
+      <!-- <a  v-for="(item, index) in AllData"
             :key="index">{{item}}</a> -->
-    <div class="calculator_null_area"></div>
-  </div>
+      <div class="calculator_null_area"></div>
+    </div>
   </div>
 </template>
-
 
 <script>
 import toolApi from "@/api/tool";
@@ -458,7 +448,7 @@ export default {
     this.computeValue();
   },
   methods: {
-     ligthOrDark(location) {
+    ligthOrDark(location) {
       let type = cookie.get("type");
       //  console.log("样式类型——" + typeof type);
       if (typeof type == "undefined") {

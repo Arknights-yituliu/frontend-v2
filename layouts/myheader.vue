@@ -8,35 +8,34 @@
       text-color="#fff"
       active-text-color="#ffd04b"
       style="border: 0px"
-      
     >
-
-     
-      <el-menu-item v-show="menu_pc" index="1" @click="mainSite()">材料一图流</el-menu-item>
-      <el-menu-item v-show="menu_pc" index="2" @click="gachaCal()">攒抽规划</el-menu-item>
-      <el-menu-item v-show="menu_pc" index="3" @click="schedule()">排班生成器</el-menu-item>
-      <el-menu-item v-show="menu_pc" index="4" @click="pack()">礼包性价比</el-menu-item>
+      <el-menu-item v-show="menu_pc" index="1" @click="mainSite()"
+        >材料一图流</el-menu-item
+      >
+      <el-menu-item v-show="menu_pc" index="2" @click="gachaCal()"
+        >攒抽规划</el-menu-item
+      >
+      <el-menu-item v-show="menu_pc" index="3" @click="schedule()"
+        >排班生成器</el-menu-item
+      >
+      <el-menu-item v-show="menu_pc" index="4" @click="pack()"
+        >礼包性价比</el-menu-item
+      >
       <!-- <el-submenu v-show="menu_pc" index="4">
         <template slot="title">其它工具</template>
         <el-menu-item index="4-1" @click="recruit()">公开招募</el-menu-item>
       </el-submenu> -->
-      <el-menu-item 
-        v-show="('/' === routePath || '/recruit/' === routePath)&&menu_pc"
+      <el-menu-item
+        v-show="('/' === routePath || '/recruit/' === routePath) && menu_pc"
         index="5"
         @click="switchTheme()"
         >{{ ThemeText }}</el-menu-item
       >
-      
     </el-menu>
-   
-
-    
-
   </div>
 </template>
 
-<style >
-</style>
+<style></style>
 
 <script>
 var count = 0;
@@ -60,15 +59,11 @@ export default {
   },
   created() {
     this.showPath();
-    
   },
-  mounted() {
-    
-  },
+  mounted() {},
   methods: {
-   
-    getTest(){
-         console.log(navigator.userAgent.toLowerCase())
+    getTest() {
+      console.log(navigator.userAgent.toLowerCase());
     },
     updateVisits(domain) {
       toolApi.updateVisits(domain).then((response) => {});
@@ -118,20 +113,20 @@ export default {
         this.activeIndex = "1";
         this.updateVisits("index");
       }
-      console.log(this.routePath.indexOf("pack"))
-      if (this.routePath.indexOf("gachaCal")!=-1) {
+      console.log(this.routePath.indexOf("pack"));
+      if (this.routePath.indexOf("gachaCal") != -1) {
         this.activeIndex = "2";
         this.updateVisits("gacha");
       }
-      if (this.routePath.indexOf("riicCal")!=-1) {
+      if (this.routePath.indexOf("riicCal") != -1) {
         this.activeIndex = "3";
         this.updateVisits("building");
       }
-      if (this.routePath.indexOf("pack")!=-1) {
+      if (this.routePath.indexOf("pack") != -1) {
         this.activeIndex = "4";
         this.updateVisits("pack");
       }
-      if (this.routePath.indexOf("maaRecruitData")!=-1) {
+      if (this.routePath.indexOf("maaRecruitData") != -1) {
         this.activeIndex = "4";
         this.updateVisits("index");
       }
@@ -161,12 +156,9 @@ export default {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
-
-  
   },
 };
 </script>
-
 
 <style>
 /* .menu-button{
@@ -178,6 +170,4 @@ export default {
   width: 200px;
   min-height: 400px;
 }
-
-
 </style>

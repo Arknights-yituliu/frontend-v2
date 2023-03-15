@@ -31,22 +31,52 @@ export default {
   },
   methods: {
     jsonFormat_composite_table() {
-      let arr = ["固源岩", "糖", "聚酸酯", "异铁", "酮凝集","装置","源岩","代糖","酯原料","异铁碎片",
-        "双酮","破损装置","提纯源岩","糖聚块","聚酸酯块","异铁块","酮阵列","改量装置","白马醇","三水锰矿","五水研磨石",
-        "RMA70-24","聚合凝胶","炽合金块","晶体电路","切削原液","精炼溶剂","转质盐聚块","晶体电子单元","聚合剂","双极纳米片",
-        "D32钢","烧结核凝晶",
+      let arr = [
+        "固源岩",
+        "糖",
+        "聚酸酯",
+        "异铁",
+        "酮凝集",
+        "装置",
+        "源岩",
+        "代糖",
+        "酯原料",
+        "异铁碎片",
+        "双酮",
+        "破损装置",
+        "提纯源岩",
+        "糖聚块",
+        "聚酸酯块",
+        "异铁块",
+        "酮阵列",
+        "改量装置",
+        "白马醇",
+        "三水锰矿",
+        "五水研磨石",
+        "RMA70-24",
+        "聚合凝胶",
+        "炽合金块",
+        "晶体电路",
+        "切削原液",
+        "精炼溶剂",
+        "转质盐聚块",
+        "晶体电子单元",
+        "聚合剂",
+        "双极纳米片",
+        "D32钢",
+        "烧结核凝晶",
       ];
 
-        let json = [];
-       for(let i in arr){
-         let info ={};
-         info.id = arr[i];
-         info.itemCost =  composite_table[arr[i]];
+      let json = [];
+      for (let i in arr) {
+        let info = {};
+        info.id = arr[i];
+        info.itemCost = composite_table[arr[i]];
 
         json.push(info);
-       }
+      }
 
-       this.newJson = json
+      this.newJson = json;
     },
     jsonFormat() {
       gacha_potentialJson
@@ -79,9 +109,12 @@ export default {
       zones
         .filter((json) => true)
         .forEach((json) => {
-          let openTime =  json.existence.CN.openTime;
-          
-          this.newJson[json.zoneId] = {zoneName:json.zoneName,openTime:openTime};
+          let openTime = json.existence.CN.openTime;
+
+          this.newJson[json.zoneId] = {
+            zoneName: json.zoneName,
+            openTime: openTime,
+          };
         });
       // this.newJson = JSON.stringify(JSON.parse(this.newJson), null, '\t')
     },

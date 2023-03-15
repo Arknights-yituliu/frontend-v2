@@ -4,90 +4,120 @@
       <!-- 标题区域 -->
       <div class="op_title">
         <div class="op_title_text">
-          <div class="op_title_ctext">
-            价值一览
-          </div>
-          <div :class=opETextTheme>
-            Material Value
-          </div>
+          <div class="op_title_ctext">价值一览</div>
+          <div :class="opETextTheme">Material Value</div>
         </div>
         <div class="op_title_tag">
-          <div id="value_switch_to_saint" :class="tag_class_sanity" @click="switchUnit(1)">
+          <div
+            id="value_switch_to_saint"
+            :class="tag_class_sanity"
+            @click="switchUnit(1)"
+          >
             等效理智
           </div>
-            <div id="value_switch_to_green" :class="tag_class_green" @click="switchUnit(2)">
+          <div
+            id="value_switch_to_green"
+            :class="tag_class_green"
+            @click="switchUnit(2)"
+          >
             等效绿票
           </div>
-          <div class="tab_text" >
-          <a style="color:rgb(65,105,240)" 
-          href="https://houduan.yituliu.site/file/export/item/value/excel"> 导出Excel</a>
-        
+          <div class="tab_text">
+            <a
+              style="color: rgb(65, 105, 240)"
+              href="https://houduan.yituliu.site/file/export/item/value/excel"
+            >
+              导出Excel</a
+            >
           </div>
           <div class="tab_text">
-          <a style="color:rgb(65,105,240)" 
-          href="https://houduan.yituliu.site/file/export/item/value/json"> 导出Json</a>
+            <a
+              style="color: rgb(65, 105, 240)"
+              href="https://houduan.yituliu.site/file/export/item/value/json"
+            >
+              导出Json</a
+            >
           </div>
         </div>
       </div>
 
-      <div class="value_content" style="display: flex;flex-wrap: wrap;">
+      <div class="value_content" style="display: flex; flex-wrap: wrap">
         <div class="value_half" id="value_left">
           <div v-for="(card, index) in 4" :key="index" class="value_subList">
-            <div v-for="(item, index) in itemList" :key="index" class="value_item">
+            <div
+              v-for="(item, index) in itemList"
+              :key="index"
+              class="value_item"
+            >
               <!-- {{item}}{{card}} -->
-              <div :class="getItemValueCard(card, item.cardNum, item.type)" >
-                <table>
-                  <tbody>
-                  <tr>
-                    <td style="padding:0px 0px 0px 6px;width: 30px;">
-                      <!-- <img class="item_img_size" :src="static_imgUrl(item.itemName)" :alt="getItemName(item.itemName)"/> -->
-                        <div :class="getSpriteImg(item.itemId,0)" ></div>
-                    </td>
-                    <td v-show="valueType == 'sanity'" class="value_subList_value_font">
-                      {{ getItemsanityValue(item.itemId, item.itemValue) }}
-                    </td>
-                    <td v-show="valueType == 'green'" class="value_subList_value_font">
-                      {{ getItemGreenValue(item.itemId, item.itemValue) }}
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="value_half" id="value_right">
-          <div v-for="(card, index) in cardNum" :key="index" class="value_subList" v-show="index > 3 && index <8">
-            <div v-for="(item, index) in itemList" :key="index" class="value_item">
               <div :class="getItemValueCard(card, item.cardNum, item.type)">
                 <table>
                   <tbody>
-                  <tr>
-                    <td style="padding:0px 0px 0px 6px;width: 30px;">
-                      <!-- <img class="item_img_size" :src="static_imgUrl(item.itemName)" :alt="getItemName(item.itemName)"/> -->
-                        <div :class="getSpriteImg(item.itemId,0)" ></div>
-                    </td>
-                    <td v-show="valueType == 'sanity'" class="value_subList_value_font">
-                      {{ getItemsanityValue(item.itemId, item.itemValue) }}
-                    </td>
-                    <td v-show="valueType == 'green'" class="value_subList_value_font">
-                      {{ getItemGreenValue(item.itemId, item.itemValue) }}
-                    </td>
-                  </tr>
+                    <tr>
+                      <td style="padding: 0px 0px 0px 6px; width: 30px">
+                        <!-- <img class="item_img_size" :src="static_imgUrl(item.itemName)" :alt="getItemName(item.itemName)"/> -->
+                        <div :class="getSpriteImg(item.itemId, 0)"></div>
+                      </td>
+                      <td
+                        v-show="valueType == 'sanity'"
+                        class="value_subList_value_font"
+                      >
+                        {{ getItemsanityValue(item.itemId, item.itemValue) }}
+                      </td>
+                      <td
+                        v-show="valueType == 'green'"
+                        class="value_subList_value_font"
+                      >
+                        {{ getItemGreenValue(item.itemId, item.itemValue) }}
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
         </div>
-
+        <div class="value_half" id="value_right">
+          <div
+            v-for="(card, index) in cardNum"
+            :key="index"
+            class="value_subList"
+            v-show="index > 3 && index < 8"
+          >
+            <div
+              v-for="(item, index) in itemList"
+              :key="index"
+              class="value_item"
+            >
+              <div :class="getItemValueCard(card, item.cardNum, item.type)">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td style="padding: 0px 0px 0px 6px; width: 30px">
+                        <!-- <img class="item_img_size" :src="static_imgUrl(item.itemName)" :alt="getItemName(item.itemName)"/> -->
+                        <div :class="getSpriteImg(item.itemId, 0)"></div>
+                      </td>
+                      <td
+                        v-show="valueType == 'sanity'"
+                        class="value_subList_value_font"
+                      >
+                        {{ getItemsanityValue(item.itemId, item.itemValue) }}
+                      </td>
+                      <td
+                        v-show="valueType == 'green'"
+                        class="value_subList_value_font"
+                      >
+                        {{ getItemGreenValue(item.itemId, item.itemValue) }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
     </div>
-
-
-
   </div>
 </template>
 
@@ -106,7 +136,7 @@ export default {
       tag_class_green: "yituliu_title_moudule_button",
       tag_class_sanity: "yituliu_title_moudule_button",
       opETextTheme: "op_title_etext_light",
-      valueVerison:0.625
+      valueVerison: 0.625,
     };
   },
   created() {
@@ -152,7 +182,7 @@ export default {
       }
     },
 
-     getSpriteImg(id, index) {
+    getSpriteImg(id, index) {
       if (index === 0) return "bg-" + id + " sprite_itemValue";
 
       return "bg-" + id;
@@ -202,13 +232,8 @@ export default {
     OSS_imgUr1l(img) {
       img = typeof img !== "undefined" ? img : 1;
 
-      return (
-        "https://image.yituliu.site/item/" + img + ".png"
-      );
+      return "https://image.yituliu.site/item/" + img + ".png";
     },
   },
 };
 </script>
-
-
-

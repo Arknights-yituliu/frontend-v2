@@ -34,7 +34,7 @@
     </el-menu>
 
     <div @click="emnu_collapse()" class="menu_div">
-      <div class="menu-collapse" id="menu" >
+      <div class="menu-collapse" id="menu">
         <h1>明日方舟一图流</h1>
         <table>
           <tbody>
@@ -61,8 +61,7 @@
   </div>
 </template>
 
-<style >
-</style>
+<style></style>
 
 <script>
 var count = 0;
@@ -101,7 +100,6 @@ export default {
         this.menu_phone = false;
         this.menu_pc = true;
       }
-      
     },
     getTest() {
       console.log(navigator.userAgent.toLowerCase());
@@ -214,7 +212,6 @@ export default {
 };
 </script>
 
-
 <style>
 /* .menu-button{
   width:66px ;
@@ -236,9 +233,7 @@ export default {
 }
 
 .menu-collapse {
-  
   transform: translateX(-290px);
- 
 }
 
 .menu-open {
@@ -247,7 +242,7 @@ export default {
   height: 1000px;
   white-space: nowrap;
   text-align: center;
-  transition:all .3s;
+  transition: all 0.3s;
   transform: translateX(0) !important;
 }
 

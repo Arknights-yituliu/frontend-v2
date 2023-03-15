@@ -4,40 +4,36 @@
       <tbody>
         <tr v-for="(singleAgent, index) in agentData" :key="index">
           <td>
-            {{singleAgent.codeName}}
+            {{ singleAgent.codeName }}
           </td>
           <td>
-            {{singleAgent.phases}}
+            {{ singleAgent.phases }}
           </td>
           <td>
-            {{singleAgent.codeName}}
+            {{ singleAgent.codeName }}
           </td>
         </tr>
       </tbody>
       <!-- {{agentData}} -->
     </table>
-
   </div>
 </template>
 
 <script>
-
-  export default {
-    data(){
-            return {
-              agentData:agentData,
-            }
-        },
-  }
-
+export default {
+  data() {
+    return {
+      agentData: agentData,
+    };
+  },
+};
 </script>
 
 <style scoped>
-  .pie_all {
-    width: 450px;
-    height: 300px;
-    border-radius: 16px;
-    margin-top: -10%;
-  }
-
+.pie_all {
+  width: 450px;
+  height: 300px;
+  border-radius: 16px;
+  margin-top: -10%;
+}
 </style>

@@ -180,7 +180,7 @@
               type="text"
               @change="compute()"
               v-model.number="customValue"
-              oninput="value=value.replace(/[^\d]/g, '')"
+              oninput="value=value.replace(/[^0-9-]+/g, '')"
             />
             <div class="gacha_unit_child_title" style="width: 330px;">
               自定义修正值(合成玉)
@@ -232,7 +232,7 @@
               type="text"
               @change="compute()"
               v-model.number="orundum_ap"
-              
+              oninput="value=value.replace(/[^0-9-]+/g, '')"
             />
             用于搓玉的理智 X
             <input

@@ -68,12 +68,7 @@
 
           <div class="checkBox_recruit_switch">
             <div @click="recruit_role_minRarity()">
-              <el-switch
-                v-model="minRarityValue_type"
-                active-color="#13ce66"
-                inactive-color="#ff4949"
-              >
-              </el-switch>
+              <el-switch v-model="minRarityValue_type" active-color="#13ce66" inactive-color="#ff4949"> </el-switch>
               隐藏1,2星干员(默认隐藏)
             </div>
           </div>
@@ -91,11 +86,7 @@
       </div>
 
       <div class="result_recruit_area">
-        <div
-          v-for="(item, index) in recDataList"
-          :key="index"
-          class="result_recruit_card"
-        >
+        <div v-for="(item, index) in recDataList" :key="index" class="result_recruit_card">
           <div class="result_recruit_tags_color_size">{{ item.tags }}</div>
 
           <div class="result_recruit_table_size">
@@ -104,11 +95,7 @@
                 <table>
                   <tr>
                     <td style="width: 45px" v-show="img_display_type">
-                      <img
-                        class="role_img_size"
-                        :src="getRoleGitUrl(name)"
-                        :alt="getRoleName(name)"
-                      />
+                      <img class="role_img_size" :src="getRoleGitUrl(name)" :alt="getRoleName(name)" />
                     </td>
                     <td style="min-width: 75px">
                       {{ getRoleName(name) }}
@@ -238,8 +225,7 @@ export default {
           if (tag == this.checkList[i]) {
             console.log("删除前", this.checkList);
             document.getElementById(id).style.color = "black";
-            document.getElementById(id).style.backgroundColor =
-              "rgb(228, 228, 228)";
+            document.getElementById(id).style.backgroundColor = "rgb(228, 228, 228)";
             this.checkList.splice(i, 1);
             console.log("删除后", this.checkList);
             this.findAllDataRec();
@@ -249,8 +235,7 @@ export default {
       }
       if (this.checkList.length > 5) {
         document.getElementById(id).style.color = "black";
-        document.getElementById(id).style.backgroundColor =
-          "rgb(228, 228, 228)";
+        document.getElementById(id).style.backgroundColor = "rgb(228, 228, 228)";
         this.$message({
           message: "至多选取6个tag",
           type: "warning",
@@ -274,13 +259,11 @@ export default {
 
       this.checkList.sort((a, b) => b.length - a.length);
 
-      toolApi
-        .findAllDataRec(0, this.checkList, this.minRarity)
-        .then((response) => {
-          this.recDataList = response.data;
+      toolApi.findAllDataRec(0, this.checkList, this.minRarity).then((response) => {
+        this.recDataList = response.data;
 
-          this.lessRarity = response.data[0].lessRarity;
-        });
+        this.lessRarity = response.data[0].lessRarity;
+      });
     },
     getRoleGitUrl(name) {
       count++;

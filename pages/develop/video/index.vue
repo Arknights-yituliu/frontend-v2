@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="pie_all" id="myChart" ref="myChart"></div>
-    <div class="title1">
-      统计范围：{{ chapters[0] }}至{{ chapters[chapters.length - 1] }}<br />
-    </div>
+    <div class="title1">统计范围：{{ chapters[0] }}至{{ chapters[chapters.length - 1] }}<br /></div>
     <div class="title2">{{ chapter }}<br /></div>
   </div>
 </template>
@@ -80,17 +78,12 @@ export default {
     async changeChartData(newData) {
       let map = this.arrTOMap(itemCount202210);
       for (let i = 0; i < newData.length; i++) {
-        var costContent =
-          newData[i].itemCount +
-          "(+ " +
-          (newData[i].itemCount - map[newData[i].itemId]) +
-          ")";
+        var costContent = newData[i].itemCount + "(+ " + (newData[i].itemCount - map[newData[i].itemId]) + ")";
         itemCostContent[15 - i] = costContent;
         itemName[15 - i] = newData[i].itemName;
         itemId[15 - i] = newData[i].itemId;
         this.itemCost[15 - i] = newData[i].itemCount;
-        if (itemCount202210[i].itemName == "固源岩组")
-          this.itemCost[15 - i] = newData[i].itemCount * 0.7;
+        if (itemCount202210[i].itemName == "固源岩组") this.itemCost[15 - i] = newData[i].itemCount * 0.7;
         itemIndex = newData[i].itemId;
         await this.sleep(1000);
 
@@ -103,14 +96,9 @@ export default {
     changeBackIamge(index) {
       this.chapter = this.chapters[index];
       document.getElementById("myChart").style.background =
-        "url(/img/back/" +
-        this.chapters[index] +
-        ".png),url(/img/back/" +
-        this.chapters[index + 1] +
-        ".png)";
+        "url(/img/back/" + this.chapters[index] + ".png),url(/img/back/" + this.chapters[index + 1] + ".png)";
       document.getElementById("myChart").style.backgroundSize = "2000px";
-      document.getElementById("myChart").style.backgroundPosition =
-        "0 0,-2000px -2000px";
+      document.getElementById("myChart").style.backgroundPosition = "0 0,-2000px -2000px";
     },
 
     arrTOMap(arr) {

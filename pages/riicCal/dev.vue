@@ -5,12 +5,7 @@
         <div class="riic_building_title">控制面板</div>
         <div class="riic_building_parameter">
           <div class="parameter_text">作业名称</div>
-          <el-input
-            class="parameter_inputbox"
-            size="small"
-            placeholder="究极资本家v1.0"
-            v-model="title"
-          ></el-input>
+          <el-input class="parameter_inputbox" size="small" placeholder="究极资本家v1.0" v-model="title"></el-input>
         </div>
         <div class="riic_building_parameter">
           <div class="parameter_text">描述(可选)</div>
@@ -23,12 +18,7 @@
         </div>
         <div class="riic_building_parameter">
           <div class="parameter_text">作者(可选)</div>
-          <el-input
-            class="parameter_inputbox"
-            size="small"
-            placeholder="yituliu"
-            v-model="author"
-          ></el-input>
+          <el-input class="parameter_inputbox" size="small" placeholder="yituliu" v-model="author"></el-input>
         </div>
         <div class="riic_building_parameter">
           <div class="parameter_text">基建模式</div>
@@ -122,40 +112,21 @@
             v-model="period_plan2[1]"
           ></el-input>
         </div>
-        <div class="riic_building_parameter">
-          *跨天需写成 [22:00][06:00] (示例，写的时候别带&emsp;[&emsp;]！)
-        </div>
+        <div class="riic_building_parameter">*跨天需写成 [22:00][06:00] (示例，写的时候别带&emsp;[&emsp;]！)</div>
       </div>
 
       <div class="riic_building">
         <div class="riic_building_title">方案导入/导出</div>
         <div class="riic_building_parameter">
-          <el-button
-            size="medium"
-            type="primary"
-            round
-            style="width: 126px"
-            @click="maaBuildingJsonCreated()"
-          >
+          <el-button size="medium" type="primary" round style="width: 126px" @click="maaBuildingJsonCreated()">
             生成排班方案
           </el-button>
           <div
             id="export_cover"
-            style="
-              position: absolute;
-              width: 235px;
-              height: 40px;
-              margin: -38px 18px 18px 137px;
-              background: #ffffff80;
-            "
+            style="position: absolute; width: 235px; height: 40px; margin: -38px 18px 18px 137px; background: #ffffff80"
           ></div>
           <a :href="exportUrl">
-            <el-button
-              size="medium"
-              type="primary"
-              round
-              style="width: 108px; margin-left: 12px"
-            >
+            <el-button size="medium" type="primary" round style="width: 108px; margin-left: 12px">
               导出到本地
             </el-button>
           </a>
@@ -169,13 +140,7 @@
             </el-button> *(后续可用)
           </div> -->
         <div class="riic_building_parameter">
-          <el-button
-            size="medium"
-            type="primary"
-            round
-            style="width: 126px"
-            @click="retrieveSchedule()"
-          >
+          <el-button size="medium" type="primary" round style="width: 126px" @click="retrieveSchedule()">
             通过id导入
           </el-button>
           <el-input
@@ -192,9 +157,7 @@
         </div>
         <div class="riic_building_parameter">
           <a href="https://www.wjx.cn/vm/mRNtSzd.aspx#">
-            <el-button size="medium" type="warning" round style="width: 186px">
-              排班生成器 问题反馈
-            </el-button>
+            <el-button size="medium" type="warning" round style="width: 186px"> 排班生成器 问题反馈 </el-button>
           </a>
         </div>
 
@@ -218,38 +181,22 @@
           <div class="riic_building_title">班次基本信息</div>
           <div class="riic_building_parameter">
             <div class="parameter_text">班次名称</div>
-            <el-input
-              size="small"
-              class="parameter_inputbox"
-              placeholder="例如：主力组A"
-              v-model="name[0]"
-            ></el-input>
+            <el-input size="small" class="parameter_inputbox" placeholder="例如：主力组A" v-model="name[0]"></el-input>
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">描述</div>
-            <el-input
-              size="small"
-              class="parameter_inputbox"
-              placeholder="可选"
-              v-model="descriptionH2[0]"
-            ></el-input>
+            <el-input size="small" class="parameter_inputbox" placeholder="可选" v-model="descriptionH2[0]"></el-input>
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">无人机</div>
-            <el-switch
-              active-color="#13ce66"
-              inactive-color="#c0c4cc"
-              v-model="switch_drones_enable[0]"
-            ></el-switch>
+            <el-switch active-color="#13ce66" inactive-color="#c0c4cc" v-model="switch_drones_enable[0]"></el-switch>
             <el-radio-group size="small" v-model="radio_drones[0]">
               <el-radio-button label="贸易站"></el-radio-button>
               <el-radio-button label="制造站"></el-radio-button>
             </el-radio-group>
           </div>
           <div class="riic_building_parameter">
-            <div class="parameter_text" style="font-size: 15px">
-              目标房间编号
-            </div>
+            <div class="parameter_text" style="font-size: 15px">目标房间编号</div>
             <el-radio-group size="small" v-model="radio_drones_index[0]">
               <el-radio-button label="1"></el-radio-button>
               <el-radio-button label="2"></el-radio-button>
@@ -267,11 +214,7 @@
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">菲亚梅塔</div>
-            <el-switch
-              active-color="#13ce66"
-              inactive-color="#c0c4cc"
-              v-model="switch_Fiammetta_enable[0]"
-            ></el-switch>
+            <el-switch active-color="#13ce66" inactive-color="#c0c4cc" v-model="switch_Fiammetta_enable[0]"></el-switch>
             <el-input
               size="small"
               style="width: 128px"
@@ -292,11 +235,7 @@
           <div class="riic_building_title">
             控制中枢
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -304,65 +243,20 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="control_plan0[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan0[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan0[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan0[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan0[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan0[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan0[3]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan0[3]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan0[4]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan0[4]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
@@ -370,33 +264,21 @@
           <div class="riic_building_title">
             贸易站1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_trading_plan0_0[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_trading_plan0_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -404,41 +286,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="trading_plan0_0[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan0_0[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan0_0[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan0_0[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan0_0[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan0_0[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -452,42 +307,26 @@
 
         <div
           class="riic_building building_trade"
-          v-show="
-            '243' === buildingType ||
-            '333' === buildingType ||
-            '252' === buildingType
-          "
+          v-show="'243' === buildingType || '333' === buildingType || '252' === buildingType"
         >
           <div class="riic_building_title">
             贸易站2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_trading_plan0_1[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_trading_plan0_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -495,41 +334,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="trading_plan0_1[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan0_1[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan0_1[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan0_1[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan0_1[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan0_1[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -541,40 +353,25 @@
           </div>
         </div>
 
-        <div
-          class="riic_building building_trade"
-          v-show="'333' === buildingType"
-        >
+        <div class="riic_building building_trade" v-show="'333' === buildingType">
           <div class="riic_building_title">
             贸易站3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_trading_plan0_2[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_trading_plan0_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -582,41 +379,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="trading_plan0_2[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan0_2[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan0_2[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan0_2[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan0_2[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan0_2[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -631,33 +401,21 @@
           <div class="riic_building_title">
             制造站1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan0_0[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan0_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -665,41 +423,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan0_0[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_0[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan0_0[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_0[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan0_0[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_0[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -716,33 +447,21 @@
           <div class="riic_building_title">
             制造站2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan0_1[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan0_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -750,41 +469,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan0_1[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_1[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan0_1[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_1[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan0_1[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_1[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -801,33 +493,21 @@
           <div class="riic_building_title">
             制造站3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan0_2[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan0_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -835,41 +515,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan0_2[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_2[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan0_2[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_2[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan0_2[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_2[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -884,42 +537,26 @@
 
         <div
           class="riic_building building_factory"
-          v-show="
-            '243' === buildingType ||
-            '153' === buildingType ||
-            '252' === buildingType
-          "
+          v-show="'243' === buildingType || '153' === buildingType || '252' === buildingType"
         >
           <div class="riic_building_title">
             制造站4
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan0_3[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan0_3[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -927,41 +564,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan0_3[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_3[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan0_3[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_3[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan0_3[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_3[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -973,40 +583,25 @@
             </el-radio-group>
           </div>
         </div>
-        <div
-          class="riic_building building_factory"
-          v-show="'153' === buildingType || '252' === buildingType"
-        >
+        <div class="riic_building building_factory" v-show="'153' === buildingType || '252' === buildingType">
           <div class="riic_building_title">
             制造站5
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan0_4[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan0_4[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1014,41 +609,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan0_4[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_4[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan0_4[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_4[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan0_4[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan0_4[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -1065,22 +633,14 @@
           <div class="riic_building_title">
             发电站1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_power_plan0_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1088,17 +648,8 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="power_plan0_0[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_POWER"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="power_plan0_0[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_POWER" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
@@ -1106,22 +657,14 @@
           <div class="riic_building_title">
             发电站2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_power_plan0_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1129,44 +672,24 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="power_plan0_0[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_POWER"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="power_plan0_0[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_POWER" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
 
-        <div
-          class="riic_building building_powerPlant"
-          v-show="!('252' === buildingType)"
-        >
+        <div class="riic_building building_powerPlant" v-show="!('252' === buildingType)">
           <div class="riic_building_title">
             发电站3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_power_plan0_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1174,17 +697,8 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="power_plan0_0[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_POWER"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="power_plan0_0[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_POWER" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
@@ -1192,22 +706,14 @@
           <div class="riic_building_title">
             会客室
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_meeting_plan0_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1215,40 +721,22 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="meeting_plan0_0[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="meeting_plan0_0[1]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="meeting_plan0_0[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="meeting_plan0_0[1]"></el-input>
           </div>
         </div>
         <div class="riic_building building_hr">
           <div class="riic_building_title">
             办公室
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_hire_plan0_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1256,45 +744,28 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="hire_plan0_0[0]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="hire_plan0_0[0]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan0_0[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan0_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1302,69 +773,32 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_0[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_0[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_0[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_0[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_0[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_0[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_0[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_0[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_0[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_0[4]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan0_1[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan0_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1372,69 +806,32 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_1[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_1[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_1[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_1[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_1[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_1[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_1[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_1[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_1[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_1[4]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan0_2[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan0_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1442,69 +839,32 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_2[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_2[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_2[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_2[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_2[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_2[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_2[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_2[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_2[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_2[4]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍4
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan0_3[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan0_3[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1512,36 +872,11 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_3[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_3[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_3[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_3[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan0_3[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_3[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_3[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_3[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_3[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan0_3[4]"></el-input>
           </div>
         </div>
       </div>
@@ -1550,38 +885,22 @@
           <div class="riic_building_title">班次基本信息</div>
           <div class="riic_building_parameter">
             <div class="parameter_text">班次名称</div>
-            <el-input
-              size="small"
-              class="parameter_inputbox"
-              placeholder="例如：主力组A"
-              v-model="name[1]"
-            ></el-input>
+            <el-input size="small" class="parameter_inputbox" placeholder="例如：主力组A" v-model="name[1]"></el-input>
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">描述</div>
-            <el-input
-              size="small"
-              class="parameter_inputbox"
-              placeholder="可选"
-              v-model="descriptionH2[1]"
-            ></el-input>
+            <el-input size="small" class="parameter_inputbox" placeholder="可选" v-model="descriptionH2[1]"></el-input>
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">无人机</div>
-            <el-switch
-              active-color="#13ce66"
-              inactive-color="#c0c4cc"
-              v-model="switch_drones_enable[1]"
-            ></el-switch>
+            <el-switch active-color="#13ce66" inactive-color="#c0c4cc" v-model="switch_drones_enable[1]"></el-switch>
             <el-radio-group size="small" v-model="radio_drones[1]">
               <el-radio-button label="贸易站"></el-radio-button>
               <el-radio-button label="制造站"></el-radio-button>
             </el-radio-group>
           </div>
           <div class="riic_building_parameter">
-            <div class="parameter_text" style="font-size: 15px">
-              目标房间编号
-            </div>
+            <div class="parameter_text" style="font-size: 15px">目标房间编号</div>
             <el-radio-group size="small" v-model="radio_drones_index[1]">
               <el-radio-button label="1"></el-radio-button>
               <el-radio-button label="2"></el-radio-button>
@@ -1600,11 +919,7 @@
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">菲亚梅塔</div>
-            <el-switch
-              active-color="#13ce66"
-              inactive-color="#c0c4cc"
-              v-model="switch_Fiammetta_enable[1]"
-            ></el-switch>
+            <el-switch active-color="#13ce66" inactive-color="#c0c4cc" v-model="switch_Fiammetta_enable[1]"></el-switch>
             <el-input
               size="small"
               style="width: 128px"
@@ -1626,11 +941,7 @@
           <div class="riic_building_title">
             控制中枢
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1638,65 +949,20 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="control_plan1[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan1[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan1[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan1[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan1[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan1[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan1[3]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan1[3]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan1[4]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan1[4]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
@@ -1705,33 +971,21 @@
           <div class="riic_building_title">
             贸易站1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_trading_plan1_0[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_trading_plan1_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1739,41 +993,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="trading_plan1_0[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan1_0[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan1_0[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan1_0[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan1_0[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan1_0[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -1786,42 +1013,26 @@
         </div>
         <div
           class="riic_building building_trade"
-          v-show="
-            '243' === buildingType ||
-            '333' === buildingType ||
-            '252' === buildingType
-          "
+          v-show="'243' === buildingType || '333' === buildingType || '252' === buildingType"
         >
           <div class="riic_building_title">
             贸易站2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_trading_plan1_1[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_trading_plan1_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1829,41 +1040,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="trading_plan1_1[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan1_1[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan1_1[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan1_1[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan1_1[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan1_1[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -1874,40 +1058,25 @@
             </el-radio-group>
           </div>
         </div>
-        <div
-          class="riic_building building_trade"
-          v-show="'333' === buildingType"
-        >
+        <div class="riic_building building_trade" v-show="'333' === buildingType">
           <div class="riic_building_title">
             贸易站3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_trading_plan1_2[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_trading_plan1_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1915,41 +1084,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="trading_plan1_2[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan1_2[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan1_2[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan1_2[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan1_2[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan1_2[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -1965,33 +1107,21 @@
           <div class="riic_building_title">
             制造站1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan1_0[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan1_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -1999,41 +1129,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan1_0[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_0[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan1_0[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_0[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan1_0[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_0[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -2049,33 +1152,21 @@
           <div class="riic_building_title">
             制造站2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan1_1[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan1_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2083,41 +1174,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan1_1[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_1[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan1_1[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_1[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan1_1[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_1[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -2134,33 +1198,21 @@
           <div class="riic_building_title">
             制造站3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan1_2[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan1_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2168,41 +1220,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan1_2[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_2[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan1_2[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_2[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan1_2[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_2[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -2217,42 +1242,26 @@
 
         <div
           class="riic_building building_factory"
-          v-show="
-            '243' === buildingType ||
-            '153' === buildingType ||
-            '252' === buildingType
-          "
+          v-show="'243' === buildingType || '153' === buildingType || '252' === buildingType"
         >
           <div class="riic_building_title">
             制造站4
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan1_3[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan1_3[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2260,41 +1269,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan1_3[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_3[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan1_3[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_3[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan1_3[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_3[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -2307,40 +1289,25 @@
           </div>
         </div>
 
-        <div
-          class="riic_building building_factory"
-          v-show="'153' === buildingType || '252' === buildingType"
-        >
+        <div class="riic_building building_factory" v-show="'153' === buildingType || '252' === buildingType">
           <div class="riic_building_title">
             制造站5
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan1_4[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan1_4[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2348,41 +1315,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan1_4[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_4[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan1_4[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_4[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan1_4[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan1_4[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -2399,22 +1339,14 @@
           <div class="riic_building_title">
             发电站1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_power_plan1_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2422,17 +1354,8 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="power_plan1_0[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_POWER"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="power_plan1_0[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_POWER" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
@@ -2440,22 +1363,14 @@
           <div class="riic_building_title">
             发电站2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_power_plan1_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2463,44 +1378,24 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="power_plan1_0[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_POWER"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="power_plan1_0[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_POWER" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
 
-        <div
-          class="riic_building building_powerPlant"
-          v-show="!('252' === buildingType)"
-        >
+        <div class="riic_building building_powerPlant" v-show="!('252' === buildingType)">
           <div class="riic_building_title">
             发电站3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_power_plan1_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2508,17 +1403,8 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="power_plan1_0[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_POWER"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="power_plan1_0[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_POWER" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
@@ -2526,22 +1412,14 @@
           <div class="riic_building_title">
             会客室
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_meeting_plan1_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2549,40 +1427,22 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="meeting_plan1_0[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="meeting_plan1_0[1]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="meeting_plan1_0[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="meeting_plan1_0[1]"></el-input>
           </div>
         </div>
         <div class="riic_building building_hr">
           <div class="riic_building_title">
             办公室
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_hire_plan1_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2590,45 +1450,28 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="hire_plan1_0[0]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="hire_plan1_0[0]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan1_0[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan1_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2636,69 +1479,32 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_0[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_0[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_0[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_0[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_0[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_0[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_0[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_0[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_0[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_0[4]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan1_1[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan1_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2706,69 +1512,32 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_1[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_1[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_1[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_1[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_1[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_1[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_1[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_1[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_1[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_1[4]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan1_2[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan1_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2776,69 +1545,32 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_2[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_2[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_2[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_2[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_2[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_2[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_2[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_2[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_2[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_2[4]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍4
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan1_3[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan1_3[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2846,36 +1578,11 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_3[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_3[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_3[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_3[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan1_3[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_3[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_3[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_3[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_3[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan1_3[4]"></el-input>
           </div>
         </div>
       </div>
@@ -2884,38 +1591,22 @@
           <div class="riic_building_title">班次基本信息</div>
           <div class="riic_building_parameter">
             <div class="parameter_text">班次名称</div>
-            <el-input
-              size="small"
-              class="parameter_inputbox"
-              placeholder="例如：主力组A"
-              v-model="name[2]"
-            ></el-input>
+            <el-input size="small" class="parameter_inputbox" placeholder="例如：主力组A" v-model="name[2]"></el-input>
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">描述</div>
-            <el-input
-              size="small"
-              class="parameter_inputbox"
-              placeholder="可选"
-              v-model="descriptionH2[2]"
-            ></el-input>
+            <el-input size="small" class="parameter_inputbox" placeholder="可选" v-model="descriptionH2[2]"></el-input>
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">无人机</div>
-            <el-switch
-              active-color="#13ce66"
-              inactive-color="#c0c4cc"
-              v-model="switch_drones_enable[2]"
-            ></el-switch>
+            <el-switch active-color="#13ce66" inactive-color="#c0c4cc" v-model="switch_drones_enable[2]"></el-switch>
             <el-radio-group size="small" v-model="radio_drones[2]">
               <el-radio-button label="贸易站"></el-radio-button>
               <el-radio-button label="制造站"></el-radio-button>
             </el-radio-group>
           </div>
           <div class="riic_building_parameter">
-            <div class="parameter_text" style="font-size: 15px">
-              目标房间编号
-            </div>
+            <div class="parameter_text" style="font-size: 15px">目标房间编号</div>
             <el-radio-group size="small" v-model="radio_drones_index[2]">
               <el-radio-button label="1"></el-radio-button>
               <el-radio-button label="2"></el-radio-button>
@@ -2933,11 +1624,7 @@
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">菲亚梅塔</div>
-            <el-switch
-              active-color="#13ce66"
-              inactive-color="#c0c4cc"
-              v-model="switch_Fiammetta_enable[2]"
-            ></el-switch>
+            <el-switch active-color="#13ce66" inactive-color="#c0c4cc" v-model="switch_Fiammetta_enable[2]"></el-switch>
             <el-input
               size="small"
               style="width: 128px"
@@ -2958,11 +1645,7 @@
           <div class="riic_building_title">
             控制中枢
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -2970,65 +1653,20 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="control_plan2[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan2[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan2[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan2[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan2[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan2[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan2[3]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan2[3]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="control_plan2[4]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_CONTROL"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="control_plan2[4]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_CONTROL" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
@@ -3037,33 +1675,21 @@
           <div class="riic_building_title">
             贸易站1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_trading_plan2_0[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_trading_plan2_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3071,41 +1697,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="trading_plan2_0[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan2_0[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan2_0[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan2_0[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan2_0[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan2_0[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -3119,42 +1718,26 @@
 
         <div
           class="riic_building building_trade"
-          v-show="
-            '243' === buildingType ||
-            '333' === buildingType ||
-            '252' === buildingType
-          "
+          v-show="'243' === buildingType || '333' === buildingType || '252' === buildingType"
         >
           <div class="riic_building_title">
             贸易站2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_trading_plan2_1[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_trading_plan2_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3162,41 +1745,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="trading_plan2_1[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan2_1[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan2_1[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan2_1[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan2_1[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan2_1[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -3208,40 +1764,25 @@
           </div>
         </div>
 
-        <div
-          class="riic_building building_trade"
-          v-show="'333' === buildingType"
-        >
+        <div class="riic_building building_trade" v-show="'333' === buildingType">
           <div class="riic_building_title">
             贸易站3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_trading_plan2_2[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_trading_plan2_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3249,41 +1790,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="trading_plan2_2[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan2_2[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan2_2[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan2_2[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="trading_plan2_2[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_TRADING"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="trading_plan2_2[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_TRADING" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -3298,33 +1812,21 @@
           <div class="riic_building_title">
             制造站1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan2_0[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan2_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3332,41 +1834,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan2_0[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_0[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan2_0[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_0[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan2_0[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_0[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -3382,33 +1857,21 @@
           <div class="riic_building_title">
             制造站2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan2_1[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan2_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3416,41 +1879,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan2_1[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_1[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan2_1[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_1[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan2_1[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_1[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -3466,33 +1902,21 @@
           <div class="riic_building_title">
             制造站3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan2_2[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan2_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3500,41 +1924,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan2_2[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_2[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan2_2[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_2[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan2_2[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_2[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -3548,42 +1945,26 @@
         </div>
         <div
           class="riic_building building_factory"
-          v-show="
-            '243' === buildingType ||
-            '153' === buildingType ||
-            '252' === buildingType
-          "
+          v-show="'243' === buildingType || '153' === buildingType || '252' === buildingType"
         >
           <div class="riic_building_title">
             制造站4
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan2_3[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan2_3[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3591,41 +1972,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan2_3[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_3[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan2_3[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_3[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan2_3[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_3[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -3637,40 +1991,25 @@
             </el-radio-group>
           </div>
         </div>
-        <div
-          class="riic_building building_factory"
-          v-show="'153' === buildingType || '252' === buildingType"
-        >
+        <div class="riic_building building_factory" v-show="'153' === buildingType || '252' === buildingType">
           <div class="riic_building_title">
             制造站5
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_manufacture_plan2_4[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_manufacture_plan2_4[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3678,41 +2017,14 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="manufacture_plan2_4[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_4[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan2_4[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_4[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
-            <el-select
-              v-model="manufacture_plan2_4[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_MANUFACTURE"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="manufacture_plan2_4[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_MANUFACTURE" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
           <div class="riic_building_parameter">
@@ -3728,22 +2040,14 @@
           <div class="riic_building_title">
             发电站1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_power_plan2_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3751,17 +2055,8 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="power_plan2_0[0]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_POWER"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="power_plan2_0[0]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_POWER" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
@@ -3769,22 +2064,14 @@
           <div class="riic_building_title">
             发电站2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_power_plan2_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3792,44 +2079,24 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="power_plan2_0[1]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_POWER"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="power_plan2_0[1]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_POWER" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
 
-        <div
-          class="riic_building building_powerPlant"
-          v-show="!('252' === buildingType)"
-        >
+        <div class="riic_building building_powerPlant" v-show="!('252' === buildingType)">
           <div class="riic_building_title">
             发电站3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_power_plan2_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3837,17 +2104,8 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-select
-              v-model="power_plan2_0[2]"
-              filterable
-              placeholder="请选择"
-              size="small"
-              ><el-option
-                v-for="item in char_POWER"
-                :key="item"
-                :label="item"
-                :value="item"
-              ></el-option
+            <el-select v-model="power_plan2_0[2]" filterable placeholder="请选择" size="small"
+              ><el-option v-for="item in char_POWER" :key="item" :label="item" :value="item"></el-option
             ></el-select>
           </div>
         </div>
@@ -3855,22 +2113,14 @@
           <div class="riic_building_title">
             会客室
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_meeting_plan2_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3878,40 +2128,22 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="meeting_plan2_0[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="meeting_plan2_0[1]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="meeting_plan2_0[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="meeting_plan2_0[1]"></el-input>
           </div>
         </div>
         <div class="riic_building building_hr">
           <div class="riic_building_title">
             办公室
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_hire_plan2_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3919,45 +2151,28 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="hire_plan2_0[0]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="hire_plan2_0[0]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍1
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan2_0[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan2_0[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -3965,69 +2180,32 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_0[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_0[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_0[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_0[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_0[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_0[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_0[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_0[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_0[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_0[4]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍2
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan2_1[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan2_1[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -4035,69 +2213,32 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_1[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_1[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_1[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_1[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_1[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_1[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_1[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_1[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_1[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_1[4]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍3
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan2_2[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan2_2[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -4105,69 +2246,32 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_2[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_2[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_2[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_2[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_2[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_2[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_2[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_2[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_2[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_2[4]"></el-input>
           </div>
         </div>
         <div class="riic_building building_dormitory">
           <div class="riic_building_title">
             宿舍4
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="顺序入驻"
               border
               v-model="switch_dormitory_plan2_3[0]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="补满空位"
               border
               v-model="switch_dormitory_plan2_3[1]"
             ></el-checkbox>
             <el-checkbox
-              style="
-                margin: 4px 0px 0px 0px;
-                background-color: #ffffff80;
-                vertical-align: top;
-              "
+              style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
               size="mini"
               label="跳过"
               border
@@ -4175,36 +2279,11 @@
             ></el-checkbox>
           </div>
           <div class="riic_building_operatorArray">
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_3[0]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_3[1]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_3[2]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_3[3]"
-            ></el-input>
-            <el-input
-              class="operator_inputbox"
-              size="small"
-              placeholder="1"
-              v-model="dormitory_plan2_3[4]"
-            ></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_3[0]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_3[1]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_3[2]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_3[3]"></el-input>
+            <el-input class="operator_inputbox" size="small" placeholder="1" v-model="dormitory_plan2_3[4]"></el-input>
           </div>
         </div>
       </div>
@@ -4228,8 +2307,7 @@ export default {
       { charset: "utf-8" },
       {
         name: "viewport",
-        content:
-          "width=device-width, initial-scale=0.68, maximum-scale=0.68, user-scalable=no",
+        content: "width=device-width, initial-scale=0.68, maximum-scale=0.68, user-scalable=no",
       },
       {
         hid: "description",
@@ -4241,8 +2319,7 @@ export default {
   },
   data() {
     return {
-      exportUrl:
-        "https://houduan.yituliu.site/tool/building/schedule/export?uid=1664632307607024",
+      exportUrl: "https://houduan.yituliu.site/tool/building/schedule/export?uid=1664632307607024",
       maaUrl: "maa://infra.yituliu/1664632307607024",
       uid: 12345,
       importId: "",
@@ -4285,13 +2362,7 @@ export default {
       manufacture_plan0_2: ["清流", "温蒂", "森蚺"],
       manufacture_plan0_3: ["砾", "槐琥", "迷迭香"],
       manufacture_plan0_4: [],
-      radio_manufacture_plan0: [
-        "作战记录",
-        "作战记录",
-        "赤金",
-        "赤金",
-        "作战记录",
-      ],
+      radio_manufacture_plan0: ["作战记录", "作战记录", "赤金", "赤金", "作战记录"],
       switch_manufacture_plan0_0: [false, false, false],
       switch_manufacture_plan0_1: [false, false, false],
       switch_manufacture_plan0_2: [false, false, false],
@@ -4328,13 +2399,7 @@ export default {
       manufacture_plan1_2: ["清流", "温蒂", "森蚺"],
       manufacture_plan1_3: ["泡泡", "火神", "刻俄柏"],
       manufacture_plan1_4: [],
-      radio_manufacture_plan1: [
-        "作战记录",
-        "作战记录",
-        "赤金",
-        "赤金",
-        "作战记录",
-      ],
+      radio_manufacture_plan1: ["作战记录", "作战记录", "赤金", "赤金", "作战记录"],
       switch_manufacture_plan1_0: [false, false, false],
       switch_manufacture_plan1_1: [false, false, false],
       switch_manufacture_plan1_2: [false, false, false],
@@ -4371,13 +2436,7 @@ export default {
       manufacture_plan2_2: ["泡泡", "火神", "刻俄柏"],
       manufacture_plan2_3: ["砾", "槐琥", "迷迭香"],
       manufacture_plan2_4: [],
-      radio_manufacture_plan2: [
-        "作战记录",
-        "作战记录",
-        "赤金",
-        "赤金",
-        "作战记录",
-      ],
+      radio_manufacture_plan2: ["作战记录", "作战记录", "赤金", "赤金", "作战记录"],
       switch_manufacture_plan2_0: [false, false, false],
       switch_manufacture_plan2_1: [false, false, false],
       switch_manufacture_plan2_2: [false, false, false],
@@ -4415,8 +2474,7 @@ export default {
         // message: '<strong> 新增内容：<br>新增3.5周年干员<br>新增深海猎人组合<br>'+
         // 'Bug修复：<br>修复了部分旧排班表导入后无法重新导出的问题<br>修复了无法导出的问题（导出前请先点击生成排班）<br>'+
         // '注意事项<br>换班起止时间不要填写中文冒号（：）需填写英文冒号（:）</strong>',
-        message:
-          "<strong> Bug修复：<br>修复了不指定换班时间生成时可能为空字串的问题 </strong>",
+        message: "<strong> Bug修复：<br>修复了不指定换班时间生成时可能为空字串的问题 </strong>",
         duration: 12000,
       });
     },
@@ -4434,25 +2492,21 @@ export default {
       toolApi.updateVisits("building").then((response) => {});
     },
     setExportUrl() {
-      this.exportUrl =
-        "https://houduan.yituliu.site/tool/building/schedule/export?uid=" +
-        this.uid;
+      this.exportUrl = "https://houduan.yituliu.site/tool/building/schedule/export?uid=" + this.uid;
       this.maaUrl = "maa://infra.yituliu/" + this.uid;
     },
     maaBuildingJsonCreated() {
       this.setJson();
-      buildingApi
-        .maaBuildingJsonCreated(this.scheduleJson, this.uid)
-        .then((response) => {
-          this.$message({
-            message: response.data.message + "作业id为：" + response.data.uid,
-            type: "success",
-            showClose: true,
-            duration: 4000,
-          });
-          this.uid = response.data.uid;
-          this.setExportUrl();
+      buildingApi.maaBuildingJsonCreated(this.scheduleJson, this.uid).then((response) => {
+        this.$message({
+          message: response.data.message + "作业id为：" + response.data.uid,
+          type: "success",
+          showClose: true,
+          duration: 4000,
         });
+        this.uid = response.data.uid;
+        this.setExportUrl();
+      });
       document.getElementById("export_cover").style.display = "none";
     },
     retrieveSchedule() {
@@ -4580,14 +2634,9 @@ export default {
       }
 
       plans_0.rooms.trading[0] = trading_planMap0_0;
-      if (
-        "243" === this.buildingType ||
-        "333" === this.buildingType ||
-        "252" === this.buildingType
-      )
+      if ("243" === this.buildingType || "333" === this.buildingType || "252" === this.buildingType)
         plans_0.rooms.trading[1] = trading_planMap0_1;
-      if ("333" === this.buildingType)
-        plans_0.rooms.trading[2] = trading_planMap0_2;
+      if ("333" === this.buildingType) plans_0.rooms.trading[2] = trading_planMap0_2;
 
       var manufacture_planMap0_0 = {
         operators: this.getList(this.manufacture_plan0_0),
@@ -4642,11 +2691,7 @@ export default {
       plans_0.rooms.manufacture[0] = manufacture_planMap0_0;
       plans_0.rooms.manufacture[1] = manufacture_planMap0_1;
       plans_0.rooms.manufacture[2] = manufacture_planMap0_2;
-      if (
-        "153" === this.buildingType ||
-        "243" === this.buildingType ||
-        "252" === this.buildingType
-      )
+      if ("153" === this.buildingType || "243" === this.buildingType || "252" === this.buildingType)
         plans_0.rooms.manufacture[3] = manufacture_planMap0_3;
       if ("153" === this.buildingType || "252" === this.buildingType)
         plans_0.rooms.manufacture[4] = manufacture_planMap0_4;
@@ -4680,8 +2725,7 @@ export default {
 
       plans_0.rooms.power[0] = power_planMap0_0;
       plans_0.rooms.power[1] = power_planMap0_1;
-      if (!("252" === this.buildingType))
-        plans_0.rooms.power[2] = power_planMap0_2;
+      if (!("252" === this.buildingType)) plans_0.rooms.power[2] = power_planMap0_2;
 
       var hire_planMap0_0 = {
         operators: this.getList(this.hire_plan0_0),
@@ -4792,14 +2836,9 @@ export default {
       }
 
       plans_1.rooms.trading[0] = trading_planMap1_0;
-      if (
-        "243" === this.buildingType ||
-        "333" === this.buildingType ||
-        "252" === this.buildingType
-      )
+      if ("243" === this.buildingType || "333" === this.buildingType || "252" === this.buildingType)
         plans_1.rooms.trading[1] = trading_planMap1_1;
-      if ("333" === this.buildingType)
-        plans_1.rooms.trading[2] = trading_planMap1_2;
+      if ("333" === this.buildingType) plans_1.rooms.trading[2] = trading_planMap1_2;
 
       var manufacture_planMap1_0 = {
         operators: this.getList(this.manufacture_plan1_0),
@@ -4854,11 +2893,7 @@ export default {
       plans_1.rooms.manufacture[0] = manufacture_planMap1_0;
       plans_1.rooms.manufacture[1] = manufacture_planMap1_1;
       plans_1.rooms.manufacture[2] = manufacture_planMap1_2;
-      if (
-        "153" === this.buildingType ||
-        "243" === this.buildingType ||
-        "252" === this.buildingType
-      )
+      if ("153" === this.buildingType || "243" === this.buildingType || "252" === this.buildingType)
         plans_1.rooms.manufacture[3] = manufacture_planMap1_3;
       if ("153" === this.buildingType || "252" === this.buildingType)
         plans_1.rooms.manufacture[4] = manufacture_planMap1_4;
@@ -4892,8 +2927,7 @@ export default {
 
       plans_1.rooms.power[0] = power_planMap1_0;
       plans_1.rooms.power[1] = power_planMap1_1;
-      if (!("252" === this.buildingType))
-        plans_1.rooms.power[2] = power_planMap1_2;
+      if (!("252" === this.buildingType)) plans_1.rooms.power[2] = power_planMap1_2;
 
       var hire_planMap1_0 = {
         operators: this.getList(this.hire_plan1_0),
@@ -5003,14 +3037,9 @@ export default {
       }
 
       plans_2.rooms.trading[0] = trading_planMap2_0;
-      if (
-        "243" === this.buildingType ||
-        "333" === this.buildingType ||
-        "252" === this.buildingType
-      )
+      if ("243" === this.buildingType || "333" === this.buildingType || "252" === this.buildingType)
         plans_2.rooms.trading[1] = trading_planMap2_1;
-      if ("333" === this.buildingType)
-        plans_2.rooms.trading[2] = trading_planMap2_2;
+      if ("333" === this.buildingType) plans_2.rooms.trading[2] = trading_planMap2_2;
 
       var manufacture_planMap2_0 = {
         operators: this.getList(this.manufacture_plan2_0),
@@ -5065,11 +3094,7 @@ export default {
       plans_2.rooms.manufacture[0] = manufacture_planMap2_0;
       plans_2.rooms.manufacture[1] = manufacture_planMap2_1;
       plans_2.rooms.manufacture[2] = manufacture_planMap2_2;
-      if (
-        "153" === this.buildingType ||
-        "243" === this.buildingType ||
-        "252" === this.buildingType
-      )
+      if ("153" === this.buildingType || "243" === this.buildingType || "252" === this.buildingType)
         plans_2.rooms.manufacture[3] = manufacture_planMap2_3;
       if ("153" === this.buildingType || "252" === this.buildingType)
         plans_2.rooms.manufacture[4] = manufacture_planMap2_4;
@@ -5103,8 +3128,7 @@ export default {
 
       plans_2.rooms.power[0] = power_planMap2_0;
       plans_2.rooms.power[1] = power_planMap2_1;
-      if (!("252" === this.buildingType))
-        plans_2.rooms.power[2] = power_planMap2_2;
+      if (!("252" === this.buildingType)) plans_2.rooms.power[2] = power_planMap2_2;
 
       var hire_planMap2_0 = {
         operators: this.getList(this.hire_plan2_0),
@@ -5185,38 +3209,26 @@ export default {
       } else {
         this.Fiammetta[0] = this.historicalData.plans[0].Fiammetta.target;
         this.switch_Fiammetta_enable[0] = true;
-        this.input_Fiammetta_order[0] = this.getOrderReverse(
-          this.historicalData.plans[0].Fiammetta.order
-        );
+        this.input_Fiammetta_order[0] = this.getOrderReverse(this.historicalData.plans[0].Fiammetta.order);
       }
-      this.radio_drones[0] = this.getParamsValueReverse(
-        this.historicalData.plans[0].drones.room
-      );
+      this.radio_drones[0] = this.getParamsValueReverse(this.historicalData.plans[0].drones.room);
       this.radio_drones_index[0] = this.historicalData.plans[0].drones.index;
       this.switch_drones_enable[0] = this.historicalData.plans[0].drones.enable;
-      this.input_drones_order[0] = this.getOrderReverse(
-        this.historicalData.plans[0].drones.order
-      );
+      this.input_drones_order[0] = this.getOrderReverse(this.historicalData.plans[0].drones.order);
 
       if (this.historicalData.plans[0].rooms.control[0].skip) {
         this.control_skip[0] = true;
       } else {
-        this.control_plan0 =
-          this.historicalData.plans[0].rooms.control[0].operators;
+        this.control_plan0 = this.historicalData.plans[0].rooms.control[0].operators;
       }
 
       if (this.historicalData.plans[0].rooms.trading[0].skip) {
         this.switch_trading_plan0_0[2] = true;
       } else {
-        this.trading_plan0_0 =
-          this.historicalData.plans[0].rooms.trading[0].operators;
-        this.switch_trading_plan0_0[0] =
-          this.historicalData.plans[0].rooms.trading[0].sort;
-        this.switch_trading_plan0_0[1] =
-          this.historicalData.plans[0].rooms.trading[0].autofill;
-        this.radio_trading_plan0[0] = this.getParamsValueReverse(
-          this.historicalData.plans[0].rooms.trading[0].product
-        );
+        this.trading_plan0_0 = this.historicalData.plans[0].rooms.trading[0].operators;
+        this.switch_trading_plan0_0[0] = this.historicalData.plans[0].rooms.trading[0].sort;
+        this.switch_trading_plan0_0[1] = this.historicalData.plans[0].rooms.trading[0].autofill;
+        this.radio_trading_plan0[0] = this.getParamsValueReverse(this.historicalData.plans[0].rooms.trading[0].product);
       }
 
       if (
@@ -5227,12 +3239,9 @@ export default {
         if (this.historicalData.plans[0].rooms.trading[1].skip) {
           this.switch_trading_plan0_1[2] = true;
         } else {
-          this.trading_plan0_1 =
-            this.historicalData.plans[0].rooms.trading[1].operators;
-          this.switch_trading_plan0_1[0] =
-            this.historicalData.plans[0].rooms.trading[1].sort;
-          this.switch_trading_plan0_1[1] =
-            this.historicalData.plans[0].rooms.trading[1].autofill;
+          this.trading_plan0_1 = this.historicalData.plans[0].rooms.trading[1].operators;
+          this.switch_trading_plan0_1[0] = this.historicalData.plans[0].rooms.trading[1].sort;
+          this.switch_trading_plan0_1[1] = this.historicalData.plans[0].rooms.trading[1].autofill;
           this.radio_trading_plan0[1] = this.getParamsValueReverse(
             this.historicalData.plans[0].rooms.trading[1].product
           );
@@ -5243,12 +3252,9 @@ export default {
         if (this.historicalData.plans[0].rooms.trading[2].skip) {
           this.switch_trading_plan0_2[2] = true;
         } else {
-          this.trading_plan0_2 =
-            this.historicalData.plans[0].rooms.trading[2].operators;
-          this.switch_trading_plan0_2[0] =
-            this.historicalData.plans[0].rooms.trading[2].sort;
-          this.switch_trading_plan0_2[1] =
-            this.historicalData.plans[0].rooms.trading[2].autofill;
+          this.trading_plan0_2 = this.historicalData.plans[0].rooms.trading[2].operators;
+          this.switch_trading_plan0_2[0] = this.historicalData.plans[0].rooms.trading[2].sort;
+          this.switch_trading_plan0_2[1] = this.historicalData.plans[0].rooms.trading[2].autofill;
           this.radio_trading_plan0[2] = this.getParamsValueReverse(
             this.historicalData.plans[0].rooms.trading[2].product
           );
@@ -5258,12 +3264,9 @@ export default {
       if (this.historicalData.plans[0].rooms.manufacture[0].skip) {
         this.switch_manufacture_plan0_0[2] = true;
       } else {
-        this.manufacture_plan0_0 =
-          this.historicalData.plans[0].rooms.manufacture[0].operators;
-        this.switch_manufacture_plan0_0[0] =
-          this.historicalData.plans[0].rooms.manufacture[0].sort;
-        this.switch_manufacture_plan0_0[1] =
-          this.historicalData.plans[0].rooms.manufacture[0].autofill;
+        this.manufacture_plan0_0 = this.historicalData.plans[0].rooms.manufacture[0].operators;
+        this.switch_manufacture_plan0_0[0] = this.historicalData.plans[0].rooms.manufacture[0].sort;
+        this.switch_manufacture_plan0_0[1] = this.historicalData.plans[0].rooms.manufacture[0].autofill;
         this.radio_manufacture_plan0[0] = this.getParamsValueReverse(
           this.historicalData.plans[0].rooms.manufacture[0].product
         );
@@ -5272,12 +3275,9 @@ export default {
       if (this.historicalData.plans[0].rooms.manufacture[1].skip) {
         this.switch_manufacture_plan0_1[2] = true;
       } else {
-        this.manufacture_plan0_1 =
-          this.historicalData.plans[0].rooms.manufacture[1].operators;
-        this.switch_manufacture_plan0_1[0] =
-          this.historicalData.plans[0].rooms.manufacture[1].sort;
-        this.switch_manufacture_plan0_1[1] =
-          this.historicalData.plans[0].rooms.manufacture[1].autofill;
+        this.manufacture_plan0_1 = this.historicalData.plans[0].rooms.manufacture[1].operators;
+        this.switch_manufacture_plan0_1[0] = this.historicalData.plans[0].rooms.manufacture[1].sort;
+        this.switch_manufacture_plan0_1[1] = this.historicalData.plans[0].rooms.manufacture[1].autofill;
         this.radio_manufacture_plan0[1] = this.getParamsValueReverse(
           this.historicalData.plans[0].rooms.manufacture[1].product
         );
@@ -5286,12 +3286,9 @@ export default {
       if (this.historicalData.plans[0].rooms.manufacture[2].skip) {
         this.switch_manufacture_plan0_2[2] = true;
       } else {
-        this.manufacture_plan0_2 =
-          this.historicalData.plans[0].rooms.manufacture[2].operators;
-        this.switch_manufacture_plan0_2[0] =
-          this.historicalData.plans[0].rooms.manufacture[2].sort;
-        this.switch_manufacture_plan0_2[1] =
-          this.historicalData.plans[0].rooms.manufacture[2].autofill;
+        this.manufacture_plan0_2 = this.historicalData.plans[0].rooms.manufacture[2].operators;
+        this.switch_manufacture_plan0_2[0] = this.historicalData.plans[0].rooms.manufacture[2].sort;
+        this.switch_manufacture_plan0_2[1] = this.historicalData.plans[0].rooms.manufacture[2].autofill;
         this.radio_manufacture_plan0[2] = this.getParamsValueReverse(
           this.historicalData.plans[0].rooms.manufacture[2].product
         );
@@ -5305,31 +3302,22 @@ export default {
         if (this.historicalData.plans[0].rooms.manufacture[3].skip) {
           this.switch_manufacture_plan0_3[2] = true;
         } else {
-          this.manufacture_plan0_3 =
-            this.historicalData.plans[0].rooms.manufacture[3].operators;
-          this.switch_manufacture_plan0_3[0] =
-            this.historicalData.plans[0].rooms.manufacture[3].sort;
-          this.switch_manufacture_plan0_3[1] =
-            this.historicalData.plans[0].rooms.manufacture[3].autofill;
+          this.manufacture_plan0_3 = this.historicalData.plans[0].rooms.manufacture[3].operators;
+          this.switch_manufacture_plan0_3[0] = this.historicalData.plans[0].rooms.manufacture[3].sort;
+          this.switch_manufacture_plan0_3[1] = this.historicalData.plans[0].rooms.manufacture[3].autofill;
           this.radio_manufacture_plan0[3] = this.getParamsValueReverse(
             this.historicalData.plans[0].rooms.manufacture[3].product
           );
         }
       }
 
-      if (
-        "153" === this.historicalData.buildingType ||
-        "252" === this.historicalData.buildingType
-      ) {
+      if ("153" === this.historicalData.buildingType || "252" === this.historicalData.buildingType) {
         if (this.historicalData.plans[0].rooms.manufacture[4].skip) {
           this.switch_manufacture_plan0_4[2] = true;
         } else {
-          this.manufacture_plan0_4 =
-            this.historicalData.plans[0].rooms.manufacture[4].operators;
-          this.switch_manufacture_plan0_4[0] =
-            this.historicalData.plans[0].rooms.manufacture[4].sort;
-          this.switch_manufacture_plan0_4[1] =
-            this.historicalData.plans[0].rooms.manufacture[4].autofill;
+          this.manufacture_plan0_4 = this.historicalData.plans[0].rooms.manufacture[4].operators;
+          this.switch_manufacture_plan0_4[0] = this.historicalData.plans[0].rooms.manufacture[4].sort;
+          this.switch_manufacture_plan0_4[1] = this.historicalData.plans[0].rooms.manufacture[4].autofill;
           this.radio_manufacture_plan0[4] = this.getParamsValueReverse(
             this.historicalData.plans[0].rooms.manufacture[4].product
           );
@@ -5339,111 +3327,81 @@ export default {
       if (this.historicalData.plans[0].rooms.power[0].skip) {
         this.switch_power_plan0_0[2] = true;
       } else {
-        this.power_plan0_0[0] =
-          this.historicalData.plans[0].rooms.power[0].operators[0];
-        this.switch_power_plan0_0[1] =
-          this.historicalData.plans[0].rooms.power[0].autofill;
+        this.power_plan0_0[0] = this.historicalData.plans[0].rooms.power[0].operators[0];
+        this.switch_power_plan0_0[1] = this.historicalData.plans[0].rooms.power[0].autofill;
       }
 
       if (this.historicalData.plans[0].rooms.power[1].skip) {
         this.switch_power_plan0_1[2] = true;
       } else {
-        this.power_plan0_0[1] =
-          this.historicalData.plans[0].rooms.power[1].operators[0];
-        this.switch_power_plan0_1[1] =
-          this.historicalData.plans[0].rooms.power[1].autofill;
+        this.power_plan0_0[1] = this.historicalData.plans[0].rooms.power[1].operators[0];
+        this.switch_power_plan0_1[1] = this.historicalData.plans[0].rooms.power[1].autofill;
       }
 
       if (!("252" === this.historicalData.buildingType)) {
         if (this.historicalData.plans[0].rooms.power[2].skip) {
           this.switch_power_plan0_2[2] = true;
         } else {
-          this.power_plan0_0[2] =
-            this.historicalData.plans[0].rooms.power[2].operators[0];
-          this.switch_power_plan0_2[1] =
-            this.historicalData.plans[0].rooms.power[2].autofill;
+          this.power_plan0_0[2] = this.historicalData.plans[0].rooms.power[2].operators[0];
+          this.switch_power_plan0_2[1] = this.historicalData.plans[0].rooms.power[2].autofill;
         }
       }
 
       if (this.historicalData.plans[0].rooms.hire[0].skip) {
         this.switch_hire_plan0_0[2] = true;
       } else {
-        this.hire_plan0_0 =
-          this.historicalData.plans[0].rooms.hire[0].operators;
-        this.switch_hire_plan0_0[1] =
-          this.historicalData.plans[0].rooms.hire[0].autofill;
+        this.hire_plan0_0 = this.historicalData.plans[0].rooms.hire[0].operators;
+        this.switch_hire_plan0_0[1] = this.historicalData.plans[0].rooms.hire[0].autofill;
       }
 
       if (this.historicalData.plans[0].rooms.meeting[0].skip) {
         this.switch_meeting_plan0_0[2] = true;
       } else {
-        this.meeting_plan0_0 =
-          this.historicalData.plans[0].rooms.meeting[0].operators;
-        this.switch_meeting_plan0_0[1] =
-          this.historicalData.plans[0].rooms.meeting[0].autofill;
+        this.meeting_plan0_0 = this.historicalData.plans[0].rooms.meeting[0].operators;
+        this.switch_meeting_plan0_0[1] = this.historicalData.plans[0].rooms.meeting[0].autofill;
       }
 
-      if (
-        undefined === this.historicalData.plans[0].rooms.dormitory[1].operators
-      ) {
+      if (undefined === this.historicalData.plans[0].rooms.dormitory[1].operators) {
       } else {
         if (this.historicalData.plans[0].rooms.dormitory[0].skip) {
           this.switch_dormitory_plan0_0[2] = true;
         } else {
-          this.dormitory_plan0_0 =
-            this.historicalData.plans[0].rooms.dormitory[0].operators;
-          this.switch_dormitory_plan0_0[0] =
-            this.historicalData.plans[0].rooms.dormitory[0].sort;
-          this.switch_dormitory_plan0_0[1] =
-            this.historicalData.plans[0].rooms.dormitory[0].autofill;
+          this.dormitory_plan0_0 = this.historicalData.plans[0].rooms.dormitory[0].operators;
+          this.switch_dormitory_plan0_0[0] = this.historicalData.plans[0].rooms.dormitory[0].sort;
+          this.switch_dormitory_plan0_0[1] = this.historicalData.plans[0].rooms.dormitory[0].autofill;
         }
       }
 
-      if (
-        undefined === this.historicalData.plans[0].rooms.dormitory[1].operators
-      ) {
+      if (undefined === this.historicalData.plans[0].rooms.dormitory[1].operators) {
       } else {
         if (this.historicalData.plans[0].rooms.dormitory[1].skip) {
           this.switch_dormitory_plan0_1[2] = true;
         } else {
-          this.dormitory_plan0_1 =
-            this.historicalData.plans[0].rooms.dormitory[1].operators;
-          this.switch_dormitory_plan0_1[0] =
-            this.historicalData.plans[0].rooms.dormitory[1].sort;
-          this.switch_dormitory_plan0_1[1] =
-            this.historicalData.plans[0].rooms.dormitory[1].autofill;
+          this.dormitory_plan0_1 = this.historicalData.plans[0].rooms.dormitory[1].operators;
+          this.switch_dormitory_plan0_1[0] = this.historicalData.plans[0].rooms.dormitory[1].sort;
+          this.switch_dormitory_plan0_1[1] = this.historicalData.plans[0].rooms.dormitory[1].autofill;
         }
       }
 
-      if (
-        undefined === this.historicalData.plans[0].rooms.dormitory[2].operators
-      ) {
+      if (undefined === this.historicalData.plans[0].rooms.dormitory[2].operators) {
       } else {
         if (this.historicalData.plans[0].rooms.dormitory[2].skip) {
           this.switch_dormitory_plan0_2[2] = true;
         } else {
-          this.dormitory_plan0_2 =
-            this.historicalData.plans[0].rooms.dormitory[2].operators;
-          this.switch_dormitory_plan0_2[0] =
-            this.historicalData.plans[0].rooms.dormitory[2].sort;
-          this.switch_dormitory_plan0_2[1] =
-            this.historicalData.plans[0].rooms.dormitory[2].autofill;
+          this.dormitory_plan0_2 = this.historicalData.plans[0].rooms.dormitory[2].operators;
+          this.switch_dormitory_plan0_2[0] = this.historicalData.plans[0].rooms.dormitory[2].sort;
+          this.switch_dormitory_plan0_2[1] = this.historicalData.plans[0].rooms.dormitory[2].autofill;
         }
       }
 
-      if (
-        undefined === this.historicalData.plans[0].rooms.dormitory[3].operators
-      ) {
+      if (undefined === this.historicalData.plans[0].rooms.dormitory[3].operators) {
       } else {
         if (this.historicalData.plans[0].rooms.dormitory[3].skip) {
           this.switch_dormitory_plan0_3[2] = true;
         } else {
-          this.dormitory_plan0_3 =
-            this.historicalData.plans[0].rooms.dormitory[3].operators;
-          this.switch_dormitory_plan0_3[0] =
-            this.historicalData.plans[0].rooms.dormitory[3].sort;
-          this.switch_dormitory_plan0_3[1] =
-            this.historicalData.plans[0].rooms.dormitory[3].autofill;
+          this.dormitory_plan0_3 = this.historicalData.plans[0].rooms.dormitory[3].operators;
+          this.switch_dormitory_plan0_3[0] = this.historicalData.plans[0].rooms.dormitory[3].sort;
+          this.switch_dormitory_plan0_3[1] = this.historicalData.plans[0].rooms.dormitory[3].autofill;
         }
       }
 
@@ -5462,38 +3420,26 @@ export default {
       } else {
         this.Fiammetta[1] = this.historicalData.plans[1].Fiammetta.target;
         this.switch_Fiammetta_enable[1] = true;
-        this.input_Fiammetta_order[1] = this.getOrderReverse(
-          this.historicalData.plans[1].Fiammetta.order
-        );
+        this.input_Fiammetta_order[1] = this.getOrderReverse(this.historicalData.plans[1].Fiammetta.order);
       }
-      this.radio_drones[1] = this.getParamsValueReverse(
-        this.historicalData.plans[1].drones.room
-      );
+      this.radio_drones[1] = this.getParamsValueReverse(this.historicalData.plans[1].drones.room);
       this.radio_drones_index[1] = this.historicalData.plans[1].drones.index;
       this.switch_drones_enable[1] = this.historicalData.plans[1].drones.enable;
-      this.input_drones_order[1] = this.getOrderReverse(
-        this.historicalData.plans[1].drones.order
-      );
+      this.input_drones_order[1] = this.getOrderReverse(this.historicalData.plans[1].drones.order);
 
       if (this.historicalData.plans[1].rooms.control[0].skip) {
         this.control_skip[1] = true;
       } else {
-        this.control_plan1 =
-          this.historicalData.plans[1].rooms.control[0].operators;
+        this.control_plan1 = this.historicalData.plans[1].rooms.control[0].operators;
       }
 
       if (this.historicalData.plans[1].rooms.trading[0].skip) {
         this.switch_trading_plan1_0[2] = true;
       } else {
-        this.trading_plan1_0 =
-          this.historicalData.plans[1].rooms.trading[0].operators;
-        this.switch_trading_plan1_0[0] =
-          this.historicalData.plans[1].rooms.trading[0].sort;
-        this.switch_trading_plan1_0[1] =
-          this.historicalData.plans[1].rooms.trading[0].autofill;
-        this.radio_trading_plan1[0] = this.getParamsValueReverse(
-          this.historicalData.plans[1].rooms.trading[0].product
-        );
+        this.trading_plan1_0 = this.historicalData.plans[1].rooms.trading[0].operators;
+        this.switch_trading_plan1_0[0] = this.historicalData.plans[1].rooms.trading[0].sort;
+        this.switch_trading_plan1_0[1] = this.historicalData.plans[1].rooms.trading[0].autofill;
+        this.radio_trading_plan1[0] = this.getParamsValueReverse(this.historicalData.plans[1].rooms.trading[0].product);
       }
 
       if (
@@ -5504,12 +3450,9 @@ export default {
         if (this.historicalData.plans[1].rooms.trading[1].skip) {
           this.switch_trading_plan1_1[2] = true;
         } else {
-          this.trading_plan1_1 =
-            this.historicalData.plans[1].rooms.trading[1].operators;
-          this.switch_trading_plan1_1[0] =
-            this.historicalData.plans[1].rooms.trading[1].sort;
-          this.switch_trading_plan1_1[1] =
-            this.historicalData.plans[1].rooms.trading[1].autofill;
+          this.trading_plan1_1 = this.historicalData.plans[1].rooms.trading[1].operators;
+          this.switch_trading_plan1_1[0] = this.historicalData.plans[1].rooms.trading[1].sort;
+          this.switch_trading_plan1_1[1] = this.historicalData.plans[1].rooms.trading[1].autofill;
           this.radio_trading_plan1[1] = this.getParamsValueReverse(
             this.historicalData.plans[1].rooms.trading[1].product
           );
@@ -5520,12 +3463,9 @@ export default {
         if (this.historicalData.plans[1].rooms.trading[2].skip) {
           this.switch_trading_plan1_2[2] = true;
         } else {
-          this.trading_plan1_2 =
-            this.historicalData.plans[1].rooms.trading[2].operators;
-          this.switch_trading_plan1_2[0] =
-            this.historicalData.plans[1].rooms.trading[2].sort;
-          this.switch_trading_plan1_2[1] =
-            this.historicalData.plans[1].rooms.trading[2].autofill;
+          this.trading_plan1_2 = this.historicalData.plans[1].rooms.trading[2].operators;
+          this.switch_trading_plan1_2[0] = this.historicalData.plans[1].rooms.trading[2].sort;
+          this.switch_trading_plan1_2[1] = this.historicalData.plans[1].rooms.trading[2].autofill;
           this.radio_trading_plan1[2] = this.getParamsValueReverse(
             this.historicalData.plans[1].rooms.trading[2].product
           );
@@ -5535,12 +3475,9 @@ export default {
       if (this.historicalData.plans[1].rooms.manufacture[0].skip) {
         this.switch_manufacture_plan1_0[2] = true;
       } else {
-        this.manufacture_plan1_0 =
-          this.historicalData.plans[1].rooms.manufacture[0].operators;
-        this.switch_manufacture_plan1_0[0] =
-          this.historicalData.plans[1].rooms.manufacture[0].sort;
-        this.switch_manufacture_plan1_0[1] =
-          this.historicalData.plans[1].rooms.manufacture[0].autofill;
+        this.manufacture_plan1_0 = this.historicalData.plans[1].rooms.manufacture[0].operators;
+        this.switch_manufacture_plan1_0[0] = this.historicalData.plans[1].rooms.manufacture[0].sort;
+        this.switch_manufacture_plan1_0[1] = this.historicalData.plans[1].rooms.manufacture[0].autofill;
         this.radio_manufacture_plan1[0] = this.getParamsValueReverse(
           this.historicalData.plans[1].rooms.manufacture[0].product
         );
@@ -5549,12 +3486,9 @@ export default {
       if (this.historicalData.plans[1].rooms.manufacture[1].skip) {
         this.switch_manufacture_plan1_1[2] = true;
       } else {
-        this.manufacture_plan1_1 =
-          this.historicalData.plans[1].rooms.manufacture[1].operators;
-        this.switch_manufacture_plan1_1[0] =
-          this.historicalData.plans[1].rooms.manufacture[1].sort;
-        this.switch_manufacture_plan1_1[1] =
-          this.historicalData.plans[1].rooms.manufacture[1].autofill;
+        this.manufacture_plan1_1 = this.historicalData.plans[1].rooms.manufacture[1].operators;
+        this.switch_manufacture_plan1_1[0] = this.historicalData.plans[1].rooms.manufacture[1].sort;
+        this.switch_manufacture_plan1_1[1] = this.historicalData.plans[1].rooms.manufacture[1].autofill;
         this.radio_manufacture_plan1[1] = this.getParamsValueReverse(
           this.historicalData.plans[1].rooms.manufacture[1].product
         );
@@ -5563,12 +3497,9 @@ export default {
       if (this.historicalData.plans[1].rooms.manufacture[2].skip) {
         this.switch_manufacture_plan1_2[2] = true;
       } else {
-        this.manufacture_plan1_2 =
-          this.historicalData.plans[1].rooms.manufacture[2].operators;
-        this.switch_manufacture_plan1_2[0] =
-          this.historicalData.plans[1].rooms.manufacture[2].sort;
-        this.switch_manufacture_plan1_2[1] =
-          this.historicalData.plans[1].rooms.manufacture[2].autofill;
+        this.manufacture_plan1_2 = this.historicalData.plans[1].rooms.manufacture[2].operators;
+        this.switch_manufacture_plan1_2[0] = this.historicalData.plans[1].rooms.manufacture[2].sort;
+        this.switch_manufacture_plan1_2[1] = this.historicalData.plans[1].rooms.manufacture[2].autofill;
         this.radio_manufacture_plan1[2] = this.getParamsValueReverse(
           this.historicalData.plans[1].rooms.manufacture[2].product
         );
@@ -5582,30 +3513,21 @@ export default {
         if (this.historicalData.plans[1].rooms.manufacture[3].skip) {
           this.switch_manufacture_plan1_3[2] = true;
         } else {
-          this.manufacture_plan1_3 =
-            this.historicalData.plans[1].rooms.manufacture[3].operators;
-          this.switch_manufacture_plan1_3[0] =
-            this.historicalData.plans[1].rooms.manufacture[3].sort;
-          this.switch_manufacture_plan1_3[1] =
-            this.historicalData.plans[1].rooms.manufacture[3].autofill;
+          this.manufacture_plan1_3 = this.historicalData.plans[1].rooms.manufacture[3].operators;
+          this.switch_manufacture_plan1_3[0] = this.historicalData.plans[1].rooms.manufacture[3].sort;
+          this.switch_manufacture_plan1_3[1] = this.historicalData.plans[1].rooms.manufacture[3].autofill;
           this.radio_manufacture_plan1[3] = this.getParamsValueReverse(
             this.historicalData.plans[1].rooms.manufacture[3].product
           );
         }
       }
-      if (
-        "153" === this.historicalData.buildingType ||
-        "252" === this.historicalData.buildingType
-      ) {
+      if ("153" === this.historicalData.buildingType || "252" === this.historicalData.buildingType) {
         if (this.historicalData.plans[1].rooms.manufacture[4].skip) {
           this.switch_manufacture_plan1_4[2] = true;
         } else {
-          this.manufacture_plan1_4 =
-            this.historicalData.plans[1].rooms.manufacture[4].operators;
-          this.switch_manufacture_plan1_4[0] =
-            this.historicalData.plans[1].rooms.manufacture[4].sort;
-          this.switch_manufacture_plan1_4[1] =
-            this.historicalData.plans[1].rooms.manufacture[4].autofill;
+          this.manufacture_plan1_4 = this.historicalData.plans[1].rooms.manufacture[4].operators;
+          this.switch_manufacture_plan1_4[0] = this.historicalData.plans[1].rooms.manufacture[4].sort;
+          this.switch_manufacture_plan1_4[1] = this.historicalData.plans[1].rooms.manufacture[4].autofill;
           this.radio_manufacture_plan1[4] = this.getParamsValueReverse(
             this.historicalData.plans[1].rooms.manufacture[4].product
           );
@@ -5615,111 +3537,81 @@ export default {
       if (this.historicalData.plans[1].rooms.power[0].skip) {
         this.switch_power_plan1_0[2] = true;
       } else {
-        this.power_plan1_0[0] =
-          this.historicalData.plans[1].rooms.power[0].operators[0];
-        this.switch_power_plan1_0[1] =
-          this.historicalData.plans[1].rooms.power[0].autofill;
+        this.power_plan1_0[0] = this.historicalData.plans[1].rooms.power[0].operators[0];
+        this.switch_power_plan1_0[1] = this.historicalData.plans[1].rooms.power[0].autofill;
       }
 
       if (this.historicalData.plans[1].rooms.power[1].skip) {
         this.switch_power_plan1_1[2] = true;
       } else {
-        this.power_plan1_0[1] =
-          this.historicalData.plans[1].rooms.power[1].operators[0];
-        this.switch_power_plan1_1[1] =
-          this.historicalData.plans[1].rooms.power[1].autofill;
+        this.power_plan1_0[1] = this.historicalData.plans[1].rooms.power[1].operators[0];
+        this.switch_power_plan1_1[1] = this.historicalData.plans[1].rooms.power[1].autofill;
       }
 
       if (!("252" === this.historicalData.buildingType)) {
         if (this.historicalData.plans[1].rooms.power[2].skip) {
           this.switch_power_plan1_2[2] = true;
         } else {
-          this.power_plan1_0[2] =
-            this.historicalData.plans[1].rooms.power[2].operators[0];
-          this.switch_power_plan1_2[1] =
-            this.historicalData.plans[1].rooms.power[2].autofill;
+          this.power_plan1_0[2] = this.historicalData.plans[1].rooms.power[2].operators[0];
+          this.switch_power_plan1_2[1] = this.historicalData.plans[1].rooms.power[2].autofill;
         }
       }
 
       if (this.historicalData.plans[1].rooms.hire[0].skip) {
         this.switch_hire_plan1_0[2] = true;
       } else {
-        this.hire_plan1_0 =
-          this.historicalData.plans[1].rooms.hire[0].operators;
-        this.switch_hire_plan1_0[1] =
-          this.historicalData.plans[1].rooms.hire[0].autofill;
+        this.hire_plan1_0 = this.historicalData.plans[1].rooms.hire[0].operators;
+        this.switch_hire_plan1_0[1] = this.historicalData.plans[1].rooms.hire[0].autofill;
       }
 
       if (this.historicalData.plans[1].rooms.meeting[0].skip) {
         this.switch_meeting_plan1_0[2] = true;
       } else {
-        this.meeting_plan1_0 =
-          this.historicalData.plans[1].rooms.meeting[0].operators;
-        this.switch_meeting_plan1_0[1] =
-          this.historicalData.plans[1].rooms.meeting[0].autofill;
+        this.meeting_plan1_0 = this.historicalData.plans[1].rooms.meeting[0].operators;
+        this.switch_meeting_plan1_0[1] = this.historicalData.plans[1].rooms.meeting[0].autofill;
       }
 
-      if (
-        undefined === this.historicalData.plans[1].rooms.dormitory[0].operators
-      ) {
+      if (undefined === this.historicalData.plans[1].rooms.dormitory[0].operators) {
       } else {
         if (this.historicalData.plans[1].rooms.dormitory[0].skip) {
           this.switch_dormitory_plan1_0[2] = true;
         } else {
-          this.dormitory_plan1_0 =
-            this.historicalData.plans[1].rooms.dormitory[0].operators;
-          this.switch_dormitory_plan1_0[0] =
-            this.historicalData.plans[1].rooms.dormitory[0].sort;
-          this.switch_dormitory_plan1_0[1] =
-            this.historicalData.plans[1].rooms.dormitory[0].autofill;
+          this.dormitory_plan1_0 = this.historicalData.plans[1].rooms.dormitory[0].operators;
+          this.switch_dormitory_plan1_0[0] = this.historicalData.plans[1].rooms.dormitory[0].sort;
+          this.switch_dormitory_plan1_0[1] = this.historicalData.plans[1].rooms.dormitory[0].autofill;
         }
       }
 
-      if (
-        undefined === this.historicalData.plans[1].rooms.dormitory[1].operators
-      ) {
+      if (undefined === this.historicalData.plans[1].rooms.dormitory[1].operators) {
       } else {
         if (this.historicalData.plans[1].rooms.dormitory[1].skip) {
           this.switch_dormitory_plan1_1[2] = true;
         } else {
-          this.dormitory_plan1_1 =
-            this.historicalData.plans[1].rooms.dormitory[1].operators;
-          this.switch_dormitory_plan1_1[0] =
-            this.historicalData.plans[1].rooms.dormitory[1].sort;
-          this.switch_dormitory_plan1_1[1] =
-            this.historicalData.plans[1].rooms.dormitory[1].autofill;
+          this.dormitory_plan1_1 = this.historicalData.plans[1].rooms.dormitory[1].operators;
+          this.switch_dormitory_plan1_1[0] = this.historicalData.plans[1].rooms.dormitory[1].sort;
+          this.switch_dormitory_plan1_1[1] = this.historicalData.plans[1].rooms.dormitory[1].autofill;
         }
       }
 
-      if (
-        undefined === this.historicalData.plans[1].rooms.dormitory[2].operators
-      ) {
+      if (undefined === this.historicalData.plans[1].rooms.dormitory[2].operators) {
       } else {
         if (this.historicalData.plans[1].rooms.dormitory[2].skip) {
           this.switch_dormitory_plan1_2[2] = true;
         } else {
-          this.dormitory_plan1_2 =
-            this.historicalData.plans[1].rooms.dormitory[2].operators;
-          this.switch_dormitory_plan1_2[0] =
-            this.historicalData.plans[1].rooms.dormitory[2].sort;
-          this.switch_dormitory_plan1_2[1] =
-            this.historicalData.plans[1].rooms.dormitory[2].autofill;
+          this.dormitory_plan1_2 = this.historicalData.plans[1].rooms.dormitory[2].operators;
+          this.switch_dormitory_plan1_2[0] = this.historicalData.plans[1].rooms.dormitory[2].sort;
+          this.switch_dormitory_plan1_2[1] = this.historicalData.plans[1].rooms.dormitory[2].autofill;
         }
       }
 
-      if (
-        undefined === this.historicalData.plans[1].rooms.dormitory[3].operators
-      ) {
+      if (undefined === this.historicalData.plans[1].rooms.dormitory[3].operators) {
       } else {
         if (this.historicalData.plans[1].rooms.dormitory[3].skip) {
           this.switch_dormitory_plan1_3[2] = true;
         } else {
-          this.dormitory_plan1_3 =
-            this.historicalData.plans[1].rooms.dormitory[3].operators;
-          this.switch_dormitory_plan1_3[0] =
-            this.historicalData.plans[1].rooms.dormitory[3].sort;
-          this.switch_dormitory_plan1_3[1] =
-            this.historicalData.plans[1].rooms.dormitory[3].autofill;
+          this.dormitory_plan1_3 = this.historicalData.plans[1].rooms.dormitory[3].operators;
+          this.switch_dormitory_plan1_3[0] = this.historicalData.plans[1].rooms.dormitory[3].sort;
+          this.switch_dormitory_plan1_3[1] = this.historicalData.plans[1].rooms.dormitory[3].autofill;
         }
       }
       // 导入C班的信息-------------------------------------------------------------------------------
@@ -5731,9 +3623,7 @@ export default {
         if (undefined === this.historicalData.plans[2].period) {
           this.period_plan2 = [];
         } else {
-          this.period_plan2 = this.getPeriod(
-            this.historicalData.plans[2].period
-          );
+          this.period_plan2 = this.getPeriod(this.historicalData.plans[2].period);
         }
 
         if (undefined === this.historicalData.plans[2].Fiammetta) {
@@ -5741,36 +3631,25 @@ export default {
         } else {
           this.Fiammetta[2] = this.historicalData.plans[2].Fiammetta.target;
           this.switch_Fiammetta_enable[2] = true;
-          this.input_Fiammetta_order[2] = this.getOrderReverse(
-            this.historicalData.plans[2].Fiammetta.order
-          );
+          this.input_Fiammetta_order[2] = this.getOrderReverse(this.historicalData.plans[2].Fiammetta.order);
         }
-        this.radio_drones[2] = this.getParamsValueReverse(
-          this.historicalData.plans[2].drones.room
-        );
+        this.radio_drones[2] = this.getParamsValueReverse(this.historicalData.plans[2].drones.room);
         this.radio_drones_index[2] = this.historicalData.plans[2].drones.index;
-        this.switch_drones_enable[2] =
-          this.historicalData.plans[2].drones.enable;
-        this.input_drones_order[2] = this.getOrderReverse(
-          this.historicalData.plans[2].drones.order
-        );
+        this.switch_drones_enable[2] = this.historicalData.plans[2].drones.enable;
+        this.input_drones_order[2] = this.getOrderReverse(this.historicalData.plans[2].drones.order);
 
         if (this.historicalData.plans[2].rooms.control[0].skip) {
           this.control_skip[2] = true;
         } else {
-          this.control_plan2 =
-            this.historicalData.plans[2].rooms.control[0].operators;
+          this.control_plan2 = this.historicalData.plans[2].rooms.control[0].operators;
         }
 
         if (this.historicalData.plans[2].rooms.trading[0].skip) {
           this.switch_trading_plan2_0[2] = true;
         } else {
-          this.trading_plan2_0 =
-            this.historicalData.plans[2].rooms.trading[0].operators;
-          this.switch_trading_plan2_0[0] =
-            this.historicalData.plans[2].rooms.trading[0].sort;
-          this.switch_trading_plan2_0[1] =
-            this.historicalData.plans[2].rooms.trading[0].autofill;
+          this.trading_plan2_0 = this.historicalData.plans[2].rooms.trading[0].operators;
+          this.switch_trading_plan2_0[0] = this.historicalData.plans[2].rooms.trading[0].sort;
+          this.switch_trading_plan2_0[1] = this.historicalData.plans[2].rooms.trading[0].autofill;
           this.radio_trading_plan2[0] = this.getParamsValueReverse(
             this.historicalData.plans[2].rooms.trading[0].product
           );
@@ -5783,26 +3662,18 @@ export default {
         ) {
           if (this.historicalData.plans[2].rooms.trading[1].skip) {
             this.switch_trading_plan2_1[2] = true;
-            if (
-              this.historicalData.plans[2].rooms.trading[1].operators.length > 0
-            ) {
-              this.trading_plan2_1 =
-                this.historicalData.plans[2].rooms.trading[1].operators;
-              this.switch_trading_plan2_1[0] =
-                this.historicalData.plans[2].rooms.trading[1].sort;
-              this.switch_trading_plan2_1[1] =
-                this.historicalData.plans[2].rooms.trading[1].autofill;
+            if (this.historicalData.plans[2].rooms.trading[1].operators.length > 0) {
+              this.trading_plan2_1 = this.historicalData.plans[2].rooms.trading[1].operators;
+              this.switch_trading_plan2_1[0] = this.historicalData.plans[2].rooms.trading[1].sort;
+              this.switch_trading_plan2_1[1] = this.historicalData.plans[2].rooms.trading[1].autofill;
               this.radio_trading_plan2[1] = this.getParamsValueReverse(
                 this.historicalData.plans[2].rooms.trading[1].product
               );
             }
           } else {
-            this.trading_plan2_1 =
-              this.historicalData.plans[2].rooms.trading[1].operators;
-            this.switch_trading_plan2_1[0] =
-              this.historicalData.plans[2].rooms.trading[1].sort;
-            this.switch_trading_plan2_1[1] =
-              this.historicalData.plans[2].rooms.trading[1].autofill;
+            this.trading_plan2_1 = this.historicalData.plans[2].rooms.trading[1].operators;
+            this.switch_trading_plan2_1[0] = this.historicalData.plans[2].rooms.trading[1].sort;
+            this.switch_trading_plan2_1[1] = this.historicalData.plans[2].rooms.trading[1].autofill;
             this.radio_trading_plan2[1] = this.getParamsValueReverse(
               this.historicalData.plans[2].rooms.trading[1].product
             );
@@ -5812,26 +3683,18 @@ export default {
         if ("333" === this.historicalData.buildingType) {
           if (this.historicalData.plans[2].rooms.trading[2].skip) {
             this.switch_trading_plan2_2[2] = true;
-            if (
-              this.historicalData.plans[2].rooms.trading[2].operators.length > 0
-            ) {
-              this.trading_plan2_2 =
-                this.historicalData.plans[2].rooms.trading[2].operators;
-              this.switch_trading_plan2_2[0] =
-                this.historicalData.plans[2].rooms.trading[2].sort;
-              this.switch_trading_plan2_2[1] =
-                this.historicalData.plans[2].rooms.trading[2].autofill;
+            if (this.historicalData.plans[2].rooms.trading[2].operators.length > 0) {
+              this.trading_plan2_2 = this.historicalData.plans[2].rooms.trading[2].operators;
+              this.switch_trading_plan2_2[0] = this.historicalData.plans[2].rooms.trading[2].sort;
+              this.switch_trading_plan2_2[1] = this.historicalData.plans[2].rooms.trading[2].autofill;
               this.radio_trading_plan2[2] = this.getParamsValueReverse(
                 this.historicalData.plans[2].rooms.trading[2].product
               );
             }
           } else {
-            this.trading_plan2_2 =
-              this.historicalData.plans[2].rooms.trading[2].operators;
-            this.switch_trading_plan2_2[0] =
-              this.historicalData.plans[2].rooms.trading[2].sort;
-            this.switch_trading_plan2_2[1] =
-              this.historicalData.plans[2].rooms.trading[2].autofill;
+            this.trading_plan2_2 = this.historicalData.plans[2].rooms.trading[2].operators;
+            this.switch_trading_plan2_2[0] = this.historicalData.plans[2].rooms.trading[2].sort;
+            this.switch_trading_plan2_2[1] = this.historicalData.plans[2].rooms.trading[2].autofill;
             this.radio_trading_plan2[2] = this.getParamsValueReverse(
               this.historicalData.plans[2].rooms.trading[2].product
             );
@@ -5841,12 +3704,9 @@ export default {
         if (this.historicalData.plans[2].rooms.manufacture[0].skip) {
           this.switch_manufacture_plan2_0[2] = true;
         } else {
-          this.manufacture_plan2_0 =
-            this.historicalData.plans[2].rooms.manufacture[0].operators;
-          this.switch_manufacture_plan2_0[0] =
-            this.historicalData.plans[2].rooms.manufacture[0].sort;
-          this.switch_manufacture_plan2_0[1] =
-            this.historicalData.plans[2].rooms.manufacture[0].autofill;
+          this.manufacture_plan2_0 = this.historicalData.plans[2].rooms.manufacture[0].operators;
+          this.switch_manufacture_plan2_0[0] = this.historicalData.plans[2].rooms.manufacture[0].sort;
+          this.switch_manufacture_plan2_0[1] = this.historicalData.plans[2].rooms.manufacture[0].autofill;
           this.radio_manufacture_plan2[0] = this.getParamsValueReverse(
             this.historicalData.plans[2].rooms.manufacture[0].product
           );
@@ -5854,27 +3714,18 @@ export default {
 
         if (this.historicalData.plans[2].rooms.manufacture[1].skip) {
           this.switch_manufacture_plan2_1[2] = true;
-          if (
-            this.historicalData.plans[2].rooms.manufacture[1].operators.length >
-            0
-          ) {
-            this.manufacture_plan2_1 =
-              this.historicalData.plans[2].rooms.manufacture[1].operators;
-            this.switch_manufacture_plan2_1[0] =
-              this.historicalData.plans[2].rooms.manufacture[1].sort;
-            this.switch_manufacture_plan2_1[1] =
-              this.historicalData.plans[2].rooms.manufacture[1].autofill;
+          if (this.historicalData.plans[2].rooms.manufacture[1].operators.length > 0) {
+            this.manufacture_plan2_1 = this.historicalData.plans[2].rooms.manufacture[1].operators;
+            this.switch_manufacture_plan2_1[0] = this.historicalData.plans[2].rooms.manufacture[1].sort;
+            this.switch_manufacture_plan2_1[1] = this.historicalData.plans[2].rooms.manufacture[1].autofill;
             this.radio_manufacture_plan2[1] = this.getParamsValueReverse(
               this.historicalData.plans[2].rooms.manufacture[1].product
             );
           }
         } else {
-          this.manufacture_plan2_1 =
-            this.historicalData.plans[2].rooms.manufacture[1].operators;
-          this.switch_manufacture_plan2_1[0] =
-            this.historicalData.plans[2].rooms.manufacture[1].sort;
-          this.switch_manufacture_plan2_1[1] =
-            this.historicalData.plans[2].rooms.manufacture[1].autofill;
+          this.manufacture_plan2_1 = this.historicalData.plans[2].rooms.manufacture[1].operators;
+          this.switch_manufacture_plan2_1[0] = this.historicalData.plans[2].rooms.manufacture[1].sort;
+          this.switch_manufacture_plan2_1[1] = this.historicalData.plans[2].rooms.manufacture[1].autofill;
           this.radio_manufacture_plan2[1] = this.getParamsValueReverse(
             this.historicalData.plans[2].rooms.manufacture[1].product
           );
@@ -5882,27 +3733,18 @@ export default {
 
         if (this.historicalData.plans[2].rooms.manufacture[2].skip) {
           this.switch_manufacture_plan2_2[2] = true;
-          if (
-            this.historicalData.plans[2].rooms.manufacture[2].operators.length >
-            0
-          ) {
-            this.manufacture_plan2_2 =
-              this.historicalData.plans[2].rooms.manufacture[2].operators;
-            this.switch_manufacture_plan2_2[0] =
-              this.historicalData.plans[2].rooms.manufacture[2].sort;
-            this.switch_manufacture_plan2_2[1] =
-              this.historicalData.plans[2].rooms.manufacture[2].autofill;
+          if (this.historicalData.plans[2].rooms.manufacture[2].operators.length > 0) {
+            this.manufacture_plan2_2 = this.historicalData.plans[2].rooms.manufacture[2].operators;
+            this.switch_manufacture_plan2_2[0] = this.historicalData.plans[2].rooms.manufacture[2].sort;
+            this.switch_manufacture_plan2_2[1] = this.historicalData.plans[2].rooms.manufacture[2].autofill;
             this.radio_manufacture_plan2[2] = this.getParamsValueReverse(
               this.historicalData.plans[2].rooms.manufacture[2].product
             );
           }
         } else {
-          this.manufacture_plan2_2 =
-            this.historicalData.plans[2].rooms.manufacture[2].operators;
-          this.switch_manufacture_plan2_2[0] =
-            this.historicalData.plans[2].rooms.manufacture[2].sort;
-          this.switch_manufacture_plan2_2[1] =
-            this.historicalData.plans[2].rooms.manufacture[2].autofill;
+          this.manufacture_plan2_2 = this.historicalData.plans[2].rooms.manufacture[2].operators;
+          this.switch_manufacture_plan2_2[0] = this.historicalData.plans[2].rooms.manufacture[2].sort;
+          this.switch_manufacture_plan2_2[1] = this.historicalData.plans[2].rooms.manufacture[2].autofill;
           this.radio_manufacture_plan2[2] = this.getParamsValueReverse(
             this.historicalData.plans[2].rooms.manufacture[2].product
           );
@@ -5915,60 +3757,39 @@ export default {
         ) {
           if (this.historicalData.plans[2].rooms.manufacture[3].skip) {
             this.switch_manufacture_plan2_3[2] = true;
-            if (
-              this.historicalData.plans[2].rooms.manufacture[3].operators
-                .length > 0
-            ) {
-              this.manufacture_plan2_3 =
-                this.historicalData.plans[2].rooms.manufacture[3].operators;
-              this.switch_manufacture_plan2_3[0] =
-                this.historicalData.plans[2].rooms.manufacture[3].sort;
-              this.switch_manufacture_plan2_3[1] =
-                this.historicalData.plans[2].rooms.manufacture[3].autofill;
+            if (this.historicalData.plans[2].rooms.manufacture[3].operators.length > 0) {
+              this.manufacture_plan2_3 = this.historicalData.plans[2].rooms.manufacture[3].operators;
+              this.switch_manufacture_plan2_3[0] = this.historicalData.plans[2].rooms.manufacture[3].sort;
+              this.switch_manufacture_plan2_3[1] = this.historicalData.plans[2].rooms.manufacture[3].autofill;
               this.radio_manufacture_plan2[3] = this.getParamsValueReverse(
                 this.historicalData.plans[2].rooms.manufacture[3].product
               );
             }
           } else {
-            this.manufacture_plan2_3 =
-              this.historicalData.plans[2].rooms.manufacture[3].operators;
-            this.switch_manufacture_plan2_3[0] =
-              this.historicalData.plans[2].rooms.manufacture[3].sort;
-            this.switch_manufacture_plan2_3[1] =
-              this.historicalData.plans[2].rooms.manufacture[3].autofill;
+            this.manufacture_plan2_3 = this.historicalData.plans[2].rooms.manufacture[3].operators;
+            this.switch_manufacture_plan2_3[0] = this.historicalData.plans[2].rooms.manufacture[3].sort;
+            this.switch_manufacture_plan2_3[1] = this.historicalData.plans[2].rooms.manufacture[3].autofill;
             this.radio_manufacture_plan2[3] = this.getParamsValueReverse(
               this.historicalData.plans[2].rooms.manufacture[3].product
             );
           }
         }
 
-        if (
-          "153" === this.historicalData.buildingType ||
-          "252" === this.historicalData.buildingType
-        ) {
+        if ("153" === this.historicalData.buildingType || "252" === this.historicalData.buildingType) {
           if (this.historicalData.plans[2].rooms.manufacture[4].skip) {
             this.switch_manufacture_plan2_4[2] = true;
-            if (
-              this.historicalData.plans[2].rooms.manufacture[4].operators
-                .length > 0
-            ) {
-              this.manufacture_plan2_4 =
-                this.historicalData.plans[2].rooms.manufacture[4].operators;
-              this.switch_manufacture_plan2_4[0] =
-                this.historicalData.plans[2].rooms.manufacture[4].sort;
-              this.switch_manufacture_plan2_4[1] =
-                this.historicalData.plans[2].rooms.manufacture[4].autofill;
+            if (this.historicalData.plans[2].rooms.manufacture[4].operators.length > 0) {
+              this.manufacture_plan2_4 = this.historicalData.plans[2].rooms.manufacture[4].operators;
+              this.switch_manufacture_plan2_4[0] = this.historicalData.plans[2].rooms.manufacture[4].sort;
+              this.switch_manufacture_plan2_4[1] = this.historicalData.plans[2].rooms.manufacture[4].autofill;
               this.radio_manufacture_plan2[4] = this.getParamsValueReverse(
                 this.historicalData.plans[2].rooms.manufacture[4].product
               );
             }
           } else {
-            this.manufacture_plan2_4 =
-              this.historicalData.plans[2].rooms.manufacture[4].operators;
-            this.switch_manufacture_plan2_4[0] =
-              this.historicalData.plans[2].rooms.manufacture[4].sort;
-            this.switch_manufacture_plan2_4[1] =
-              this.historicalData.plans[2].rooms.manufacture[4].autofill;
+            this.manufacture_plan2_4 = this.historicalData.plans[2].rooms.manufacture[4].operators;
+            this.switch_manufacture_plan2_4[0] = this.historicalData.plans[2].rooms.manufacture[4].sort;
+            this.switch_manufacture_plan2_4[1] = this.historicalData.plans[2].rooms.manufacture[4].autofill;
             this.radio_manufacture_plan2[4] = this.getParamsValueReverse(
               this.historicalData.plans[2].rooms.manufacture[4].product
             );
@@ -5978,115 +3799,81 @@ export default {
         if (this.historicalData.plans[2].rooms.power[0].skip) {
           this.switch_power_plan2_0[2] = true;
         } else {
-          this.power_plan2_0[0] =
-            this.historicalData.plans[2].rooms.power[0].operators[0];
-          this.switch_power_plan2_0[1] =
-            this.historicalData.plans[2].rooms.power[0].autofill;
+          this.power_plan2_0[0] = this.historicalData.plans[2].rooms.power[0].operators[0];
+          this.switch_power_plan2_0[1] = this.historicalData.plans[2].rooms.power[0].autofill;
         }
 
         if (this.historicalData.plans[2].rooms.power[1].skip) {
           this.switch_power_plan2_1[2] = true;
         } else {
-          this.power_plan2_0[1] =
-            this.historicalData.plans[2].rooms.power[1].operators[0];
-          this.switch_power_plan2_1[1] =
-            this.historicalData.plans[2].rooms.power[1].autofill;
+          this.power_plan2_0[1] = this.historicalData.plans[2].rooms.power[1].operators[0];
+          this.switch_power_plan2_1[1] = this.historicalData.plans[2].rooms.power[1].autofill;
         }
 
         if (!("252" === this.historicalData.buildingType)) {
           if (this.historicalData.plans[2].rooms.power[2].skip) {
             this.switch_power_plan2_2[2] = true;
           } else {
-            this.power_plan2_0[2] =
-              this.historicalData.plans[2].rooms.power[2].operators[0];
-            this.switch_power_plan2_2[1] =
-              this.historicalData.plans[2].rooms.power[2].autofill;
+            this.power_plan2_0[2] = this.historicalData.plans[2].rooms.power[2].operators[0];
+            this.switch_power_plan2_2[1] = this.historicalData.plans[2].rooms.power[2].autofill;
           }
         }
 
         if (this.historicalData.plans[2].rooms.hire[0].skip) {
           this.switch_hire_plan2_0[2] = true;
         } else {
-          this.hire_plan2_0 =
-            this.historicalData.plans[2].rooms.hire[0].operators;
-          this.switch_hire_plan2_0[1] =
-            this.historicalData.plans[2].rooms.hire[0].autofill;
+          this.hire_plan2_0 = this.historicalData.plans[2].rooms.hire[0].operators;
+          this.switch_hire_plan2_0[1] = this.historicalData.plans[2].rooms.hire[0].autofill;
         }
 
         if (this.historicalData.plans[2].rooms.meeting[0].skip) {
           this.switch_meeting_plan2_0[2] = true;
         } else {
-          this.meeting_plan2_0 =
-            this.historicalData.plans[2].rooms.meeting[0].operators;
-          this.switch_meeting_plan2_0[1] =
-            this.historicalData.plans[2].rooms.meeting[0].autofill;
+          this.meeting_plan2_0 = this.historicalData.plans[2].rooms.meeting[0].operators;
+          this.switch_meeting_plan2_0[1] = this.historicalData.plans[2].rooms.meeting[0].autofill;
         }
 
-        if (
-          undefined ===
-          this.historicalData.plans[2].rooms.dormitory[0].operators
-        ) {
+        if (undefined === this.historicalData.plans[2].rooms.dormitory[0].operators) {
         } else {
           if (this.historicalData.plans[2].rooms.dormitory[0].skip) {
             this.switch_dormitory_plan2_0[2] = true;
           } else {
-            this.dormitory_plan2_0 =
-              this.historicalData.plans[2].rooms.dormitory[0].operators;
-            this.switch_dormitory_plan2_0[0] =
-              this.historicalData.plans[2].rooms.dormitory[0].sort;
-            this.switch_dormitory_plan2_0[1] =
-              this.historicalData.plans[2].rooms.dormitory[0].autofill;
+            this.dormitory_plan2_0 = this.historicalData.plans[2].rooms.dormitory[0].operators;
+            this.switch_dormitory_plan2_0[0] = this.historicalData.plans[2].rooms.dormitory[0].sort;
+            this.switch_dormitory_plan2_0[1] = this.historicalData.plans[2].rooms.dormitory[0].autofill;
           }
         }
 
-        if (
-          undefined ===
-          this.historicalData.plans[2].rooms.dormitory[1].operators
-        ) {
+        if (undefined === this.historicalData.plans[2].rooms.dormitory[1].operators) {
         } else {
           if (this.historicalData.plans[2].rooms.dormitory[1].skip) {
             this.switch_dormitory_plan2_1[2] = true;
           } else {
-            this.dormitory_plan2_1 =
-              this.historicalData.plans[2].rooms.dormitory[1].operators;
-            this.switch_dormitory_plan2_1[0] =
-              this.historicalData.plans[2].rooms.dormitory[1].sort;
-            this.switch_dormitory_plan2_1[1] =
-              this.historicalData.plans[2].rooms.dormitory[1].autofill;
+            this.dormitory_plan2_1 = this.historicalData.plans[2].rooms.dormitory[1].operators;
+            this.switch_dormitory_plan2_1[0] = this.historicalData.plans[2].rooms.dormitory[1].sort;
+            this.switch_dormitory_plan2_1[1] = this.historicalData.plans[2].rooms.dormitory[1].autofill;
           }
         }
 
-        if (
-          undefined ===
-          this.historicalData.plans[2].rooms.dormitory[2].operators
-        ) {
+        if (undefined === this.historicalData.plans[2].rooms.dormitory[2].operators) {
         } else {
           if (this.historicalData.plans[2].rooms.dormitory[2].skip) {
             this.switch_dormitory_plan2_2[2] = true;
           } else {
-            this.dormitory_plan2_2 =
-              this.historicalData.plans[2].rooms.dormitory[2].operators;
-            this.switch_dormitory_plan2_2[0] =
-              this.historicalData.plans[2].rooms.dormitory[2].sort;
-            this.switch_dormitory_plan2_2[1] =
-              this.historicalData.plans[2].rooms.dormitory[2].autofill;
+            this.dormitory_plan2_2 = this.historicalData.plans[2].rooms.dormitory[2].operators;
+            this.switch_dormitory_plan2_2[0] = this.historicalData.plans[2].rooms.dormitory[2].sort;
+            this.switch_dormitory_plan2_2[1] = this.historicalData.plans[2].rooms.dormitory[2].autofill;
           }
         }
 
-        if (
-          undefined ===
-          this.historicalData.plans[2].rooms.dormitory[3].operators
-        ) {
+        if (undefined === this.historicalData.plans[2].rooms.dormitory[3].operators) {
         } else {
           if (this.historicalData.plans[2].rooms.dormitory[3].skip) {
             this.switch_dormitory_plan2_3[2] = true;
           } else {
-            this.dormitory_plan2_3 =
-              this.historicalData.plans[2].rooms.dormitory[3].operators;
-            this.switch_dormitory_plan2_3[0] =
-              this.historicalData.plans[2].rooms.dormitory[3].sort;
-            this.switch_dormitory_plan2_3[1] =
-              this.historicalData.plans[2].rooms.dormitory[3].autofill;
+            this.dormitory_plan2_3 = this.historicalData.plans[2].rooms.dormitory[3].operators;
+            this.switch_dormitory_plan2_3[0] = this.historicalData.plans[2].rooms.dormitory[3].sort;
+            this.switch_dormitory_plan2_3[1] = this.historicalData.plans[2].rooms.dormitory[3].autofill;
           }
         }
       }

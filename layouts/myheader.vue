@@ -9,18 +9,10 @@
       active-text-color="#ffd04b"
       style="border: 0px"
     >
-      <el-menu-item v-show="menu_pc" index="1" @click="mainSite()"
-        >材料一图流</el-menu-item
-      >
-      <el-menu-item v-show="menu_pc" index="2" @click="gachaCal()"
-        >攒抽规划</el-menu-item
-      >
-      <el-menu-item v-show="menu_pc" index="3" @click="schedule()"
-        >排班生成器</el-menu-item
-      >
-      <el-menu-item v-show="menu_pc" index="4" @click="pack()"
-        >礼包性价比</el-menu-item
-      >
+      <el-menu-item v-show="menu_pc" index="1" @click="mainSite()">材料一图流</el-menu-item>
+      <el-menu-item v-show="menu_pc" index="2" @click="gachaCal()">攒抽规划</el-menu-item>
+      <el-menu-item v-show="menu_pc" index="3" @click="schedule()">排班生成器</el-menu-item>
+      <el-menu-item v-show="menu_pc" index="4" @click="pack()">礼包性价比</el-menu-item>
       <!-- <el-submenu v-show="menu_pc" index="4">
         <template slot="title">其它工具</template>
         <el-menu-item index="4-1" @click="recruit()">公开招募</el-menu-item>
@@ -74,11 +66,9 @@ export default {
         document.getElementById("indexDiv").style.background = "#f0f0f0";
         document.getElementById("indexDiv").style.color = "#000000";
         var titles = document.getElementsByClassName("op_title_ctext");
-        for (var i = 0; i < titles.length; i++)
-          titles[i].style.color = "#000000dd";
+        for (var i = 0; i < titles.length; i++) titles[i].style.color = "#000000dd";
         var titles = document.getElementsByClassName("op_title_etext");
-        for (var i = 0; i < titles.length; i++)
-          titles[i].style.WebkitTextStroke = "0.6px black";
+        for (var i = 0; i < titles.length; i++) titles[i].style.WebkitTextStroke = "0.6px black";
         cookie.set("theme", "light", { expires: 30 });
         console.log("nowlight");
         this.ThemeText = "亮色";
@@ -86,11 +76,9 @@ export default {
         document.getElementById("indexDiv").style.background = "#222222";
         document.getElementById("indexDiv").style.color = "#ffffff";
         var titles = document.getElementsByClassName("op_title_ctext");
-        for (var i = 0; i < titles.length; i++)
-          titles[i].style.color = "#ffffffdd";
+        for (var i = 0; i < titles.length; i++) titles[i].style.color = "#ffffffdd";
         var titles = document.getElementsByClassName("op_title_etext");
-        for (var i = 0; i < titles.length; i++)
-          titles[i].style.WebkitTextStroke = "0.3px white";
+        for (var i = 0; i < titles.length; i++) titles[i].style.WebkitTextStroke = "0.3px white";
         cookie.set("theme", "dark", { expires: 30 });
         console.log("nowdark");
         this.ThemeText = "暗色";

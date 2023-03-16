@@ -9,7 +9,11 @@
         </tr>
         <tr>
           <td>
-            <el-select v-model="char_profession" placeholder="请选择" @change="IreneCal()">
+            <el-select
+              v-model="char_profession"
+              placeholder="请选择"
+              @change="IreneCal()"
+            >
               <el-option
                 v-for="item in char_professionList"
                 :key="item"
@@ -20,22 +24,26 @@
             </el-select>
           </td>
           <td>
-            <el-input  v-model.number="train1_spd" @change="IreneCal()" />
+            <el-input v-model.number="train1_spd" @change="IreneCal()" />
           </td>
           <td>
-            <el-input  v-model.number="train2_spd" @change="IreneCal()" />
+            <el-input v-model.number="train2_spd" @change="IreneCal()" />
           </td>
         </tr>
         <tr>
           <td>专精一</td>
           <td colspan="3">
-            在训练{{ doubleProf1_time }}后，剩余{{doubleProf1_remaining_time}}时换成艾丽妮
+            在训练{{ doubleProf1_time }}后，剩余{{
+              doubleProf1_remaining_time
+            }}时换成艾丽妮
           </td>
         </tr>
         <tr>
           <td>专精二</td>
           <td colspan="3">
-            在训练{{ doubleProf2_time }}后，剩余{{doubleProf2_remaining_time}}时换成艾丽妮
+            在训练{{ doubleProf2_time }}后，剩余{{
+              doubleProf2_remaining_time
+            }}时换成艾丽妮
           </td>
         </tr>
       </tbody>
@@ -67,24 +75,30 @@ export default {
     IreneCal() {
       console.log(this.char_profession);
       console.log(this.train_spd);
-      var Irene_spd = 1.05;  //艾丽妮基础效率
-      var front1_spd = 1.05 + parseFloat(this.train1_spd / 100);  //专精1前置干员效率
-      var front2_spd = 1.05 + parseFloat(this.train2_spd / 100);  //专精2前置干员效率
-      var doubleProf1_ms = 8 * 3600;      //专精总时长
-      var Irene_ms = 5 * 3600 + 10 * 60;   //艾丽妮技能最低时长，取5小时10分钟
-      if ("狙击近卫" === this.char_profession ) {
-        Irene_spd = 1.35;     //艾丽妮最终效率
-        Irene_ms = Irene_ms * Irene_spd;   //艾丽妮需求原始时长（无效率时长）
-        var doubleProf1_front_ms = (doubleProf1_ms - Irene_ms) / front1_spd;   //前置干员可工作总时长
+      var Irene_spd = 1.05; //艾丽妮基础效率
+      var front1_spd = 1.05 + parseFloat(this.train1_spd / 100); //专精1前置干员效率
+      var front2_spd = 1.05 + parseFloat(this.train2_spd / 100); //专精2前置干员效率
+      var doubleProf1_ms = 8 * 3600; //专精总时长
+      var Irene_ms = 5 * 3600 + 10 * 60; //艾丽妮技能最低时长，取5小时10分钟
+      if ("狙击近卫" === this.char_profession) {
+        Irene_spd = 1.35; //艾丽妮最终效率
+        Irene_ms = Irene_ms * Irene_spd; //艾丽妮需求原始时长（无效率时长）
+        var doubleProf1_front_ms = (doubleProf1_ms - Irene_ms) / front1_spd; //前置干员可工作总时长
         var doubleProf1_front_hh = parseInt(doubleProf1_front_ms / 3600); //前置干员可工作小时
-        var doubleProf1_front_mm = parseInt((doubleProf1_front_ms - doubleProf1_front_hh * 3600) / 60); //前置干员可工作分钟
+        var doubleProf1_front_mm = parseInt(
+          (doubleProf1_front_ms - doubleProf1_front_hh * 3600) / 60
+        ); //前置干员可工作分钟
         this.doubleProf1_time =
-          doubleProf1_front_hh +"小时" +doubleProf1_front_mm+"分钟";
+          doubleProf1_front_hh + "小时" + doubleProf1_front_mm + "分钟";
 
         var doubleProf1_remaining_ms =
-          (doubleProf1_ms - doubleProf1_front_ms * front1_spd) / front1_spd;   //前置干员撤出前剩余时长
-        var doubleProf1_remaining_hh = parseInt(doubleProf1_remaining_ms / 3600); //前置干员撤出前剩余小时
-        var doubleProf1_remaining_mm = parseInt((doubleProf1_remaining_ms - doubleProf1_remaining_hh * 3600) /60); //前置干员撤出前剩余分钟
+          (doubleProf1_ms - doubleProf1_front_ms * front1_spd) / front1_spd; //前置干员撤出前剩余时长
+        var doubleProf1_remaining_hh = parseInt(
+          doubleProf1_remaining_ms / 3600
+        ); //前置干员撤出前剩余小时
+        var doubleProf1_remaining_mm = parseInt(
+          (doubleProf1_remaining_ms - doubleProf1_remaining_hh * 3600) / 60
+        ); //前置干员撤出前剩余分钟
         this.doubleProf1_remaining_time =
           this.addZero(doubleProf1_remaining_hh) +
           ":" +
@@ -97,14 +111,20 @@ export default {
 
         var doubleProf2_front_ms = (doubleProf1_ms - Irene_ms) / front2_spd;
         var doubleProf2_front_hh = parseInt(doubleProf2_front_ms / 3600);
-        var doubleProf2_front_mm = parseInt((doubleProf2_front_ms - doubleProf2_front_hh * 3600) / 60);
+        var doubleProf2_front_mm = parseInt(
+          (doubleProf2_front_ms - doubleProf2_front_hh * 3600) / 60
+        );
         this.doubleProf2_time =
-          doubleProf2_front_hh +"小时" +doubleProf2_front_mm+"分钟";
+          doubleProf2_front_hh + "小时" + doubleProf2_front_mm + "分钟";
 
         var doubleProf2_remaining_ms =
           (doubleProf1_ms - doubleProf2_front_ms * front2_spd) / front2_spd;
-        var doubleProf2_remaining_hh = parseInt(doubleProf2_remaining_ms / 3600);
-        var doubleProf2_remaining_mm = parseInt((doubleProf2_remaining_ms - doubleProf2_remaining_hh * 3600) /60);
+        var doubleProf2_remaining_hh = parseInt(
+          doubleProf2_remaining_ms / 3600
+        );
+        var doubleProf2_remaining_mm = parseInt(
+          (doubleProf2_remaining_ms - doubleProf2_remaining_hh * 3600) / 60
+        );
         this.doubleProf2_remaining_time =
           this.addZero(doubleProf2_remaining_hh) +
           ":" +
@@ -114,19 +134,24 @@ export default {
         console.log("专精2时长：", doubleProf1_ms);
         console.log("专精2艾丽妮最短时长：", Irene_ms);
         console.log("专精2剩余时长", doubleProf2_remaining_ms);
-      }else{
- 
-        Irene_ms = Irene_ms * Irene_spd;   //艾丽妮需求原始时长（无效率时长）
-        var doubleProf1_front_ms = (doubleProf1_ms - Irene_ms) / front1_spd;   //前置干员可工作总时长
+      } else {
+        Irene_ms = Irene_ms * Irene_spd; //艾丽妮需求原始时长（无效率时长）
+        var doubleProf1_front_ms = (doubleProf1_ms - Irene_ms) / front1_spd; //前置干员可工作总时长
         var doubleProf1_front_hh = parseInt(doubleProf1_front_ms / 3600); //前置干员可工作小时
-        var doubleProf1_front_mm = parseInt((doubleProf1_front_ms - doubleProf1_front_hh * 3600) / 60); //前置干员可工作分钟
+        var doubleProf1_front_mm = parseInt(
+          (doubleProf1_front_ms - doubleProf1_front_hh * 3600) / 60
+        ); //前置干员可工作分钟
         this.doubleProf1_time =
-          doubleProf1_front_hh +"小时" +doubleProf1_front_mm+"分钟";
+          doubleProf1_front_hh + "小时" + doubleProf1_front_mm + "分钟";
 
         var doubleProf1_remaining_ms =
-          (doubleProf1_ms - doubleProf1_front_ms * front1_spd) / front1_spd;   //前置干员撤出前剩余时长
-        var doubleProf1_remaining_hh = parseInt(doubleProf1_remaining_ms / 3600); //前置干员撤出前剩余小时
-        var doubleProf1_remaining_mm = parseInt((doubleProf1_remaining_ms - doubleProf1_remaining_hh * 3600) /60); //前置干员撤出前剩余分钟
+          (doubleProf1_ms - doubleProf1_front_ms * front1_spd) / front1_spd; //前置干员撤出前剩余时长
+        var doubleProf1_remaining_hh = parseInt(
+          doubleProf1_remaining_ms / 3600
+        ); //前置干员撤出前剩余小时
+        var doubleProf1_remaining_mm = parseInt(
+          (doubleProf1_remaining_ms - doubleProf1_remaining_hh * 3600) / 60
+        ); //前置干员撤出前剩余分钟
         this.doubleProf1_remaining_time =
           this.addZero(doubleProf1_remaining_hh) +
           ":" +
@@ -139,14 +164,20 @@ export default {
 
         var doubleProf2_front_ms = (doubleProf1_ms - Irene_ms) / front2_spd;
         var doubleProf2_front_hh = parseInt(doubleProf2_front_ms / 3600);
-        var doubleProf2_front_mm = parseInt((doubleProf2_front_ms - doubleProf2_front_hh * 3600) / 60);
+        var doubleProf2_front_mm = parseInt(
+          (doubleProf2_front_ms - doubleProf2_front_hh * 3600) / 60
+        );
         this.doubleProf2_time =
-          doubleProf2_front_hh +"小时" +doubleProf2_front_mm+"分钟";
+          doubleProf2_front_hh + "小时" + doubleProf2_front_mm + "分钟";
 
         var doubleProf2_remaining_ms =
           (doubleProf1_ms - doubleProf2_front_ms * front2_spd) / front2_spd;
-        var doubleProf2_remaining_hh = parseInt(doubleProf2_remaining_ms / 3600);
-        var doubleProf2_remaining_mm = parseInt((doubleProf2_remaining_ms - doubleProf2_remaining_hh * 3600) /60);
+        var doubleProf2_remaining_hh = parseInt(
+          doubleProf2_remaining_ms / 3600
+        );
+        var doubleProf2_remaining_mm = parseInt(
+          (doubleProf2_remaining_ms - doubleProf2_remaining_hh * 3600) / 60
+        );
         this.doubleProf2_remaining_time =
           this.addZero(doubleProf2_remaining_hh) +
           ":" +

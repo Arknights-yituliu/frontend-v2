@@ -11,65 +11,61 @@
 </template>
 
 <script>
-  import storeApi from "@/api/store";
+import storeApi from "@/api/store";
 
-  export default {
-    layout: "poster",
-    data() {
-      return {
+export default {
+  layout: "poster",
+  data() {
+    return {};
+  },
+  created() {},
+  methods: {
+    change() {
+      document.getElementById("div").className = "test";
+      setTimeout(function () {
+        document.getElementById("div").className = "box1";
+      }, 10);
 
-      };
+      // document.getElementById("ondiv").onmouseleave = function () {
+      //   document.getElementById("div").className = "test";
+      // };
     },
-    created() {
-    },
-    methods: {
-      change() {
-        document.getElementById("div").className = "test";
-        setTimeout(function () {
-          document.getElementById("div").className = "box1";
-        }, 10);
-
-        // document.getElementById("ondiv").onmouseleave = function () {
-        //   document.getElementById("div").className = "test";
-        // };
-      },
-    },
-  };
+  },
+};
 </script>
 
-
 <style scoped>
-  #ondiv {
-    background: #000;
-    width: 200px;
-    height: 50px;
-  }
+#ondiv {
+  background: #000;
+  width: 200px;
+  height: 50px;
+}
 
-  .test {
-    display: none;
-    background: red;
-    width: 100px;
-    height: 100px;
-    transition: all 0.3s;
-    transform: translateX(-290px);
-  }
+.test {
+  display: none;
+  background: red;
+  width: 100px;
+  height: 100px;
+  transition: all 0.3s;
+  transform: translateX(-290px);
+}
 
-  .box1 {
-    background: red;
-    width: 200px;
-    height: 200px;
-    transition: all 0.3s;
-    transform: translateX(0);
-  }
+.box1 {
+  background: red;
+  width: 200px;
+  height: 200px;
+  transition: all 0.3s;
+  transform: translateX(0);
+}
 
-  div {
-    width: 60px;
-    height: 60px;
-    background-color: skyblue;
-  }
+div {
+  width: 60px;
+  height: 60px;
+  background-color: skyblue;
+}
 
-  .moved {
-    transform: translateX(10px);
-    background-color: pink;
-  }
+.moved {
+  transform: translateX(10px);
+  background-color: pink;
+}
 </style>

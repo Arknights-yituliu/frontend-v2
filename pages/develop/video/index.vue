@@ -1,8 +1,10 @@
 <template>
   <div>
     <div class="pie_all" id="myChart" ref="myChart"></div>
-   <div class="title1">统计范围：{{chapters[0]}}至{{chapters[chapters.length-1]}}<br/></div>
-    <div class="title2">{{ chapter }}<br/></div>
+    <div class="title1">
+      统计范围：{{ chapters[0] }}至{{ chapters[chapters.length - 1] }}<br />
+    </div>
+    <div class="title2">{{ chapter }}<br /></div>
   </div>
 </template>
 
@@ -15,7 +17,6 @@ import itemCount202210 from "static/bar/itemCount202210.json";
 import imageUrl from "static/bar/imageUrl.json";
 import echarts from "static/js/echarts.min.js";
 
-
 let itemId = [];
 let itemName = [];
 let itemCostContent = [];
@@ -26,15 +27,13 @@ export default {
   data() {
     return {
       itemCost: [],
-      chapters: ["淬火尘霾","叙拉古人", "照我以火", "登临意", "春分",],
-      chapter: '',
+      chapters: ["淬火尘霾", "叙拉古人", "照我以火", "登临意", "春分"],
+      chapter: "",
     };
   },
-  created() {
-    
-  },
-  mounted(){
-     this.show();
+  created() {},
+  mounted() {
+    this.show();
   },
   methods: {
     sleep(d) {
@@ -42,82 +41,88 @@ export default {
     },
 
     async show() {
-      
-      this.changeBackIamge(0)
+      this.changeBackIamge(0);
       await this.sleep(2000);
       for (let i = 0; i < itemCount202210.length; i++) {
         itemName.unshift(itemCount202210[i].itemName);
         itemId.unshift(itemCount202210[i].itemId);
-        
-        var costContent = itemCount202210[i].itemCount + "(+ " + 0 +")";
+
+        var costContent = itemCount202210[i].itemCount + "(+ " + 0 + ")";
         itemCostContent.unshift(costContent);
-        if(itemCount202210[i].itemName=="固源岩组"){
-          this.itemCost.unshift(itemCount202210[i].itemCount*0.7);
-        }else{
+        if (itemCount202210[i].itemName == "固源岩组") {
+          this.itemCost.unshift(itemCount202210[i].itemCount * 0.7);
+        } else {
           this.itemCost.unshift(itemCount202210[i].itemCount);
         }
-        
+
         await this.sleep(1500);
         itemIndex = itemCount202210[i].itemId;
         this.barChart();
       }
 
-       await this.sleep(1000);
-       this.changeBackIamge(1)
-       this.changeChartData(itemCount202211);
+      await this.sleep(1000);
+      this.changeBackIamge(1);
+      this.changeChartData(itemCount202211);
 
-       await this.sleep(17500);
-       this.changeBackIamge(2)
-       this.changeChartData(itemCount202212);
-    
-       await this.sleep(17500);
-       this.changeBackIamge(3)
-       this.changeChartData(itemCount202301);
+      await this.sleep(17500);
+      this.changeBackIamge(2);
+      this.changeChartData(itemCount202212);
 
-       await this.sleep(17500);
-       this.changeBackIamge(4)
-       this.changeChartData(itemCount202302);
-      
-     
+      await this.sleep(17500);
+      this.changeBackIamge(3);
+      this.changeChartData(itemCount202301);
+
+      await this.sleep(17500);
+      this.changeBackIamge(4);
+      this.changeChartData(itemCount202302);
     },
 
-
-    async changeChartData(newData){
+    async changeChartData(newData) {
       let map = this.arrTOMap(itemCount202210);
       for (let i = 0; i < newData.length; i++) {
-        var costContent = newData[i].itemCount + "(+ " + (newData[i].itemCount-map[newData[i].itemId]) + ")";
+        var costContent =
+          newData[i].itemCount +
+          "(+ " +
+          (newData[i].itemCount - map[newData[i].itemId]) +
+          ")";
         itemCostContent[15 - i] = costContent;
         itemName[15 - i] = newData[i].itemName;
         itemId[15 - i] = newData[i].itemId;
         this.itemCost[15 - i] = newData[i].itemCount;
-        if(itemCount202210[i].itemName=="固源岩组") this.itemCost[15 - i] = newData[i].itemCount*0.7;
+        if (itemCount202210[i].itemName == "固源岩组")
+          this.itemCost[15 - i] = newData[i].itemCount * 0.7;
         itemIndex = newData[i].itemId;
         await this.sleep(1000);
 
-        console.log(15-i,' :',newData[i].itemName)
-        
+        console.log(15 - i, " :", newData[i].itemName);
+
         this.barChart();
       }
     },
-  
-    changeBackIamge(index){
+
+    changeBackIamge(index) {
       this.chapter = this.chapters[index];
-      document.getElementById("myChart").style.background = "url(/img/back/" + this.chapters[index] + ".png),url(/img/back/" + this.chapters[index+1] + ".png)"
-      document.getElementById("myChart").style.backgroundSize = "2000px"
-      document.getElementById("myChart").style.backgroundPosition = "0 0,-2000px -2000px";
+      document.getElementById("myChart").style.background =
+        "url(/img/back/" +
+        this.chapters[index] +
+        ".png),url(/img/back/" +
+        this.chapters[index + 1] +
+        ".png)";
+      document.getElementById("myChart").style.backgroundSize = "2000px";
+      document.getElementById("myChart").style.backgroundPosition =
+        "0 0,-2000px -2000px";
     },
 
-
-    arrTOMap(arr){
+    arrTOMap(arr) {
       let map = {};
-      for(const i in arr){
-           map[arr[i].itemId]= arr[i].itemCount
+      for (const i in arr) {
+        map[arr[i].itemId] = arr[i].itemCount;
       }
       return map;
     },
 
     async getUpdateNumber(newData, oldData) {
-      for (let i = 0; i < (newData - oldData); i++) {
+      for (let i = 0; i < newData - oldData; i++) {
         await this.sleep(10);
         return oldData++;
       }
@@ -193,7 +198,6 @@ export default {
         ],
         series: [
           {
-            
             type: "bar",
             barWidth: 40,
             data: this.itemCost,

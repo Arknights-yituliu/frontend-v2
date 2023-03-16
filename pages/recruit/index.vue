@@ -1,6 +1,6 @@
 <template>
   <div :class="pageTheme" id="indexDiv">
-    <br>
+    <br />
     <div class="recruit_area_">
       <div class="checkBox_recruit_area">
         <div class="checkBox_recruit_title">资历</div>
@@ -124,7 +124,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 var count = 0;

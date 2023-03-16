@@ -1,7 +1,5 @@
 <template>
-  <div>
-    
-  </div>
+  <div></div>
 </template>
 
 <script>
@@ -11,15 +9,9 @@ import gacha_actRewardJson from "static/json/gacha_actReward.json"; //活动奖�
 export default {
   layout: "poster",
   data() {
-    return {
-    
-    };
+    return {};
   },
-  created() {
-   
-  },
-  methods: {
-  
-  },
+  created() {},
+  methods: {},
 };
 </script>

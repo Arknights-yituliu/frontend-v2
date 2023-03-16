@@ -1,36 +1,36 @@
 <template>
-  <div id="extra" style="max-width: 1080px;margin: auto;">
-    <div style="padding: 8px 16px 0px 16px;max-width: 1080px;margin: auto;">
-      关卡效率和材料价值由明日方舟一图流计算，掉率数据由企鹅物流统计，采用<a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">知识共享 署名-非商业性使用
-      4.0 国际 许可协议</a>进行许可。转载、公开或以任何形式复制、发行、再传播本页任何内容时，必须注明从明日方舟一图流转载，并提供版权标识、许可协议标识、免责标识和作品链接；且未经许可，不得将本站内容或由其衍生作品用于商业目的。<br>
+  <div id="extra" style="max-width: 1080px; margin: auto">
+    <div style="padding: 8px 16px 0px 16px; max-width: 1080px; margin: auto">
+      关卡效率和材料价值由明日方舟一图流计算，掉率数据由企鹅物流统计，采用<a
+        href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh"
+        >知识共享 署名-非商业性使用 4.0 国际 许可协议</a
+      >进行许可。转载、公开或以任何形式复制、发行、再传播本页任何内容时，必须注明从明日方舟一图流转载，并提供版权标识、许可协议标识、免责标识和作品链接；且未经许可，不得将本站内容或由其衍生作品用于商业目的。<br />
       本项目为无偿开源项目，致力于方便明日方舟玩家。如有开发/数据分析/设计/美工经验，欢迎来开发群一叙。
     </div>
     <div id="foot_main">
-
-
       <div class="foot_unit">
-        <p class="foot_unit_title" style="margin-bottom: 11px;">-开发信息-</p>
+        <p class="foot_unit_title" style="margin-bottom: 11px">-开发信息-</p>
         <a href="https://github.com/Zirun-wang/yituliuFrontEnd">
           <div class="foot_unit_button uni_shadow_2" id="foot_frontEnd">
-            <img class="foot_unit_pic" src="/img/website/github.png"/>
+            <img class="foot_unit_pic" src="/img/website/github.png" />
             前端
           </div>
         </a>
         <a href="https://github.com/yamasakura/yituliuBackEnd">
           <div class="foot_unit_button uni_shadow_2" id="foot_backEnd">
-            <img class="foot_unit_pic" src="/img/website/github.png"/>
+            <img class="foot_unit_pic" src="/img/website/github.png" />
             后端
           </div>
         </a>
         <a href="https://jq.qq.com/?_wv=1027&k=ZmORnr5F">
-          <div class="foot_unit_button uni_shadow_2" style="width: 202px;">
-            <img class="foot_unit_pic" src="/img/website/qq.png"/>
+          <div class="foot_unit_button uni_shadow_2" style="width: 202px">
+            <img class="foot_unit_pic" src="/img/website/qq.png" />
             开发群938710832
           </div>
         </a>
         <a href="https://shimo.im/sheets/dPkpKP1zQmc1PvqO/7mSBe">
-          <div class="foot_unit_button uni_shadow_2" style="width: 202px;">
-            <img class="foot_unit_pic" src="/img/website/图标_源石.png"/>
+          <div class="foot_unit_button uni_shadow_2" style="width: 202px">
+            <img class="foot_unit_pic" src="/img/website/图标_源石.png" />
             本站财政状况
           </div>
         </a>
@@ -39,32 +39,62 @@
       <div class="foot_unit">
         <p class="foot_unit_title">-本页开发-</p>
         <a href="https://space.bilibili.com/39109412">
-          <div class="foot_unit_button uni_shadow_2" style="vertical-align:middle">
-            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/84258011?v=4">
+          <div
+            class="foot_unit_button uni_shadow_2"
+            style="vertical-align: middle"
+          >
+            <img
+              class="foot_unit_pic"
+              src="https://avatars.githubusercontent.com/u/84258011?v=4"
+            />
             山桜
           </div>
         </a>
         <a href="https://space.bilibili.com/10057492">
-          <div class="foot_unit_button uni_shadow_2" style="vertical-align:middle">
-            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/84625349?v=4"/>
+          <div
+            class="foot_unit_button uni_shadow_2"
+            style="vertical-align: middle"
+          >
+            <img
+              class="foot_unit_pic"
+              src="https://avatars.githubusercontent.com/u/84625349?v=4"
+            />
             Zirunwang
           </div>
         </a>
         <a href="https://github.com/Yanstory">
-          <div class="foot_unit_button uni_shadow_2" style="vertical-align:middle">
-            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/5153875?v=4"/>
+          <div
+            class="foot_unit_button uni_shadow_2"
+            style="vertical-align: middle"
+          >
+            <img
+              class="foot_unit_pic"
+              src="https://avatars.githubusercontent.com/u/5153875?v=4"
+            />
             Yanstory
           </div>
         </a>
         <a href="https://github.com/DSLM">
-          <div class="foot_unit_button uni_shadow_2" style="vertical-align:middle">
-            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/12635058?v=4"/>
+          <div
+            class="foot_unit_button uni_shadow_2"
+            style="vertical-align: middle"
+          >
+            <img
+              class="foot_unit_pic"
+              src="https://avatars.githubusercontent.com/u/12635058?v=4"
+            />
             DSLM
           </div>
         </a>
         <a href="https://github.com/ZhaoZuohong">
-          <div class="foot_unit_button uni_shadow_2" style="vertical-align:middle">
-            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/34163622?v=4"/>
+          <div
+            class="foot_unit_button uni_shadow_2"
+            style="vertical-align: middle"
+          >
+            <img
+              class="foot_unit_pic"
+              src="https://avatars.githubusercontent.com/u/34163622?v=4"
+            />
             ZhaoZuohong
           </div>
         </a>
@@ -73,8 +103,11 @@
       <div class="foot_unit">
         <p class="foot_unit_title">-数据源-</p>
         <a href="https://yituliu.site/">
-          <div class="foot_unit_button uni_shadow_2" style="vertical-align:middle;color:gray;"><img
-            class="foot_unit_pic" src="/img/website/ico64.png"/>一图流主站
+          <div
+            class="foot_unit_button uni_shadow_2"
+            style="vertical-align: middle; color: gray"
+          >
+            <img class="foot_unit_pic" src="/img/website/ico64.png" />一图流主站
           </div>
         </a>
       </div>
@@ -82,20 +115,25 @@
       <div class="foot_unit">
         <p class="foot_unit_title">-B站发布-</p>
         <a href="https://space.bilibili.com/688411531">
-          <div class="foot_unit_button uni_shadow_2" style="vertical-align:middle">
-            <img class="foot_unit_pic" src="/img/website/bilibili.png"/>
+          <div
+            class="foot_unit_button uni_shadow_2"
+            style="vertical-align: middle"
+          >
+            <img class="foot_unit_pic" src="/img/website/bilibili.png" />
             罗德岛基建BETA
           </div>
         </a>
         <p class="foot_unit_title">-粉丝群-</p>
         <a href="https://jq.qq.com/?_wv=1027&k=q1z3p9Yj">
-          <div class="foot_unit_button uni_shadow_2" style="vertical-align:middle">
-            <img class="foot_unit_pic" src="/img/website/qq.png"/>
+          <div
+            class="foot_unit_button uni_shadow_2"
+            style="vertical-align: middle"
+          >
+            <img class="foot_unit_pic" src="/img/website/qq.png" />
             阿戈尔数据文献馆
           </div>
         </a>
       </div>
-
     </div>
   </div>
 </template>
@@ -110,9 +148,7 @@ export default {
       updateTime: "2000-01-01 00:00:00",
     };
   },
-  created() {
-
-  },
+  created() {},
   mounted() {
     //    this.getUpdateTime();
   },
@@ -125,7 +161,7 @@ export default {
         await this.sleep(500);
         this.updateTime = cookie.get("updateTime");
       }
-    }
+    },
   },
 };
 </script>
@@ -154,7 +190,7 @@ export default {
   width: 165px;
 }
 
-#al_card td:nth-child(2n+1) {
+#al_card td:nth-child(2n + 1) {
   font-weight: 600;
   padding: 0px 8px;
   width: 75px;
@@ -242,14 +278,12 @@ export default {
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
-
 }
 
 #foot_warning {
   border-top: 1px solid #dddddd;
   overflow-x: hidden;
   padding-left: 12px;
-
 }
 
 #foot_warning_text {
@@ -258,7 +292,7 @@ export default {
   /* top: 5px; */
   /* float: left; */
   padding: 10px;
-  text-align: center
+  text-align: center;
 }
 
 .foot_unit_button {

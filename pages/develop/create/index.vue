@@ -4,62 +4,135 @@
 
     <table border="0" class="pack-table">
       <tbody>
-      <tr class="title—tr">
-        <td class="long-td">礼包名称</td>
-        <td class="long-td">礼包显示名称</td>
-        <td class="long-td">礼包图片名称</td>
-        <td class="long-short">礼包类型</td>
-        <td class="long-short">礼包ID</td>
-        <td class="long-short">礼包状态</td>
-        <td class="long-short">售价</td>
-        <!-- <td class="long-short">抽数</td>
+        <tr class="title—tr">
+          <td class="long-td">礼包名称</td>
+          <td class="long-td">礼包显示名称</td>
+          <td class="long-td">礼包图片名称</td>
+          <td class="long-short">礼包类型</td>
+          <td class="long-short">礼包ID</td>
+          <td class="long-short">礼包状态</td>
+          <td class="long-short">售价</td>
+          <!-- <td class="long-short">抽数</td>
         <td class="long-short">源石数</td>
         <td class="long-short">抽卡单价</td>
         <td class="long-short">源石单价</td>
         <td class="long-short">抽卡性价比</td>
         <td class="long-short">总体性价比</td> -->
-        <td class="long-short">合成玉</td>
-        <td class="long-short">源石</td>
-        <td class="long-short">单抽</td>
-        <td class="long-short">十连</td>
-        <td class="">备注</td>
-        <td >礼包内容</td>
-      </tr>
-      <tr v-for="index in packPPRDataLength" :key="index" class="title—tr" >
-        <td><input type="text" class="input_long" v-model="packName[index-1]"/></td>
-        <td><input type="text" class="input_long" v-model="packShowName[index-1]"/></td>
-        <td><input type="text" class="input_long" v-model="packImg[index-1]"/></td>
-        <td><input type="text" class="input_short" v-model="packType[index-1]"/></td>
-        <td><input type="text" class="input_short" v-model.number="packID[index-1]"/></td>
-        <td><input type="text" class="input_short" v-model.number="packState[index-1]"/></td>
-        <td><input type="text" class="input_short" v-model.number="packPrice[index-1]"/></td>
-        <!-- <td><input type="text" class="input_short" v-model="packDraw[index-1]"/></td>
+          <td class="long-short">合成玉</td>
+          <td class="long-short">源石</td>
+          <td class="long-short">单抽</td>
+          <td class="long-short">十连</td>
+          <td class="">备注</td>
+          <td>礼包内容</td>
+        </tr>
+        <tr v-for="index in packPPRDataLength" :key="index" class="title—tr">
+          <td>
+            <input
+              type="text"
+              class="input_long"
+              v-model="packName[index - 1]"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              class="input_long"
+              v-model="packShowName[index - 1]"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              class="input_long"
+              v-model="packImg[index - 1]"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              class="input_short"
+              v-model="packType[index - 1]"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              class="input_short"
+              v-model.number="packID[index - 1]"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              class="input_short"
+              v-model.number="packState[index - 1]"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              class="input_short"
+              v-model.number="packPrice[index - 1]"
+            />
+          </td>
+          <!-- <td><input type="text" class="input_short" v-model="packDraw[index-1]"/></td>
         <td><input type="text" class="input_short" v-model="packOriginium[index-1]"/></td>
         <td><input type="text" class="input_short" v-model="packRmbPerDraw[index-1]"/></td>
         <td><input type="text" class="input_short" v-model="packRmbPerOriginium[index-1]"/></td>
         <td><input type="text" class="input_short" v-model="packPPRDraw[index-1]"/></td>
         <td><input type="text" class="input_short" v-model="packPPROriginium[index-1]"/></td> -->
-        <td><input type="text" class="input_short" v-model.number="gachaOrundum[index-1]"/></td>
-        <td><input type="text" class="input_short" v-model.number="gachaOriginium[index-1]"/></td>
-        <td><input type="text" class="input_short" v-model.number="gachaPermit[index-1]"/></td>
-        <td><input type="text" class="input_short" v-model.number="gachaPermit10[index-1]"/></td>
-        <td><input type="text" class="" v-model="packTag[index-1]"/></td>
-        <td>
-          <div class="div-Content">
-            <div v-for="count in 12" :key="count" class="div-item">
-             <div><input type="text" class="input_content" v-model="packContent_item[index-1][count-1]"/></div>
-             <div><input type="text" class="input_content" v-model.number="packContent_count[index-1][count-1]"/></div>
+          <td>
+            <input
+              type="text"
+              class="input_short"
+              v-model.number="gachaOrundum[index - 1]"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              class="input_short"
+              v-model.number="gachaOriginium[index - 1]"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              class="input_short"
+              v-model.number="gachaPermit[index - 1]"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              class="input_short"
+              v-model.number="gachaPermit10[index - 1]"
+            />
+          </td>
+          <td><input type="text" class="" v-model="packTag[index - 1]" /></td>
+          <td>
+            <div class="div-Content">
+              <div v-for="count in 12" :key="count" class="div-item">
+                <div>
+                  <input
+                    type="text"
+                    class="input_content"
+                    v-model="packContent_item[index - 1][count - 1]"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    class="input_content"
+                    v-model.number="packContent_count[index - 1][count - 1]"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </td>
-
-      </tr>
-
-
+          </td>
+        </tr>
       </tbody>
     </table>
-
-
   </div>
 </template>
 
@@ -73,7 +146,7 @@ export default {
   data() {
     return {
       packPPRDataLength: 0,
-      packPPRData:[],
+      packPPRData: [],
       packName: [],
       packShowName: [],
       packImg: [],
@@ -92,10 +165,10 @@ export default {
       gachaOriginium: [],
       gachaPermit: [],
       gachaPermit10: [],
-      packTag:[],
+      packTag: [],
       packContent_item: [],
       packContent_count: [],
-      packJson: {}
+      packJson: {},
     };
   },
   created() {
@@ -103,7 +176,7 @@ export default {
   },
   methods: {
     getNumber(num, acc) {
-      acc = (typeof acc !== 'undefined') ? acc : 2;
+      acc = typeof acc !== "undefined" ? acc : 2;
       return parseFloat(num).toFixed(acc);
     },
 
@@ -113,9 +186,9 @@ export default {
 
     getStorePackData() {
       storeApi.findPackStore().then((response) => {
-           this.packPPRData = response.data;
-          //  console.log(this.packPPRData.length);
-           this.readJson();
+        this.packPPRData = response.data;
+        //  console.log(this.packPPRData.length);
+        this.readJson();
       });
     },
 
@@ -124,7 +197,7 @@ export default {
       await this.sleep(700);
       toolApi.createStorePackJson(this.packJson).then((response) => {
         this.$message({
-          message: '创建成功',
+          message: "创建成功",
           type: "success",
           showClose: true,
           duration: 4000,
@@ -159,36 +232,41 @@ export default {
 
         let content = [];
         for (let j = 0; j < this.packContent_item[i].length; j++) {
-          var content_item = {}
+          var content_item = {};
           content_item.packContentItem = this.packContent_item[i][j];
           content_item.packContentQuantity = this.packContent_count[i][j];
-          if (this.packContent_item[i][j] != undefined && this.packContent_item[i][j] != "") {
-          content.push(content_item);
+          if (
+            this.packContent_item[i][j] != undefined &&
+            this.packContent_item[i][j] != ""
+          ) {
+            content.push(content_item);
           }
         }
 
         console.log("礼包", i, this.packContent_item[i][0] != undefined);
         console.log("礼包", i, this.packContent_item[i][0] != "");
 
-        if (this.packContent_item[i][0] != undefined && this.packContent_item[i][0] != "") {
+        if (
+          this.packContent_item[i][0] != undefined &&
+          this.packContent_item[i][0] != ""
+        ) {
           map.packContent = content;
         }
 
-        if(this.packName[i] != undefined && this.packName[i] != "")
-        list.push(map);
+        if (this.packName[i] != undefined && this.packName[i] != "")
+          list.push(map);
       }
       this.packJson = list;
       console.log(list);
     },
 
-
     readJson() {
       this.packPPRDataLength = this.packPPRData.length + 7;
-      for (let i = 0; i < this.packPPRDataLength+1; i++) {
-      this.packContent_item.push([]);
-      this.packContent_count.push([]);
+      for (let i = 0; i < this.packPPRDataLength + 1; i++) {
+        this.packContent_item.push([]);
+        this.packContent_count.push([]);
       }
-      console.log("当前长度：", this.packPPRDataLength)
+      console.log("当前长度：", this.packPPRDataLength);
       for (let i = 0; i < this.packPPRData.length; i++) {
         // if("礼包"== packName[i]) break;
         this.packName[i] = this.packPPRData[i].packName;
@@ -210,7 +288,7 @@ export default {
         this.gachaPermit[i] = this.packPPRData[i].gachaPermit;
         this.gachaPermit10[i] = this.packPPRData[i].gachaPermit10;
         this.packTag[i] = this.packPPRData[i].packTag;
-        console.log(this.packPPRData[i].packContent == undefined)
+        console.log(this.packPPRData[i].packContent == undefined);
         if (this.packPPRData[i].packContent != undefined) {
           let content = this.packPPRData[i].packContent;
           for (let j = 0; j < content.length; j++) {
@@ -218,19 +296,13 @@ export default {
             this.packContent_count[i][j] = content[j].packContentQuantity;
           }
         }
-
       }
-
-
     },
   },
 };
 </script>
 
-
 <style scoped>
-
-
 .pack-table {
   /* border-collapse: collapse; */
   border-spacing: 0 20px;
@@ -263,7 +335,7 @@ export default {
   width: 110px;
 }
 
-.input_content{
+.input_content {
   width: 80px;
 }
 
@@ -274,13 +346,12 @@ export default {
   /* firefox */
   -ms-overflow-style: none;
   /* IE 10+ */
-   display: flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
 }
 
 .div-item {
   display: flex;
-  flex-direction:column;
-
+  flex-direction: column;
 }
 </style>

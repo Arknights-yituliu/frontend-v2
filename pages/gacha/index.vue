@@ -12,89 +12,99 @@
         <div
           id="chart_bar"
           ref="chart_bar"
-          style="width: 450px; height: 600px;margin:auto"
+          style="width: 450px; height: 600px; margin: auto"
         ></div>
       </div>
 
       <div class="pool_table_div">
         <table class="satas_table">
           <tbody>
-          <tr>
-            <td>详细数据：</td>
-          </tr>
-          <tr>
-            <td>总计{{ poolDataCount }}抽</td>
-          </tr>
-          <tr class="rarity_6">
-            <td>六星</td>
-            <td>{{ poolData_satas.char_6 }}</td>
-            <td>{{ poolData_satas.char_6_knock }}%</td>
-          </tr>
-          <tr class="rarity_5">
-            <td>五星</td>
-            <td>{{ poolData_satas.char_5 }}</td>
-            <td>{{ poolData_satas.char_5_knock }}%</td>
-          </tr>
-          <tr class="rarity_4">
-            <td>四星</td>
-            <td>{{ poolData_satas.char_4 }}</td>
-            <td>{{ poolData_satas.char_4_knock }}%</td>
-          </tr>
-          <tr class="rarity_3">
-            <td>三星</td>
-            <td>{{ poolData_satas.char_3 }}</td>
-            <td>{{ poolData_satas.char_3_knock }}%</td>
-          </tr>
-          <tr>
-            <td>&emsp;</td>
-          </tr>
-          <tr>
-            <td>平均出货次数：</td>
-          </tr>
+            <tr>
+              <td>详细数据：</td>
+            </tr>
+            <tr>
+              <td>总计{{ poolDataCount }}抽</td>
+            </tr>
+            <tr class="rarity_6">
+              <td>六星</td>
+              <td>{{ poolData_satas.char_6 }}</td>
+              <td>{{ poolData_satas.char_6_knock }}%</td>
+            </tr>
+            <tr class="rarity_5">
+              <td>五星</td>
+              <td>{{ poolData_satas.char_5 }}</td>
+              <td>{{ poolData_satas.char_5_knock }}%</td>
+            </tr>
+            <tr class="rarity_4">
+              <td>四星</td>
+              <td>{{ poolData_satas.char_4 }}</td>
+              <td>{{ poolData_satas.char_4_knock }}%</td>
+            </tr>
+            <tr class="rarity_3">
+              <td>三星</td>
+              <td>{{ poolData_satas.char_3 }}</td>
+              <td>{{ poolData_satas.char_3_knock }}%</td>
+            </tr>
+            <tr>
+              <td>&emsp;</td>
+            </tr>
+            <tr>
+              <td>平均出货次数：</td>
+            </tr>
 
-          <tr>
-            <td class="rarity_6">
-              六星： <a>{{ poolData_satas.char_6_avg }}</a>抽
-            </td>
-            <td class="rarity_5">
-              &emsp;五星：<a>{{ poolData_satas.char_5_avg }}</a>抽
-            </td>
-          </tr>
-          <tr>
-            <td class="rarity_4">
-              四星： <a>{{ poolData_satas.char_4_avg }}</a>抽
-            </td>
-            <td class="rarity_3">
-              &emsp;三星：<a>{{ poolData_satas.char_3_avg }}</a>抽
-            </td>
-          </tr>
-          <tr>
-            <td>&emsp;</td>
-          </tr>
-          <tr>
-            <td>未出货次数：</td>
-          </tr>
-          <tr>
-            <td>
-              限定池已<a>{{ poolData_satas.limited_last }}</a>抽未出货
-            </td>
-            <td>
-              &emsp;普通池已<a>{{ poolData_satas.permanent_last }}</a>抽未出货
-            </td>
-          </tr>
+            <tr>
+              <td class="rarity_6">
+                六星： <a>{{ poolData_satas.char_6_avg }}</a
+                >抽
+              </td>
+              <td class="rarity_5">
+                &emsp;五星：<a>{{ poolData_satas.char_5_avg }}</a
+                >抽
+              </td>
+            </tr>
+            <tr>
+              <td class="rarity_4">
+                四星： <a>{{ poolData_satas.char_4_avg }}</a
+                >抽
+              </td>
+              <td class="rarity_3">
+                &emsp;三星：<a>{{ poolData_satas.char_3_avg }}</a
+                >抽
+              </td>
+            </tr>
+            <tr>
+              <td>&emsp;</td>
+            </tr>
+            <tr>
+              <td>未出货次数：</td>
+            </tr>
+            <tr>
+              <td>
+                限定池已<a>{{ poolData_satas.limited_last }}</a
+                >抽未出货
+              </td>
+              <td>
+                &emsp;普通池已<a>{{ poolData_satas.permanent_last }}</a
+                >抽未出货
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
       <div class="pool_table_div">
         <table class="pool_table">
           <tbody>
-          <tr v-for="(pool,index) in this.poolData_satas.char_6_list" :key="index" class="rarity_6">
-            <td ><a v-show="pool.isNew">New</a></td>
-            <td>{{ pool.name }}</td>
-            <td>[{{ strSubstring(pool.pool) }}]</td>
-            <td>[{{ pool.times }}]</td>
-            <td> {{ tsToDate(pool.ts*1000) }}</td>
-          </tr>
+            <tr
+              v-for="(pool, index) in this.poolData_satas.char_6_list"
+              :key="index"
+              class="rarity_6"
+            >
+              <td><a v-show="pool.isNew">New</a></td>
+              <td>{{ pool.name }}</td>
+              <td>[{{ strSubstring(pool.pool) }}]</td>
+              <td>[{{ pool.times }}]</td>
+              <td>{{ tsToDate(pool.ts * 1000) }}</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -106,15 +116,14 @@
 import toolApi from "@/api/tool";
 import echarts from "static/js/echarts.min.js";
 
-
 let myChart = "";
 let myChart_bar = "";
 
 export default {
   layout: "poster",
   // head: {
-    // script:[{
-    //   src:"https://image.yituliu.site/js/echarts.min.js"
+  // script:[{
+  //   src:"https://image.yituliu.site/js/echarts.min.js"
   // }],
   // },
   data() {
@@ -165,7 +174,6 @@ export default {
           if (2 === this.poolData[i].rarity) char_3++;
         }
 
-
         let permanent_flag = false;
         let limited_flag = false;
         let permanent_last = 0;
@@ -202,22 +210,38 @@ export default {
         this.poolData_satas.char_4 = char_4;
         this.poolData_satas.char_3 = char_3;
 
-        this.poolData_satas.char_6_knock = this.floatToFixed((char_6 / this.poolDataCount) * 100);
-        this.poolData_satas.char_5_knock = this.floatToFixed((char_5 / this.poolDataCount) * 100);
-        this.poolData_satas.char_4_knock = this.floatToFixed((char_4 / this.poolDataCount) * 100);
-        this.poolData_satas.char_3_knock = this.floatToFixed((char_3 / this.poolDataCount) * 100);
-        this.poolData_satas.char_6_avg = this.floatToFixed(this.poolDataCount / char_6);
-        this.poolData_satas.char_5_avg = this.floatToFixed(this.poolDataCount / char_5);
-        this.poolData_satas.char_4_avg = this.floatToFixed(this.poolDataCount / char_4);
-        this.poolData_satas.char_3_avg = this.floatToFixed(this.poolDataCount / char_3);
+        this.poolData_satas.char_6_knock = this.floatToFixed(
+          (char_6 / this.poolDataCount) * 100
+        );
+        this.poolData_satas.char_5_knock = this.floatToFixed(
+          (char_5 / this.poolDataCount) * 100
+        );
+        this.poolData_satas.char_4_knock = this.floatToFixed(
+          (char_4 / this.poolDataCount) * 100
+        );
+        this.poolData_satas.char_3_knock = this.floatToFixed(
+          (char_3 / this.poolDataCount) * 100
+        );
+        this.poolData_satas.char_6_avg = this.floatToFixed(
+          this.poolDataCount / char_6
+        );
+        this.poolData_satas.char_5_avg = this.floatToFixed(
+          this.poolDataCount / char_5
+        );
+        this.poolData_satas.char_4_avg = this.floatToFixed(
+          this.poolDataCount / char_4
+        );
+        this.poolData_satas.char_3_avg = this.floatToFixed(
+          this.poolDataCount / char_3
+        );
 
         let char_6_list = [];
 
         let pieData = [
-          {value: char_6, name: "六星"},
-          {value: char_5, name: "五星"},
-          {value: char_4, name: "四星"},
-          {value: char_3, name: "三星"},
+          { value: char_6, name: "六星" },
+          { value: char_5, name: "五星" },
+          { value: char_4, name: "四星" },
+          { value: char_3, name: "三星" },
         ];
 
         this.setChart_pie(pieData);
@@ -278,7 +302,7 @@ export default {
                 show: true,
                 formatter: "{b} : {c}位\n  ({d}%)",
               },
-              labelLine: {show: true},
+              labelLine: { show: true },
               color: function (params) {
                 //自定义颜色
                 var colorList = [
@@ -402,18 +426,16 @@ export default {
       }
       return str;
     },
-    tsToDate(ts){
+    tsToDate(ts) {
       var item = new Date(ts).toLocaleString();
-      return  item
-    }
+      return item;
+    },
   },
 };
 </script>
 
-
 <style scoped>
 .pool_area {
-
   height: auto;
   display: flex;
   flex-direction: row;
@@ -449,25 +471,21 @@ export default {
   text-align: center;
 }
 
-.satas_table{
-  font-size:20px ;
+.satas_table {
+  font-size: 20px;
   font-weight: 600;
 }
 
-.rarity_6{
-color: rgb(255, 102, 0);
-
+.rarity_6 {
+  color: rgb(255, 102, 0);
 }
-.rarity_5{
+.rarity_5 {
   color: rgb(248, 203, 0);
 }
-.rarity_4{
-   color: rgb(67, 171, 255);
+.rarity_4 {
+  color: rgb(67, 171, 255);
 }
-.rarity_3{
-   color: rgb(187, 187, 187);
+.rarity_3 {
+  color: rgb(187, 187, 187);
 }
-
-
-
 </style>

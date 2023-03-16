@@ -1,22 +1,22 @@
 <template>
-<div class="main">
-  <div class="cover">
-    <div class="title">
-      <span>&emsp;&emsp;&nbsp;新材料加入后</span><br />
-      <span>截止《春分》</span><br />
-      <span>全干员</span>
-      <span><a class="title1"> 蓝材料</a>需求统计</span><br />
-    </div>
-    <img class="item_size1" :src="getImage('转质盐组')" alt="" />
-    <div class="item_card">
-      <div v-for="(item, index) in itemList.slice(0, 15)" :key="index">
-        <img class="item_size" :src="getImage(item.itemName)" alt="" />
+  <div class="main">
+    <div class="cover">
+      <div class="title">
+        <span>&emsp;&emsp;&nbsp;新材料加入后</span><br />
+        <span>截止《春分》</span><br />
+        <span>全干员</span>
+        <span><a class="title1"> 蓝材料</a>需求统计</span><br />
       </div>
-    </div>
+      <img class="item_size1" :src="getImage('转质盐组')" alt="" />
+      <div class="item_card">
+        <div v-for="(item, index) in itemList.slice(0, 15)" :key="index">
+          <img class="item_size" :src="getImage(item.itemName)" alt="" />
+        </div>
+      </div>
 
-    <!-- <div class="char-image"> <img class="" src="/img/back/char_4080_lin_1b.png" ></div> -->
-  </div>
+      <!-- <div class="char-image"> <img class="" src="/img/back/char_4080_lin_1b.png" ></div> -->
     </div>
+  </div>
 </template>
 
 <script>
@@ -47,8 +47,7 @@ export default {
 </script>
 
 <style scoped>
-
-.main{
+.main {
   width: 2376px;
   height: 1296px;
   border: solid 1px red;

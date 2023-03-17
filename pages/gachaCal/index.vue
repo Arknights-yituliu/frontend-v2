@@ -241,7 +241,7 @@
           <div class="gacha_unit_info">搓玉系数：1-7(1.09)</div>
           <div class="gacha_unit_child">
             <a href="/?item=Orundum" style="margin: 0px 24px 0px 0px">查看其它可搓玉关卡</a>
-            <a href="https://www.bilibili.com/video/BV1XT411F7m4" style="display: inline-block">
+            <a href="https://www.bilibili.com/video/BV1v54y1T7u5" style="display: inline-block">
               搓玉教程<img class="gacha_img_small" src="/img/website/el.png"
             /></a>
           </div>

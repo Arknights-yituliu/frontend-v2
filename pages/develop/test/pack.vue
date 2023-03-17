@@ -24,19 +24,12 @@
             v-for="(pack2, index) in packsPPRData.slice(0)"
             :key="index"
             :class="getColor(pack2.packType)"
-            v-show="
-              'permanent' !== pack2.packType ||
-              '普通源石648元' === pack2.packName
-            "
+            v-show="'permanent' !== pack2.packType || '普通源石648元' === pack2.packName"
           >
             <td><a v-show="'limited' === pack2.packType">new </a></td>
 
             <td>
-              <img
-                class="pack_image"
-                :src="getPackPic(pack2.packImg, pack2.packType)"
-                alt=""
-              />
+              <img class="pack_image" :src="getPackPic(pack2.packImg, pack2.packType)" alt="" />
             </td>
             <td>{{ pack2.packName }}</td>
             <td>{{ pack2.packPrice }}元</td>
@@ -98,12 +91,8 @@ export default {
       this.packsPPRData = [];
       this.packsPPRDataSort = [];
       for (let i = 0; i < this.packPPRResponse.length; i += 1) {
-        if (this.packPPRResponse[i].packRmbPerDraw === null)
-          this.packPPRResponse[i].packRmbPerDraw = 0;
-        if (
-          this.packPPRResponse[i].packRmbPerDraw > 0 &&
-          this.packPPRResponse[i].packState == 1
-        ) {
+        if (this.packPPRResponse[i].packRmbPerDraw === null) this.packPPRResponse[i].packRmbPerDraw = 0;
+        if (this.packPPRResponse[i].packRmbPerDraw > 0 && this.packPPRResponse[i].packState == 1) {
           console.log(this.packPPRResponse[i].packName);
           this.packsPPRData.push(this.packPPRResponse[i]);
           this.packsPPRDataSort.push(this.packPPRResponse[i]);
@@ -127,10 +116,7 @@ export default {
       for (let i = 0; i < this.packsPPRDataSort.length - 1; i += 1) {
         for (let j = 0; j < this.packsPPRDataSort.length - 1 - i; j += 1) {
           // console.log(this.packsPPRDataSort[j+1].packName,this.packsPPRDataSort[j+1].packRmbPerDraw)
-          if (
-            this.packsPPRDataSort[j].packRmbPerDraw >
-            this.packsPPRDataSort[j + 1].packRmbPerDraw
-          ) {
+          if (this.packsPPRDataSort[j].packRmbPerDraw > this.packsPPRDataSort[j + 1].packRmbPerDraw) {
             const temp = this.packsPPRDataSort[j];
             this.packsPPRDataSort[j] = this.packsPPRDataSort[j + 1];
             this.packsPPRDataSort[j + 1] = temp;
@@ -148,10 +134,7 @@ export default {
 
       for (let i = 0; i < this.packsPPRDataSort.length - 1; i += 1) {
         for (let j = 0; j < this.packsPPRDataSort.length - 1 - i; j += 1) {
-          if (
-            this.packsPPRDataSort[j].packRmbPerOriginium >
-            this.packsPPRDataSort[j + 1].packRmbPerOriginium
-          ) {
+          if (this.packsPPRDataSort[j].packRmbPerOriginium > this.packsPPRDataSort[j + 1].packRmbPerOriginium) {
             const temp = this.packsPPRDataSort[j];
             this.packsPPRDataSort[j] = this.packsPPRDataSort[j + 1];
             this.packsPPRDataSort[j + 1] = temp;

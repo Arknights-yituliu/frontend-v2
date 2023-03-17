@@ -15,48 +15,16 @@
           <div class="poster_block_title" style="margin-top: 0">
             各稀有度Tag<span class="text_special">出现的概率</span>
           </div>
-          <div
-            class="poster_block_content pie_all"
-            id="chart2"
-            ref="chart"
-          ></div>
+          <div class="poster_block_content pie_all" id="chart2" ref="chart"></div>
           <div class="probabilityDescribe">
             <table>
               <tr>
-                <td>
-                  六星：{{
-                    getProbability(
-                      maaData.topOperator,
-                      maaData.maaTagsDataCount
-                    )
-                  }}%
-                </td>
-                <td>
-                  五星：{{
-                    getProbability(
-                      maaData.seniorOperatorCount,
-                      maaData.maaTagsDataCount
-                    )
-                  }}%
-                </td>
+                <td>六星：{{ getProbability(maaData.topOperator, maaData.maaTagsDataCount) }}%</td>
+                <td>五星：{{ getProbability(maaData.seniorOperatorCount, maaData.maaTagsDataCount) }}%</td>
               </tr>
               <tr>
-                <td>
-                  四星：{{
-                    getProbability(
-                      maaData.rareOperatorCount,
-                      maaData.maaTagsDataCount
-                    )
-                  }}%
-                </td>
-                <td>
-                  三星：{{
-                    getProbability(
-                      maaData.commonOperatorCount,
-                      maaData.maaTagsDataCount
-                    )
-                  }}%
-                </td>
+                <td>四星：{{ getProbability(maaData.rareOperatorCount, maaData.maaTagsDataCount) }}%</td>
+                <td>三星：{{ getProbability(maaData.commonOperatorCount, maaData.maaTagsDataCount) }}%</td>
               </tr>
             </table>
           </div>
@@ -64,14 +32,11 @@
         <div class="poster_block">
           <div class="poster_block_number">2</div>
           <div class="poster_block_title">
-            所有的<span class="text_special"
-              >{{ maaData.maaTagsDataCount }}条</span
-            >数据中
+            所有的<span class="text_special">{{ maaData.maaTagsDataCount }}条</span>数据中
           </div>
           <div class="poster_block_content">
             <div class="poster_block_p1">
-              有<span class="text_special">{{ maaData.topOperator }}次</span
-              >高级资深干员
+              有<span class="text_special">{{ maaData.topOperator }}次</span>高级资深干员
             </div>
             <div class="poster_block_p1"></div>
             <div class="poster_block_p2">你是欧罗巴的贵族，</div>
@@ -86,9 +51,7 @@
           <div class="poster_block_content">
             <div class="poster_block_p1">
               占到了5星tag的<span class="text_special"
-                >{{
-                  getProbability(maaData.vulcan, maaData.seniorOperatorCount)
-                }}%</span
+                >{{ getProbability(maaData.vulcan, maaData.seniorOperatorCount) }}%</span
               >
             </div>
             <div class="poster_block_p1"></div>
@@ -98,35 +61,25 @@
         <div class="poster_block">
           <div class="poster_block_number">4</div>
           <div class="poster_block_title">
-            在<span class="text_special">{{ maaData.seniorOperator }}次</span
-            >资深干员中
+            在<span class="text_special">{{ maaData.seniorOperator }}次</span>资深干员中
           </div>
           <div class="poster_block_content">
             <div class="poster_block_p1">
-              出现了<span class="text_special"
-                >{{ maaData.topAndSeniorOperator }}次</span
-              >高级资深干员
+              出现了<span class="text_special">{{ maaData.topAndSeniorOperator }}次</span>高级资深干员
             </div>
             <div class="poster_block_p1"></div>
-            <div class="poster_block_p2">
-              我的黄票！<br />这俩TAG能不能拆开用啊！
-            </div>
+            <div class="poster_block_p2">我的黄票！<br />这俩TAG能不能拆开用啊！</div>
           </div>
         </div>
 
         <div class="poster_block">
           <div class="poster_block_number">5</div>
           <div class="poster_block_title">
-            小车的出率有<span class="text_special"
-              >{{
-                getProbability(maaData.robot, maaData.maaTagsDataCount)
-              }}%</span
-            >
+            小车的出率有<span class="text_special">{{ getProbability(maaData.robot, maaData.maaTagsDataCount) }}%</span>
           </div>
           <div class="poster_block_content">
             <div class="poster_block_p1">
-              但其中<span class="text_special"
-                >{{ getProbability(maaData.robotChoice, maaData.robot) }}%</span
+              但其中<span class="text_special">{{ getProbability(maaData.robotChoice, maaData.robot) }}%</span
               >面临黄票的诱惑
             </div>
             <div class="poster_block_p1"></div>
@@ -144,9 +97,7 @@
           </div></a
         >
         <a href="https://yituliu.site"
-          ><div class="poster_button" style="width: 64px; text-align: center">
-            返回主站
-          </div></a
+          ><div class="poster_button" style="width: 64px; text-align: center">返回主站</div></a
         >
       </div>
     </div>
@@ -183,8 +134,7 @@ export default {
       { charset: "utf-8" },
       {
         name: "viewport",
-        content:
-          "width=device-width, initial-scale=0.68, maximum-scale=0.68, user-scalable=no",
+        content: "width=device-width, initial-scale=0.68, maximum-scale=0.68, user-scalable=no",
       },
       {
         hid: "description",
@@ -201,8 +151,7 @@ export default {
       console.log("api方法");
       toolApi.maaStatistical().then((response) => {
         this.maaData = response.data;
-        if (this.maaData.maaTagsDataCount == null)
-          this.maaData.maaTagsDataCount = this.maaData.maaRecruitDataCount;
+        if (this.maaData.maaTagsDataCount == null) this.maaData.maaTagsDataCount = this.maaData.maaRecruitDataCount;
         this.pieData[0].value = this.maaData.topOperator;
         this.pieData[1].value = this.maaData.seniorOperatorCount;
         this.pieData[2].value = this.maaData.rareOperatorCount;

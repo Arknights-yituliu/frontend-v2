@@ -81,12 +81,7 @@ export default {
                 ChainLink += 10;
               }
               if ("焰尾" === operator) Flametail = true;
-              if (
-                "阿米娅" === operator ||
-                "诗怀雅" === operator ||
-                "明椒" === operator
-              )
-                control_trade = 0.07;
+              if ("阿米娅" === operator || "诗怀雅" === operator || "明椒" === operator) control_trade = 0.07;
               if ("凯尔希" === operator) control_manu = 0.02;
             })
           );
@@ -158,14 +153,7 @@ export default {
             info: "第" + (i + 1) + "班的第" + (t + 1) + "个贸易站",
             value: 0,
           });
-          this.cal_trade(
-            drones,
-            dronesIndex,
-            t + 1,
-            trade_rooms[t].operators,
-            control_trade,
-            ChainLink
-          );
+          this.cal_trade(drones, dronesIndex, t + 1, trade_rooms[t].operators, control_trade, ChainLink);
         }
 
         //制造站
@@ -201,18 +189,7 @@ export default {
     // tradeNum,贸易站数量
     // ChainLink,思维链环
     // Flametail,焰尾
-    cal_manu(
-      drones,
-      dronesIndex,
-      index,
-      product,
-      manu_room,
-      control_manu,
-      powerNum,
-      tradeNum,
-      ChainLink,
-      Flametail
-    ) {
+    cal_manu(drones, dronesIndex, index, product, manu_room, control_manu, powerNum, tradeNum, ChainLink, Flametail) {
       let room_char_num = manu_room.length;
 
       this.infoList.push({ info: "房间人数", value: room_char_num });
@@ -286,8 +263,7 @@ export default {
 
             if ("仓库整备" === building_data_manu[j].skillName) {
               manu_spd_item = parseFloat(building_data_manu[j].skillData);
-              prodLimit =
-                prodLimit + parseFloat(building_data_manu[j].prodLimit);
+              prodLimit = prodLimit + parseFloat(building_data_manu[j].prodLimit);
               this.infoList.push({
                 info: building_data_manu[j].name + "—提供制造效率",
                 value: manu_spd_item,
@@ -296,13 +272,11 @@ export default {
             }
 
             if ("仓库上限" === building_data_manu[j].skillName) {
-              prodLimit =
-                prodLimit + parseFloat(building_data_manu[j].prodLimit);
+              prodLimit = prodLimit + parseFloat(building_data_manu[j].prodLimit);
             }
 
             if ("念力" === building_data_manu[j].skillName) {
-              manu_spd_item =
-                ChainLink * parseFloat(building_data_manu[j].skillDataSp);
+              manu_spd_item = ChainLink * parseFloat(building_data_manu[j].skillDataSp);
               this.infoList.push({
                 info: building_data_manu[j].name + "—提供制造效率",
                 value: manu_spd_item,
@@ -334,8 +308,7 @@ export default {
               }
 
               if ("仓库上限-作战记录" === building_data_manu[j].skillName) {
-                prodLimit =
-                  prodLimit + parseFloat(building_data_manu[j].prodLimit);
+                prodLimit = prodLimit + parseFloat(building_data_manu[j].prodLimit);
               }
             }
 
@@ -372,8 +345,7 @@ export default {
       for (let i = 0; i < char_skill_sp.length; i++) {
         let manu_spd_item = 0;
         if ("标准化增强" === char_skill_sp[i].skillName) {
-          manu_spd_item =
-            standardization * parseFloat(char_skill_sp[i].skillDataSp);
+          manu_spd_item = standardization * parseFloat(char_skill_sp[i].skillDataSp);
 
           this.infoList.push({
             info: char_skill_sp[i].name + "—提供制造效率",
@@ -419,8 +391,7 @@ export default {
         let manu_spd_item = 0;
         if ("配合意识" === char_skill_variable[i].skillName) {
           manu_spd_item =
-            (manu_spd / parseFloat(char_skill_variable[i].variable)) *
-            parseFloat(char_skill_variable[i].skillDataSp);
+            (manu_spd / parseFloat(char_skill_variable[i].variable)) * parseFloat(char_skill_variable[i].skillDataSp);
 
           if (manu_spd_item > parseFloat(char_skill_variable[i].skillLimit)) {
             manu_spd_item = 0.4;
@@ -442,8 +413,7 @@ export default {
         let manu_spd_item = 0;
         if ("Pure Gold" === product) {
           if ("再生能源" === char_skill_room[i].skillName) {
-            manu_spd_item =
-              tradeNum * parseFloat(char_skill_room[i].skillDataSp);
+            manu_spd_item = tradeNum * parseFloat(char_skill_room[i].skillDataSp);
 
             this.infoList.push({
               info: char_skill_room[i].name + "—提供赤金效率",
@@ -520,8 +490,7 @@ export default {
             // ************干员技能**************
             //标准技能
             if ("基建效率" === building_data_trade[j].skillName) {
-              trade_spd =
-                trade_spd + parseFloat(building_data_trade[j].skillData);
+              trade_spd = trade_spd + parseFloat(building_data_trade[j].skillData);
               info = {
                 info: building_data_trade[j].name + "—提供贸易效率",
                 value: parseFloat(building_data_trade[j].skillData),
@@ -531,10 +500,8 @@ export default {
 
             // 订单上限增加
             if ("基建效率&加容量" === building_data_trade[j].skillName) {
-              orderLimit =
-                orderLimit + parseInt(building_data_trade[j].ordLimit);
-              trade_spd =
-                trade_spd + parseFloat(building_data_trade[j].skillData);
+              orderLimit = orderLimit + parseInt(building_data_trade[j].ordLimit);
+              trade_spd = trade_spd + parseFloat(building_data_trade[j].skillData);
               info = {
                 info: building_data_trade[j].name + "—提供贸易效率",
                 value: parseFloat(building_data_trade[j].skillData),
@@ -564,9 +531,7 @@ export default {
 
             //  空弦
             if ("基建效率_根据宿舍" === building_data_trade[j].skillName) {
-              trade_spd =
-                trade_spd +
-                dormLv * parseFloat(building_data_trade[j].skillDataSp);
+              trade_spd = trade_spd + dormLv * parseFloat(building_data_trade[j].skillDataSp);
               info = {
                 info: building_data_trade[j].name + "—提供贸易效率",
                 value: dormLv * parseFloat(building_data_trade[j].skillDataSp),
@@ -591,8 +556,7 @@ export default {
             // 伺夜
             if ("基建效率_根据会议室" === building_data_trade[j].skillName) {
               let trade_spd_v =
-                parseFloat(building_data_trade[j].skillData) +
-                meetLv * parseFloat(building_data_trade[j].skillDataSp);
+                parseFloat(building_data_trade[j].skillData) + meetLv * parseFloat(building_data_trade[j].skillDataSp);
               trade_spd = trade_spd + trade_spd_v;
               info = {
                 info: building_data_trade[j].name + "—提供贸易效率",
@@ -644,8 +608,7 @@ export default {
         //雪雉
         if ("基建效率_根据效率" === char_skill_variable[i].skillName) {
           char_trade_spd =
-            (trade_spd / parseFloat(char_skill_variable[i].variable)) *
-            parseFloat(char_skill_variable[i].skillDataSp);
+            (trade_spd / parseFloat(char_skill_variable[i].variable)) * parseFloat(char_skill_variable[i].skillDataSp);
 
           if (char_trade_spd > parseFloat(char_skill_variable[i].skillLimit)) {
             char_trade_spd = 0.35;
@@ -663,8 +626,7 @@ export default {
           if (true) {
             orderLimit = orderLimit - parseInt(trade_spd / 0.1);
 
-            char_trade_spd =
-              orderLimit * parseFloat(char_skill_variable[i].skillDataSp);
+            char_trade_spd = orderLimit * parseFloat(char_skill_variable[i].skillDataSp);
           }
           info = {
             info: char_skill_variable[i].name + "—提供贸易效率",

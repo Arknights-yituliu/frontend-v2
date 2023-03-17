@@ -1,13 +1,7 @@
 <template>
   <div>
     <div>
-      <el-input
-        class="input"
-        type="textarea"
-        v-model.trim="buildJson"
-        @change="readJson()"
-      >
-      </el-input>
+      <el-input class="input" type="textarea" v-model.trim="buildJson" @change="readJson()"> </el-input>
     </div>
   </div>
 </template>

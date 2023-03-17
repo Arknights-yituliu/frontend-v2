@@ -8,33 +8,15 @@
           <div :class="opETextTheme">Material Value</div>
         </div>
         <div class="op_title_tag">
-          <div
-            id="value_switch_to_saint"
-            :class="tag_class_sanity"
-            @click="switchUnit(1)"
-          >
-            等效理智
-          </div>
-          <div
-            id="value_switch_to_green"
-            :class="tag_class_green"
-            @click="switchUnit(2)"
-          >
-            等效绿票
-          </div>
+          <div id="value_switch_to_saint" :class="tag_class_sanity" @click="switchUnit(1)">等效理智</div>
+          <div id="value_switch_to_green" :class="tag_class_green" @click="switchUnit(2)">等效绿票</div>
           <div class="tab_text">
-            <a
-              style="color: rgb(65, 105, 240)"
-              href="https://houduan.yituliu.site/file/export/item/value/excel"
-            >
+            <a style="color: rgb(65, 105, 240)" href="https://houduan.yituliu.site/file/export/item/value/excel">
               导出Excel</a
             >
           </div>
           <div class="tab_text">
-            <a
-              style="color: rgb(65, 105, 240)"
-              href="https://houduan.yituliu.site/file/export/item/value/json"
-            >
+            <a style="color: rgb(65, 105, 240)" href="https://houduan.yituliu.site/file/export/item/value/json">
               导出Json</a
             >
           </div>
@@ -44,11 +26,7 @@
       <div class="value_content" style="display: flex; flex-wrap: wrap">
         <div class="value_half" id="value_left">
           <div v-for="(card, index) in 4" :key="index" class="value_subList">
-            <div
-              v-for="(item, index) in itemList"
-              :key="index"
-              class="value_item"
-            >
+            <div v-for="(item, index) in itemList" :key="index" class="value_item">
               <!-- {{item}}{{card}} -->
               <div :class="getItemValueCard(card, item.cardNum, item.type)">
                 <table>
@@ -58,16 +36,10 @@
                         <!-- <img class="item_img_size" :src="static_imgUrl(item.itemName)" :alt="getItemName(item.itemName)"/> -->
                         <div :class="getSpriteImg(item.itemId, 0)"></div>
                       </td>
-                      <td
-                        v-show="valueType == 'sanity'"
-                        class="value_subList_value_font"
-                      >
+                      <td v-show="valueType == 'sanity'" class="value_subList_value_font">
                         {{ getItemsanityValue(item.itemId, item.itemValue) }}
                       </td>
-                      <td
-                        v-show="valueType == 'green'"
-                        class="value_subList_value_font"
-                      >
+                      <td v-show="valueType == 'green'" class="value_subList_value_font">
                         {{ getItemGreenValue(item.itemId, item.itemValue) }}
                       </td>
                     </tr>
@@ -78,17 +50,8 @@
           </div>
         </div>
         <div class="value_half" id="value_right">
-          <div
-            v-for="(card, index) in cardNum"
-            :key="index"
-            class="value_subList"
-            v-show="index > 3 && index < 8"
-          >
-            <div
-              v-for="(item, index) in itemList"
-              :key="index"
-              class="value_item"
-            >
+          <div v-for="(card, index) in cardNum" :key="index" class="value_subList" v-show="index > 3 && index < 8">
+            <div v-for="(item, index) in itemList" :key="index" class="value_item">
               <div :class="getItemValueCard(card, item.cardNum, item.type)">
                 <table>
                   <tbody>
@@ -97,16 +60,10 @@
                         <!-- <img class="item_img_size" :src="static_imgUrl(item.itemName)" :alt="getItemName(item.itemName)"/> -->
                         <div :class="getSpriteImg(item.itemId, 0)"></div>
                       </td>
-                      <td
-                        v-show="valueType == 'sanity'"
-                        class="value_subList_value_font"
-                      >
+                      <td v-show="valueType == 'sanity'" class="value_subList_value_font">
                         {{ getItemsanityValue(item.itemId, item.itemValue) }}
                       </td>
-                      <td
-                        v-show="valueType == 'green'"
-                        class="value_subList_value_font"
-                      >
+                      <td v-show="valueType == 'green'" class="value_subList_value_font">
                         {{ getItemGreenValue(item.itemId, item.itemValue) }}
                       </td>
                     </tr>

@@ -27,53 +27,25 @@
         </tr>
         <tr v-for="index in packPPRDataLength" :key="index" class="title—tr">
           <td>
-            <input
-              type="text"
-              class="input_long"
-              v-model="packName[index - 1]"
-            />
+            <input type="text" class="input_long" v-model="packName[index - 1]" />
           </td>
           <td>
-            <input
-              type="text"
-              class="input_long"
-              v-model="packShowName[index - 1]"
-            />
+            <input type="text" class="input_long" v-model="packShowName[index - 1]" />
           </td>
           <td>
-            <input
-              type="text"
-              class="input_long"
-              v-model="packImg[index - 1]"
-            />
+            <input type="text" class="input_long" v-model="packImg[index - 1]" />
           </td>
           <td>
-            <input
-              type="text"
-              class="input_short"
-              v-model="packType[index - 1]"
-            />
+            <input type="text" class="input_short" v-model="packType[index - 1]" />
           </td>
           <td>
-            <input
-              type="text"
-              class="input_short"
-              v-model.number="packID[index - 1]"
-            />
+            <input type="text" class="input_short" v-model.number="packID[index - 1]" />
           </td>
           <td>
-            <input
-              type="text"
-              class="input_short"
-              v-model.number="packState[index - 1]"
-            />
+            <input type="text" class="input_short" v-model.number="packState[index - 1]" />
           </td>
           <td>
-            <input
-              type="text"
-              class="input_short"
-              v-model.number="packPrice[index - 1]"
-            />
+            <input type="text" class="input_short" v-model.number="packPrice[index - 1]" />
           </td>
           <!-- <td><input type="text" class="input_short" v-model="packDraw[index-1]"/></td>
         <td><input type="text" class="input_short" v-model="packOriginium[index-1]"/></td>
@@ -82,50 +54,26 @@
         <td><input type="text" class="input_short" v-model="packPPRDraw[index-1]"/></td>
         <td><input type="text" class="input_short" v-model="packPPROriginium[index-1]"/></td> -->
           <td>
-            <input
-              type="text"
-              class="input_short"
-              v-model.number="gachaOrundum[index - 1]"
-            />
+            <input type="text" class="input_short" v-model.number="gachaOrundum[index - 1]" />
           </td>
           <td>
-            <input
-              type="text"
-              class="input_short"
-              v-model.number="gachaOriginium[index - 1]"
-            />
+            <input type="text" class="input_short" v-model.number="gachaOriginium[index - 1]" />
           </td>
           <td>
-            <input
-              type="text"
-              class="input_short"
-              v-model.number="gachaPermit[index - 1]"
-            />
+            <input type="text" class="input_short" v-model.number="gachaPermit[index - 1]" />
           </td>
           <td>
-            <input
-              type="text"
-              class="input_short"
-              v-model.number="gachaPermit10[index - 1]"
-            />
+            <input type="text" class="input_short" v-model.number="gachaPermit10[index - 1]" />
           </td>
           <td><input type="text" class="" v-model="packTag[index - 1]" /></td>
           <td>
             <div class="div-Content">
               <div v-for="count in 12" :key="count" class="div-item">
                 <div>
-                  <input
-                    type="text"
-                    class="input_content"
-                    v-model="packContent_item[index - 1][count - 1]"
-                  />
+                  <input type="text" class="input_content" v-model="packContent_item[index - 1][count - 1]" />
                 </div>
                 <div>
-                  <input
-                    type="text"
-                    class="input_content"
-                    v-model.number="packContent_count[index - 1][count - 1]"
-                  />
+                  <input type="text" class="input_content" v-model.number="packContent_count[index - 1][count - 1]" />
                 </div>
               </div>
             </div>
@@ -235,10 +183,7 @@ export default {
           var content_item = {};
           content_item.packContentItem = this.packContent_item[i][j];
           content_item.packContentQuantity = this.packContent_count[i][j];
-          if (
-            this.packContent_item[i][j] != undefined &&
-            this.packContent_item[i][j] != ""
-          ) {
+          if (this.packContent_item[i][j] != undefined && this.packContent_item[i][j] != "") {
             content.push(content_item);
           }
         }
@@ -246,15 +191,11 @@ export default {
         console.log("礼包", i, this.packContent_item[i][0] != undefined);
         console.log("礼包", i, this.packContent_item[i][0] != "");
 
-        if (
-          this.packContent_item[i][0] != undefined &&
-          this.packContent_item[i][0] != ""
-        ) {
+        if (this.packContent_item[i][0] != undefined && this.packContent_item[i][0] != "") {
           map.packContent = content;
         }
 
-        if (this.packName[i] != undefined && this.packName[i] != "")
-          list.push(map);
+        if (this.packName[i] != undefined && this.packName[i] != "") list.push(map);
       }
       this.packJson = list;
       console.log(list);

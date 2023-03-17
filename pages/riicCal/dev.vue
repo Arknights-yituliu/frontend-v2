@@ -51,11 +51,7 @@
             <!-- <el-radio-button label="4班" ></el-radio-button> -->
           </el-radio-group>
         </div>
-        <div
-          class="riic_building_parameter"
-          v-for="(planItem, index) in plans"
-          :key="index"
-        >
+        <div class="riic_building_parameter" v-for="(planItem, index) in plans" :key="index">
           <div class="parameter_text" style="width: 108px">名称/起止时间</div>
           <el-input
             size="small"
@@ -89,26 +85,13 @@
       <div class="riic_building">
         <div class="riic_building_title">方案导入/导出</div>
         <div class="riic_building_parameter">
-          <el-button size="medium" type="primary" round style="width: 126px">
-            生成排班方案
-          </el-button>
+          <el-button size="medium" type="primary" round style="width: 126px"> 生成排班方案 </el-button>
           <div
             id="export_cover"
-            style="
-              position: absolute;
-              width: 235px;
-              height: 40px;
-              margin: -38px 18px 18px 137px;
-              background: #ffffff80;
-            "
+            style="position: absolute; width: 235px; height: 40px; margin: -38px 18px 18px 137px; background: #ffffff80"
           ></div>
           <a>
-            <el-button
-              size="medium"
-              type="primary"
-              round
-              style="width: 108px; margin-left: 12px"
-            >
+            <el-button size="medium" type="primary" round style="width: 108px; margin-left: 12px">
               导出到本地
             </el-button>
           </a>
@@ -122,9 +105,7 @@
           </el-button> *(后续可用)
         </div> -->
         <div class="riic_building_parameter">
-          <el-button size="medium" type="primary" round style="width: 126px">
-            通过id导入
-          </el-button>
+          <el-button size="medium" type="primary" round style="width: 126px"> 通过id导入 </el-button>
           <el-input
             size="small"
             class="parameter_inputbox"
@@ -138,9 +119,7 @@
         </div>
         <div class="riic_building_parameter">
           <a href="https://www.wjx.cn/vm/mRNtSzd.aspx#">
-            <el-button size="medium" type="warning" round style="width: 186px">
-              排班生成器 问题反馈
-            </el-button>
+            <el-button size="medium" type="warning" round style="width: 186px"> 排班生成器 问题反馈 </el-button>
           </a>
         </div>
 
@@ -182,23 +161,14 @@
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">无人机</div>
-            <el-switch
-              active-color="#13ce66"
-              inactive-color="#c0c4cc"
-              v-model="planItem.drones.enable"
-            ></el-switch>
+            <el-switch active-color="#13ce66" inactive-color="#c0c4cc" v-model="planItem.drones.enable"></el-switch>
             <el-radio-group size="small" v-model="planItem.drones.room">
-              <el-radio-button
-                label="贸易站"
-                value="manufacture"
-              ></el-radio-button>
+              <el-radio-button label="贸易站" value="manufacture"></el-radio-button>
               <el-radio-button label="制造站" value="trading"></el-radio-button>
             </el-radio-group>
           </div>
           <div class="riic_building_parameter">
-            <div class="parameter_text" style="font-size: 15px">
-              目标房间编号
-            </div>
+            <div class="parameter_text" style="font-size: 15px">目标房间编号</div>
             <el-radio-group size="small" v-model="planItem.drones.index">
               <el-radio-button label="1"></el-radio-button>
               <el-radio-button label="2"></el-radio-button>
@@ -216,11 +186,7 @@
           </div>
           <div class="riic_building_parameter">
             <div class="parameter_text">菲亚梅塔</div>
-            <el-switch
-              active-color="#13ce66"
-              inactive-color="#c0c4cc"
-              v-model="planItem.Fiammetta.enable"
-            ></el-switch>
+            <el-switch active-color="#13ce66" inactive-color="#c0c4cc" v-model="planItem.Fiammetta.enable"></el-switch>
             <el-input
               size="small"
               style="width: 128px"
@@ -285,41 +251,25 @@
           </div>
         </div> -->
 
-          <div
-            class="riic_building building_trade"
-            v-for="(trading, index) in planItem.trading"
-            :key="index"
-          >
+          <div class="riic_building building_trade" v-for="(trading, index) in planItem.trading" :key="index">
             <div class="riic_building_title">
               贸易站1
               <el-checkbox
-                style="
-                  margin: 4px 0px 0px 0px;
-                  background-color: #ffffff80;
-                  vertical-align: top;
-                "
+                style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
                 size="mini"
                 label="顺序入驻"
                 border
                 v-model="trading.sort"
               ></el-checkbox>
               <el-checkbox
-                style="
-                  margin: 4px 0px 0px 0px;
-                  background-color: #ffffff80;
-                  vertical-align: top;
-                "
+                style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
                 size="mini"
                 label="补满空位"
                 border
                 v-model="trading.autofill"
               ></el-checkbox>
               <el-checkbox
-                style="
-                  margin: 4px 0px 0px 0px;
-                  background-color: #ffffff80;
-                  vertical-align: top;
-                "
+                style="margin: 4px 0px 0px 0px; background-color: #ffffff80; vertical-align: top"
                 size="mini"
                 label="跳过"
                 border
@@ -638,8 +588,7 @@ export default {
       { charset: "utf-8" },
       {
         name: "viewport",
-        content:
-          "width=device-width, initial-scale=0.68, maximum-scale=0.68, user-scalable=no",
+        content: "width=device-width, initial-scale=0.68, maximum-scale=0.68, user-scalable=no",
       },
       {
         hid: "description",
@@ -876,13 +825,7 @@ export default {
         }
         for (var d = 0; d < 5; d++) {
           var dormitory = {
-            operators: [
-              i + "-d-" + d,
-              i + "-d-" + d,
-              i + "-d-" + d,
-              i + "-d-" + d,
-              i + "-d-" + d,
-            ],
+            operators: [i + "-d-" + d, i + "-d-" + d, i + "-d-" + d, i + "-d-" + d, i + "-d-" + d],
             sort: true,
             autofill: false,
             skip: false,

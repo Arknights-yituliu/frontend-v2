@@ -39,62 +39,32 @@
       <div class="foot_unit">
         <p class="foot_unit_title">-本页开发-</p>
         <a href="https://space.bilibili.com/39109412">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/84258011?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/84258011?v=4" />
             山桜
           </div>
         </a>
         <a href="https://space.bilibili.com/10057492">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/84625349?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/84625349?v=4" />
             Zirunwang
           </div>
         </a>
         <a href="https://github.com/Yanstory">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/5153875?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/5153875?v=4" />
             Yanstory
           </div>
         </a>
         <a href="https://github.com/DSLM">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/12635058?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/12635058?v=4" />
             DSLM
           </div>
         </a>
         <a href="https://github.com/ZhaoZuohong">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/34163622?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/34163622?v=4" />
             ZhaoZuohong
           </div>
         </a>
@@ -103,10 +73,7 @@
       <div class="foot_unit">
         <p class="foot_unit_title">-数据源-</p>
         <a href="https://yituliu.site/">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle; color: gray"
-          >
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle; color: gray">
             <img class="foot_unit_pic" src="/img/website/ico64.png" />一图流主站
           </div>
         </a>
@@ -115,20 +82,14 @@
       <div class="foot_unit">
         <p class="foot_unit_title">-B站发布-</p>
         <a href="https://space.bilibili.com/688411531">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
             <img class="foot_unit_pic" src="/img/website/bilibili.png" />
             罗德岛基建BETA
           </div>
         </a>
         <p class="foot_unit_title">-粉丝群-</p>
         <a href="https://jq.qq.com/?_wv=1027&k=q1z3p9Yj">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
             <img class="foot_unit_pic" src="/img/website/qq.png" />
             阿戈尔数据文献馆
           </div>

@@ -155,7 +155,7 @@
 
 <script>
 import toolApi from "@/api/tool";
-import echarts from "static/js/echarts.min.js";
+// import echarts from "static/js/echarts.min.js";
 
 export default {
   layout: "poster",

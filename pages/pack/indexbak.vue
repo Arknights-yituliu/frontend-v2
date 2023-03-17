@@ -1,63 +1,39 @@
 <template>
   <div id="pack" style="display: flex">
     <div id="pack_left">
-      <div
-        v-for="(pack2, index) in packsPPRData"
-        :key="index"
-        class="pack_unit"
-      >
+      <div v-for="(pack2, index) in packsPPRData" :key="index" class="pack_unit">
         <div class="pack_img" :style="getPackPic(pack2.packName)">
-          <div class="pack_img_text1">
-            {{ pack2.packShowName }} ￥{{ pack2.packPrice }}
-          </div>
+          <div class="pack_img_text1">{{ pack2.packShowName }} ￥{{ pack2.packPrice }}</div>
         </div>
 
         <div class="pack_info">
           <div class="pack_info_text">
-            共{{ pack2.packDraw }}抽 <br /><t1
-              >￥{{ getEfficiency(pack2.packRmbPerDraw, 1) }}/抽</t1
-            >
+            共{{ pack2.packDraw }}抽 <br /><t1>￥{{ getEfficiency(pack2.packRmbPerDraw, 1) }}/抽</t1>
           </div>
           <div class="pack_chart">
             <div class="pack_chart_unit" v-show="pack2.packPPRDraw >= 1.57">
               <div class="pack_chart_unit_text">本礼包</div>
-              <div
-                class="pack_chart_unit_ppr bg_red"
-                :style="getWidth(pack2.packPPRDraw * 100, 0.75)"
-              >
+              <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack2.packPPRDraw * 100, 0.75)">
                 {{ getEfficiency(pack2.packPPRDraw * 100, 0) }}%
               </div>
             </div>
             <div class="pack_chart_unit">
               <div class="pack_chart_unit_text">大月卡</div>
-              <div class="pack_chart_unit_ppr" :style="getWidth(157, 0.75)">
-                157%
-              </div>
+              <div class="pack_chart_unit_ppr" :style="getWidth(157, 0.75)">157%</div>
             </div>
-            <div
-              class="pack_chart_unit"
-              v-show="pack2.packPPRDraw < 1.57 && pack2.packPPRDraw >= 1"
-            >
+            <div class="pack_chart_unit" v-show="pack2.packPPRDraw < 1.57 && pack2.packPPRDraw >= 1">
               <div class="pack_chart_unit_text">本礼包</div>
-              <div
-                class="pack_chart_unit_ppr bg_red"
-                :style="getWidth(pack2.packPPRDraw * 100, 0.75)"
-              >
+              <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack2.packPPRDraw * 100, 0.75)">
                 {{ getEfficiency(pack2.packPPRDraw * 100, 0) }}%
               </div>
             </div>
             <div class="pack_chart_unit">
               <div class="pack_chart_unit_text">648源石</div>
-              <div class="pack_chart_unit_ppr" :style="getWidth(100, 0.75)">
-                100%
-              </div>
+              <div class="pack_chart_unit_ppr" :style="getWidth(100, 0.75)">100%</div>
             </div>
             <div class="pack_chart_unit" v-show="pack2.packPPRDraw < 1">
               <div class="pack_chart_unit_text">本礼包</div>
-              <div
-                class="pack_chart_unit_ppr bg_red"
-                :style="getWidth(pack2.packPPRDraw * 100, 0.75)"
-              >
+              <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack2.packPPRDraw * 100, 0.75)">
                 {{ getEfficiency(pack2.packPPRDraw * 100, 0) }}%
               </div>
             </div>
@@ -66,39 +42,17 @@
 
         <div class="pack_type">仅计抽卡</div>
 
-        <div class="pack_corner corner_new" v-show="pack2.packType == 'limit'">
-          New!
-        </div>
-        <div
-          class="pack_corner corner_monthly"
-          v-show="pack2.packType == 'monthly'"
-        >
-          每月
-        </div>
-        <div
-          class="pack_corner corner_monthly"
-          v-show="pack2.packType == 'weekly'"
-        >
-          每周
-        </div>
-        <div class="pack_corner corner_once" v-show="pack2.packType == 'once'">
-          一次
-        </div>
-        <div class="pack_corner corner_once" v-show="pack2.packType == 'year'">
-          双倍
-        </div>
+        <div class="pack_corner corner_new" v-show="pack2.packType == 'limit'">New!</div>
+        <div class="pack_corner corner_monthly" v-show="pack2.packType == 'monthly'">每月</div>
+        <div class="pack_corner corner_monthly" v-show="pack2.packType == 'weekly'">每周</div>
+        <div class="pack_corner corner_once" v-show="pack2.packType == 'once'">一次</div>
+        <div class="pack_corner corner_once" v-show="pack2.packType == 'year'">双倍</div>
       </div>
     </div>
     <div id="pack_right">
-      <div
-        v-for="(pack3, index) in packsPPRData"
-        :key="index"
-        class="pack_unit"
-      >
+      <div v-for="(pack3, index) in packsPPRData" :key="index" class="pack_unit">
         <div class="pack_img" :style="getPackPic(pack3.packName)">
-          <div class="pack_img_text1">
-            {{ pack3.packShowName }} ￥{{ pack3.packPrice }}
-          </div>
+          <div class="pack_img_text1">{{ pack3.packShowName }} ￥{{ pack3.packPrice }}</div>
         </div>
 
         <div class="pack_info">
@@ -108,50 +62,29 @@
             >
           </div>
           <div class="pack_chart">
-            <div
-              class="pack_chart_unit"
-              v-show="pack3.packPPROriginium >= 1.57"
-            >
+            <div class="pack_chart_unit" v-show="pack3.packPPROriginium >= 1.57">
               <div class="pack_chart_unit_text">本礼包</div>
-              <div
-                class="pack_chart_unit_ppr bg_red"
-                :style="getWidth(pack3.packPPROriginium * 100, 0.75)"
-              >
+              <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack3.packPPROriginium * 100, 0.75)">
                 {{ getEfficiency(pack3.packPPROriginium * 100, 0) }}%
               </div>
             </div>
             <div class="pack_chart_unit">
               <div class="pack_chart_unit_text">大月卡</div>
-              <div class="pack_chart_unit_ppr" :style="getWidth(157, 0.75)">
-                157%
-              </div>
+              <div class="pack_chart_unit_ppr" :style="getWidth(157, 0.75)">157%</div>
             </div>
-            <div
-              class="pack_chart_unit"
-              v-show="
-                pack3.packPPROriginium < 1.57 && pack3.packPPROriginium >= 1
-              "
-            >
+            <div class="pack_chart_unit" v-show="pack3.packPPROriginium < 1.57 && pack3.packPPROriginium >= 1">
               <div class="pack_chart_unit_text">本礼包</div>
-              <div
-                class="pack_chart_unit_ppr bg_red"
-                :style="getWidth(pack3.packPPROriginium * 100, 0.75)"
-              >
+              <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack3.packPPROriginium * 100, 0.75)">
                 {{ getEfficiency(pack3.packPPROriginium * 100, 0) }}%
               </div>
             </div>
             <div class="pack_chart_unit">
               <div class="pack_chart_unit_text">648源石</div>
-              <div class="pack_chart_unit_ppr" :style="getWidth(100, 0.75)">
-                100%
-              </div>
+              <div class="pack_chart_unit_ppr" :style="getWidth(100, 0.75)">100%</div>
             </div>
             <div class="pack_chart_unit" v-show="pack3.packPPROriginium < 1">
               <div class="pack_chart_unit_text">本礼包</div>
-              <div
-                class="pack_chart_unit_ppr bg_red"
-                :style="getWidth(pack3.packPPROriginium * 100, 0.75)"
-              >
+              <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack3.packPPROriginium * 100, 0.75)">
                 {{ getEfficiency(pack3.packPPROriginium * 100, 0) }}%
               </div>
             </div>
@@ -159,27 +92,11 @@
         </div>
 
         <div class="pack_type">材料折合源石</div>
-        <div class="pack_corner corner_new" v-show="pack3.packType == 'limit'">
-          New!
-        </div>
-        <div
-          class="pack_corner corner_monthly"
-          v-show="pack3.packType == 'monthly'"
-        >
-          每月
-        </div>
-        <div
-          class="pack_corner corner_monthly"
-          v-show="pack3.packType == 'weekly'"
-        >
-          每周
-        </div>
-        <div class="pack_corner corner_once" v-show="pack3.packType == 'once'">
-          一次
-        </div>
-        <div class="pack_corner corner_once" v-show="pack3.packType == 'year'">
-          双倍
-        </div>
+        <div class="pack_corner corner_new" v-show="pack3.packType == 'limit'">New!</div>
+        <div class="pack_corner corner_monthly" v-show="pack3.packType == 'monthly'">每月</div>
+        <div class="pack_corner corner_monthly" v-show="pack3.packType == 'weekly'">每周</div>
+        <div class="pack_corner corner_once" v-show="pack3.packType == 'once'">一次</div>
+        <div class="pack_corner corner_once" v-show="pack3.packType == 'year'">双倍</div>
       </div>
     </div>
   </div>
@@ -360,11 +277,7 @@ export default {
         return "background:url(https://ak.hycdn.cn/announce/images/20221021/c9f1738ab94962bff14edc1dc92c098e.JPG) 85% 20%  / 400% no-repeat,#444444";
       if (img === "枯焰芯片礼包")
         return "background:url(https://ak.hycdn.cn/announce/images/20221208/e2f417b45fcc108caf01521d7d0d09fe.jpg) 75% 50%  / 250% no-repeat,#444444";
-      return (
-        "background:url(/img/packs/" +
-        img +
-        ".png) 00% 110% / cover no-repeat,#444444;"
-      );
+      return "background:url(/img/packs/" + img + ".png) 00% 110% / cover no-repeat,#444444;";
     },
   },
 };

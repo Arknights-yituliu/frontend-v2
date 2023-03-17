@@ -13,7 +13,6 @@
         <!-- <el-divider></el-divider> -->
         <div class="gacha_unit" id="total">
           <!-- 如果有4个选项则修改为 style="width:98%;margin:0 1%;"，子项宽度25% -->
-
           <el-radio-group
             size="small"
             style="width: 90%; margin: 6px 5%"
@@ -21,6 +20,17 @@
             @change="checkEndDate(timeSelector)"
           >
             <el-radio-button label="怪猎联动(3.21)" style="width: 33%"></el-radio-button>
+            <el-radio-button label="怪猎联动(3.23)" style="width: 33%"></el-radio-button>
+            <el-radio-button label="怪猎联动(3.28)" type="primary" style="width: 33%"></el-radio-button>
+            <!-- <el-radio-button label="????" disabled style="width:32%;"></el-radio-button> -->
+          </el-radio-group>
+          <el-radio-group
+            size="small"
+            style="width: 90%; margin: 6px 5%"
+            v-model="timeSelector"
+            @change="checkEndDate(timeSelector)"
+          >
+            <el-radio-button label="怪猎联动(3.30)" style="width: 33%"></el-radio-button>
             <el-radio-button label="4周年(5.15)" style="width: 33%"></el-radio-button>
             <el-radio-button label="夏活限定" type="primary" style="width: 33%" disabled></el-radio-button>
             <!-- <el-radio-button label="????" disabled style="width:32%;"></el-radio-button> -->
@@ -176,7 +186,7 @@
               type="text"
               @change="compute()"
               v-model.number="customValue"
-              oninput="value=value.replace(/[^0-9-]+/g, '')"
+              oninput="value=value.replace(/[^\d]/g, '')"
             />
             <div class="gacha_unit_child_title" style="width: 330px">自定义修正值(合成玉)</div>
             <div class="gacha_resources_unit" style="width: 135px">
@@ -216,13 +226,7 @@
             搓玉计算
           </div>
           <div class="gacha_unit_child">
-            <input
-              class="gacha_unit_child_inputbox"
-              type="text"
-              @change="compute()"
-              v-model.number="orundum_ap"
-              oninput="value=value.replace(/[^0-9-]+/g, '')"
-            />
+            <input class="gacha_unit_child_inputbox" type="text" @change="compute()" v-model.number="orundum_ap" />
             用于搓玉的理智 X
             <input
               class="gacha_unit_child_inputbox"
@@ -238,7 +242,7 @@
               {{ toFixedByAcc(orundum_ap * orundum_rate, 2) }}
             </div>
           </div>
-          <div class="gacha_unit_info">搓玉系数：1-7(1.09)</div>
+          <div class="gacha_unit_info">搓玉系数：1-7(1.09)，GA-4(0.83)</div>
           <div class="gacha_unit_child">
             <a href="/?item=Orundum" style="margin: 0px 24px 0px 0px">查看其它可搓玉关卡</a>
             <a href="https://www.bilibili.com/video/BV1XT411F7m4" style="display: inline-block">
@@ -593,7 +597,7 @@
                     style="width: 40px"
                     v-show="singlePack.gachaOrundum > 0.1"
                     :class="getSpriteImg('4003icon', 0)"
-                  />
+                  ></div>
                   <div style="width: 54px" v-show="singlePack.gachaOrundum > 0.1">
                     {{ singlePack.gachaOrundum }}
                   </div>
@@ -601,11 +605,15 @@
                     style="width: 40px"
                     v-show="singlePack.gachaOriginium > 0.1"
                     :class="getSpriteImg('4002icon', 0)"
-                  />
+                  ></div>
                   <div style="width: 54px" v-show="singlePack.gachaOriginium > 0.1">
                     {{ singlePack.gachaOriginium }}
                   </div>
-                  <div style="width: 40px" v-show="singlePack.gachaPermit > 0.1" :class="getSpriteImg('7003icon', 0)" />
+                  <div
+                    style="width: 40px"
+                    v-show="singlePack.gachaPermit > 0.1"
+                    :class="getSpriteImg('7003icon', 0)"
+                  ></div>
                   <div style="width: 54px" v-show="singlePack.gachaPermit > 0.1">
                     {{ singlePack.gachaPermit }}
                   </div>
@@ -613,7 +621,7 @@
                     style="width: 40px"
                     v-show="singlePack.gachaPermit10 > 0.1"
                     :class="getSpriteImg('7004icon', 0)"
-                  />
+                  ></div>
                   <div style="width: 54px" v-show="singlePack.gachaPermit10 > 0.1">
                     {{ singlePack.gachaPermit10 }}
                   </div>
@@ -1024,7 +1032,7 @@ export default {
       paradox: 0, //悖论模拟
       annihilation: 0, //未通过剿灭个数
       orundum_ap: 0, //用于搓玉的理智数量
-      orundum_rate: 1.09, //搓玉系数
+      orundum_rate: 0, //搓玉系数
 
       remainingDays: 0, //剩余天数
       remainingWeeks: 0, //剩余周数
@@ -1080,8 +1088,7 @@ export default {
         title: "更新公告",
         dangerouslyUseHTMLString: true,
         // message: '<strong> 限定池还有'+ this.poolCountDown + '天,结束</strong>',
-        message:
-          "<strong> 新增 剿灭战模拟战计算<br>调整搓玉计算模块<br>因为鹰角自由的发饼更新了自由的联动日期</strong>",
+        message: "<strong> 新增 剿灭战模拟战计算<br>调整搓玉计算模块</strong>",
         duration: 12000,
       });
     },
@@ -1103,6 +1110,21 @@ export default {
         this.poolCountDownFlag_permit = false; //是否要计算限定池倒计时（主要用于计算每日赠送合成玉和单抽）
         this.poolCountDownFlag_orundum = false; //是否要计算限定池倒计时（主要用于计算每日赠送合成玉和单抽）
         this.gacha_store258List = [];
+      } else if (this.timeSelector === "怪猎联动(3.23)") {
+        this.endDate = "2023/03/23 03:59:00";
+        this.rewardType = "联动限定";
+        this.poolCountDownFlag_permit = false;
+        this.poolCountDownFlag_orundum = false;
+      } else if (this.timeSelector === "怪猎联动(3.28)") {
+        this.endDate = "2023/03/28 03:59:00";
+        this.rewardType = "联动限定";
+        this.poolCountDownFlag_permit = false;
+        this.poolCountDownFlag_orundum = false;
+      } else if (this.timeSelector === "怪猎联动(3.30)") {
+        this.endDate = "2023/03/30 03:59:00";
+        this.rewardType = "联动限定";
+        this.poolCountDownFlag_permit = false;
+        this.poolCountDownFlag_orundum = false;
       } else if (this.timeSelector === "4周年(5.15)") {
         this.endDate = "2023/05/15 03:59:00";
         this.rewardType = "周年限定";
@@ -1749,7 +1771,7 @@ export default {
   .el-collapse {
     padding-left: 550px;
     height: 100%;
-    overflow-y: scroll;
+    overflow: scroll;
   }
 
   #gacha {

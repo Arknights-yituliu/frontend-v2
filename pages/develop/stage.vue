@@ -9,23 +9,9 @@
           <div :class="opETextTheme">Best Stages</div>
         </div>
         <div class="op_title_tag">
-          <div id="nowActStageKey" class="op_tag_0" @click="showNowActive()">
-            只显示up
-          </div>
-          <div
-            id="orundumStageKey"
-            class="op_tag_0"
-            @click="showOrundumPopup()"
-          >
-            搓玉版
-          </div>
-          <div
-            id="historyStageKey"
-            class="op_tag_0"
-            @click="showHistoryPopup()"
-          >
-            往期活动效率
-          </div>
+          <div id="nowActStageKey" class="op_tag_0" @click="showNowActive()">只显示up</div>
+          <div id="orundumStageKey" class="op_tag_0" @click="showOrundumPopup()">搓玉版</div>
+          <div id="historyStageKey" class="op_tag_0" @click="showHistoryPopup()">往期活动效率</div>
           <!-- <div id="orundumStageKey" class="op_tag_0" @click="switchStrategy()">
             高级选项
           </div> -->
@@ -70,10 +56,7 @@
           @click="showPopup(indexAll)"
         >
           <!-- <div class="stage_card_t3_img" :style="getCardBackground(materialRankT3[1].itemType)"></div> -->
-          <div
-            class="stage_card_t3_img"
-            :class="getSpriteImg(materialRankT3[0].itemId, 0)"
-          ></div>
+          <div class="stage_card_t3_img" :class="getSpriteImg(materialRankT3[0].itemId, 0)"></div>
 
           <div class="stage_card_t3_table">
             <table>
@@ -90,9 +73,7 @@
                   <td>
                     <div :class="getSpriteImg(stage.secondaryId, 1)"></div>
                   </td>
-                  <td class="stage_table_c3">
-                    {{ getEfficiency(stage.stageEfficiency, 1) }}%
-                  </td>
+                  <td class="stage_table_c3">{{ getEfficiency(stage.stageEfficiency, 1) }}%</td>
                   <!-- <td class="stage_table_c4">{{getBoxEfficiency(stage.stageState, stage.stageEfficiencyEx, stage.stageEfficiency)}}</td> -->
                 </tr>
               </tbody>
@@ -100,38 +81,14 @@
           </div>
         </div>
         <!-- 排版占位用卡片 -->
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
       </div>
       <!-- 扩展卡 -->
       <div class="op_content" id="stage_t3_content_plus" style="display: none">
@@ -142,10 +99,7 @@
           :style="judgeActive(index)"
           @click="showPopup(index)"
         >
-          <div
-            class="stage_card_t3_img"
-            :class="getSpriteImg(materialRankT3[0].itemId, 0)"
-          ></div>
+          <div class="stage_card_t3_img" :class="getSpriteImg(materialRankT3[0].itemId, 0)"></div>
 
           <div class="stage_card_t3_table">
             <table>
@@ -162,9 +116,7 @@
                   <td>
                     <div :class="getSpriteImg(stage.secondaryId, 1)"></div>
                   </td>
-                  <td class="stage_table_c3">
-                    {{ getEfficiency(stage.stageEfficiency, 1) }}%
-                  </td>
+                  <td class="stage_table_c3">{{ getEfficiency(stage.stageEfficiency, 1) }}%</td>
                   <!-- <td class="stage_table_c4">{{getBoxEfficiency(stage.stageState, stage.stageEfficiencyEx, stage.stageEfficiency)}}</td> -->
                 </tr>
               </tbody>
@@ -172,35 +124,16 @@
           </div>
         </div>
         <!-- 排版占位用卡片 -->
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
-        <el-card
-          class="stage_card_t3"
-          style="height: 0px; margin-bottom: 0px"
-        ></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
+        <el-card class="stage_card_t3" style="height: 0px; margin-bottom: 0px"></el-card>
       </div>
       <!-- t2内容区域 -->
       <div class="op_content" id="stage_t2_content">
         <div class="stage_card_t2 uni_shadow_2">
-          <div
-            v-for="(materialRankT2, index) in stageRankT2.slice(0, 6)"
-            :key="index"
-            class="stage_card_t2_img"
-          >
+          <div v-for="(materialRankT2, index) in stageRankT2.slice(0, 6)" :key="index" class="stage_card_t2_img">
             <!-- <img :src="getImgUrl(materialRankT2[0].itemName)" :alt="materialRankT2[0].itemName" "> -->
             <div
               :class="getSpriteImg(materialRankT2[0].itemId, 100)"
@@ -219,10 +152,7 @@
       <!-- 散装标题Start -->
       <div class="popup_card" id="popup_card">
         <div class="popup_header">
-          <div
-            :class="getSpriteImg(itemId, 2)"
-            style="display: inline-block; margin: 10px"
-          ></div>
+          <div :class="getSpriteImg(itemId, 2)" style="display: inline-block; margin: 10px"></div>
           <div class="popup_header_text">{{ itemType }}</div>
           <a :href="getPenguinUrl(itemId)" target="_blank">
             <div class="t3 popup_header_penguin" style="display: flex">
@@ -237,27 +167,13 @@
         <table class="popup_table">
           <tbody>
             <tr class="popup_table_title">
-              <td class="popup_table_c1" style="width: 55px; width: 65px">
-                关卡名
-              </td>
-              <td class="popup_table_c2" style="width: 65px; width: 75px">
-                样本数<br />(置信度)
-              </td>
-              <td class="popup_table_c3" style="width: 40px; width: 50px">
-                SPM
-              </td>
-              <td class="popup_table_c4" style="width: 50px; width: 60px">
-                副产品
-              </td>
-              <td class="popup_table_c5" style="width: 80px; width: 90px">
-                主产物掉率
-              </td>
-              <td class="popup_table_c6" style="width: 80px; width: 90px">
-                主产物期望
-              </td>
-              <td class="popup_table_c7" style="width: 70px; width: 80px">
-                关卡效率
-              </td>
+              <td class="popup_table_c1" style="width: 55px; width: 65px">关卡名</td>
+              <td class="popup_table_c2" style="width: 65px; width: 75px">样本数<br />(置信度)</td>
+              <td class="popup_table_c3" style="width: 40px; width: 50px">SPM</td>
+              <td class="popup_table_c4" style="width: 50px; width: 60px">副产品</td>
+              <td class="popup_table_c5" style="width: 80px; width: 90px">主产物掉率</td>
+              <td class="popup_table_c6" style="width: 80px; width: 90px">主产物期望</td>
+              <td class="popup_table_c7" style="width: 70px; width: 80px">关卡效率</td>
               <!-- <td class="popup_table_c7" style="width:64px;">小样提升<br>(理论值)</td> -->
             </tr>
             <tr
@@ -266,25 +182,18 @@
               :class="getColor(stage.stageColor)"
               class="stage_table_r"
             >
-              <td
-                class="popup_table_c1"
-                :style="getHardcoreMark(stage.chapterName)"
-              >
+              <td class="popup_table_c1" :style="getHardcoreMark(stage.chapterName)">
                 {{ stage.stageCode }}
               </td>
               <td class="popup_table_c2" style="font-size: 14px">
-                {{ shrinkTimes(stage.sampleSize) }}<br />({{
-                  stage.sampleConfidence
-                }}%)
+                {{ shrinkTimes(stage.sampleSize) }}<br />({{ stage.sampleConfidence }}%)
               </td>
               <td class="popup_table_c3">{{ getEfficiency(stage.spm, 1) }}</td>
               <!-- <td class="popup_table_c4" ><img class="stage_img_secondary" :src="getImgUrl(stage.secondary)" alt=""></td> -->
               <td style="padding-left: 20px">
                 <div :class="getSpriteImg(stage.secondaryId, 3)"></div>
               </td>
-              <td class="popup_table_c5">
-                {{ getEfficiency(stage.knockRating * 100, 1) }}%
-              </td>
+              <td class="popup_table_c5">{{ getEfficiency(stage.knockRating * 100, 1) }}%</td>
               <td class="popup_table_c6">
                 {{ getEfficiency(stage.apExpect) }}
               </td>
@@ -301,15 +210,9 @@
           <div class="popup_text f12">
             效率基准:<b>常驻图</b>中综合效率最高者<br />
             置信度:掉率对关卡效率误差影响在3%前提下的可信度范围
-            <a
-              href="https://www.bilibili.com/video/BV1yL4y1P7K1"
-              style="margin-left: 8px"
-            >
+            <a href="https://www.bilibili.com/video/BV1yL4y1P7K1" style="margin-left: 8px">
               <div style="display: inline-block">详细介绍</div>
-              <div
-                style="display: inline-block"
-                :class="getSpriteImg('el', 7)"
-              ></div>
+              <div style="display: inline-block" :class="getSpriteImg('el', 7)"></div>
             </a>
             SPM:假设敌人被秒杀，1倍速下每分钟消耗的理智量，实际可能略有出入
           </div>
@@ -347,24 +250,14 @@
                   <!-- <div>1</div> -->
                   <!-- <div :class="getSpriteImg('AP_GAMEPLAY', 5)" ></div> -->
                   <div>{{ getEfficiency(stage.orundumPerAp) }}</div>
-                  <div
-                    style="margin-bottom: -15px"
-                    :class="getSpriteImg(4003, 5)"
-                  ></div>
+                  <div style="margin-bottom: -15px" :class="getSpriteImg(4003, 5)"></div>
                 </td>
                 <td class="popup_orundum_c3" style="width: 120px">
                   <div>{{ getEfficiency(stage.lMDCost) }}w</div>
-                  <div
-                    style="margin-bottom: -8px"
-                    :class="getSpriteImg(4001, 5)"
-                  ></div>
+                  <div style="margin-bottom: -8px" :class="getSpriteImg(4001, 5)"></div>
                 </td>
-                <td class="popup_table_c5" style="width: 95px">
-                  {{ stage.stageEfficiency }}%
-                </td>
-                <td class="popup_table_c6" style="width: 95px">
-                  {{ stage.orundumPerApEfficiency }}%
-                </td>
+                <td class="popup_table_c5" style="width: 95px">{{ stage.stageEfficiency }}%</td>
+                <td class="popup_table_c6" style="width: 95px">{{ stage.orundumPerApEfficiency }}%</td>
               </tr>
             </tbody>
           </table>
@@ -378,25 +271,12 @@
       </div>
       <!-- 往期活动 -->
       <div id="popup_card_history">
-        <div
-          v-for="(closedAct, index) in stageActHistory"
-          :key="index"
-          class="popup_card"
-        >
+        <div v-for="(closedAct, index) in stageActHistory" :key="index" class="popup_card">
           <div class="history_actName">{{ closedAct[0].activityName }}</div>
           <div class="history_actStages">
-            <div
-              v-for="(stage, index) in closedAct"
-              :key="index"
-              class="history_stage"
-            >
-              <div
-                :class="getSpriteImg(stage.itemId, 2)"
-                style="display: inline-block"
-              ></div>
-              <div class="history_stage_table">
-                {{ stage.stageCode }}<br />{{ stage.stageEfficiency }}%
-              </div>
+            <div v-for="(stage, index) in closedAct" :key="index" class="history_stage">
+              <div :class="getSpriteImg(stage.itemId, 2)" style="display: inline-block"></div>
+              <div class="history_stage_table">{{ stage.stageCode }}<br />{{ stage.stageEfficiency }}%</div>
             </div>
           </div>
         </div>
@@ -541,15 +421,10 @@ export default {
     },
     getImgUrl(img, source) {
       source = typeof source !== "undefined" ? type : 1;
-      if (source > 2.1)
-        return "https://image.yituliu.site/ activity_picture /" + img + ".png";
-      if (source > 1.1)
-        return "https://image.yituliu.site/item/" + img + ".png";
+      if (source > 2.1) return "https://image.yituliu.site/ activity_picture /" + img + ".png";
+      if (source > 1.1) return "https://image.yituliu.site/item/" + img + ".png";
       else if (source > 0.1) return "/img/materials/" + img + ".png";
-      else
-        return (
-          "https://cdn.jsdelivr.net/gh/zirun-wang/OnePicCDN/img/" + img + ".png"
-        );
+      else return "https://cdn.jsdelivr.net/gh/zirun-wang/OnePicCDN/img/" + img + ".png";
     },
 
     getCardBackground(url) {
@@ -582,10 +457,7 @@ export default {
       return "detail_card" + num.toString();
     },
     getHardcoreMark(area) {
-      if (area === "tough_10")
-        return (
-          "background: url(" + "/static/img_website/hcbg.png" + ") no-repeat;"
-        );
+      if (area === "tough_10") return "background: url(" + "/static/img_website/hcbg.png" + ") no-repeat;";
       else return "";
     },
     getUpMark(state) {
@@ -632,28 +504,24 @@ export default {
     },
 
     getStageResultDateT3() {
-      stageApi
-        .findStageDateByTypeOrderByEfficiencyDesc(500, this.stageVersion)
-        .then((response) => {
-          this.stageRankT3 = [];
-          this.stageRankT3 = response.data;
-          this.updateTime = response.data[0][0].updateTime;
-          cookie.set("updateTime", this.updateTime, { expires: 30 });
-          // this.$message({
-          //       message: '切换成功' ,
-          //       type: "success",
-          //       showClose: true,
-          //       duration: 2000,
-          //     });
-        });
+      stageApi.findStageDateByTypeOrderByEfficiencyDesc(500, this.stageVersion).then((response) => {
+        this.stageRankT3 = [];
+        this.stageRankT3 = response.data;
+        this.updateTime = response.data[0][0].updateTime;
+        cookie.set("updateTime", this.updateTime, { expires: 30 });
+        // this.$message({
+        //       message: '切换成功' ,
+        //       type: "success",
+        //       showClose: true,
+        //       duration: 2000,
+        //     });
+      });
     },
     getStageResultDateT2() {
-      stageApi
-        .findStageDateByMainOrderByExpectDesc(this.stageVersion)
-        .then((response) => {
-          this.stageRankT2 = [];
-          this.stageRankT2 = response.data;
-        });
+      stageApi.findStageDateByMainOrderByExpectDesc(this.stageVersion).then((response) => {
+        this.stageRankT2 = [];
+        this.stageRankT2 = response.data;
+      });
     },
     getStageResultDateOrundum() {
       stageApi.findStageDataOfOrundum("Ordinary").then((response) => {

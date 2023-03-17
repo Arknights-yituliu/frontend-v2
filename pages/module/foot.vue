@@ -9,38 +9,25 @@
           <el-collapse accordion>
             <el-collapse-item name="1" style="">
               <template slot="title">
-                <span style="font-size: large"
-                  ><i class="el-icon-s-comment"></i>&nbsp;<b>网站反馈</b></span
-                >
+                <span style="font-size: large"><i class="el-icon-s-comment"></i>&nbsp;<b>网站反馈</b></span>
               </template>
-              <a href="https://www.wjx.cn/vm/O68SHiq.aspx">点击此处</a
-              >通过问卷反馈问题/提供建议。
+              <a href="https://www.wjx.cn/vm/O68SHiq.aspx">点击此处</a>通过问卷反馈问题/提供建议。
             </el-collapse-item>
             <el-collapse-item name="2" style="">
               <template slot="title">
-                <span style="font-size: large"
-                  ><i class="el-icon-s-marketing"></i>&nbsp;<b
-                    >动态平衡算法简述</b
-                  ></span
-                >
+                <span style="font-size: large"><i class="el-icon-s-marketing"></i>&nbsp;<b>动态平衡算法简述</b></span>
               </template>
-              <b
-                >算法核心思路为“掉率越高，则价值越低”且“物品价值仅受获取成本影响”</b
-              >
+              <b>算法核心思路为“掉率越高，则价值越低”且“物品价值仅受获取成本影响”</b>
               <hr />
               <ul style="padding-left: 2em">
-                <li>
-                  第1步：取所有<b>常驻关卡</b>的掉率，以材料价格计算关卡效率
-                </li>
+                <li>第1步：取所有<b>常驻关卡</b>的掉率，以材料价格计算关卡效率</li>
                 <li>第2步：以关卡效率修正材料价格</li>
                 <li>
                   第3步：重复操作(1)(2)，直至材料价格和关卡效率收敛于误差小于万分之一，实现动态平衡，此时得出<b>关卡效率</b>和<b
                     >材料价值</b
                   >
                 </li>
-                <li>
-                  第4步：根据商店售价和物品价值，计算常驻商店和活动商店性价比
-                </li>
+                <li>第4步：根据商店售价和物品价值，计算常驻商店和活动商店性价比</li>
               </ul>
 
               <b>FAQ</b>
@@ -50,50 +37,31 @@
                 <li><b>A：如果不收敛网站就崩了，你也看不到这句话了。</b></li>
                 <li>Q：为什么不用线性规划进行计算？</li>
                 <li>
-                  <b
-                    >A：人无法两次踏进同一条河流，线性规划的目标时刻都在变动，随活动UP起伏的价值你喜欢吗？</b
-                  >
+                  <b>A：人无法两次踏进同一条河流，线性规划的目标时刻都在变动，随活动UP起伏的价值你喜欢吗？</b>
                 </li>
+                <li>Q：你这结果有问题啊，XX关的x材料期望明显更低，为什么XX关不是效率最高？</li>
                 <li>
-                  Q：你这结果有问题啊，XX关的x材料期望明显更低，为什么XX关不是效率最高？
-                </li>
-                <li>
-                  <b
-                    >A：大部分关卡都掉落多种材料，单一材料的期望只能说明短期最优，长期最优是要计算副产物的。</b
-                  >
+                  <b>A：大部分关卡都掉落多种材料，单一材料的期望只能说明短期最优，长期最优是要计算副产物的。</b>
                 </li>
               </ul>
             </el-collapse-item>
             <el-collapse-item name="3" style="">
               <template slot="title">
-                <span style="font-size: large"
-                  ><i class="el-icon-s-opportunity"></i>&nbsp;<b
-                    >图例与计算细节</b
-                  ></span
-                >
+                <span style="font-size: large"><i class="el-icon-s-opportunity"></i>&nbsp;<b>图例与计算细节</b></span>
               </template>
               <b>刷图规划</b>
               <hr />
-              <span style="font-weight: bold; color: #e85d06">橙色：</span
-              >关卡效率最高（长期最优）且 主产物期望最低（短期最优）<br />
-              <span style="font-weight: bold; color: #a335ee">紫色：</span
-              >关卡效率最高（长期最优）<br />
-              <span style="font-weight: bold; color: #00a2a2">绿色：</span
-              >主产物期望最低（短期最优）<br />
-              <span style="font-weight: bold; color: #168afa">蓝色：</span
-              >一般路过关卡<br />
+              <span style="font-weight: bold; color: #e85d06">橙色：</span>关卡效率最高（长期最优）且
+              主产物期望最低（短期最优）<br />
+              <span style="font-weight: bold; color: #a335ee">紫色：</span>关卡效率最高（长期最优）<br />
+              <span style="font-weight: bold; color: #00a2a2">绿色：</span>主产物期望最低（短期最优）<br />
+              <span style="font-weight: bold; color: #168afa">蓝色：</span>一般路过关卡<br />
               <ul style="padding-left: 2em">
                 <li>根据价值一览中的价格和企鹅物流的关卡掉落数据计算。</li>
                 <li>只有多于300样本的关卡才会被收录。</li>
                 <li>仅收录由自动刷图软件上报的掉落数据。</li>
-                <li>
-                  活动关卡只在活动期间出现，且都标记为<font style="color: red"
-                    >红色</font
-                  >。
-                </li>
-                <li>
-                  插曲和别传常驻后，视为新关卡并重新计算效率，该效率与活动时无关。
-                </li>
+                <li>活动关卡只在活动期间出现，且都标记为<font style="color: red">红色</font>。</li>
+                <li>插曲和别传常驻后，视为新关卡并重新计算效率，该效率与活动时无关。</li>
               </ul>
 
               <b>商店性价比</b>
@@ -104,12 +72,7 @@
                 <li>根据<b>价值一览</b>中的价格和商店售价得到的性价比值。</li>
                 <li>活动商店采用相同算法。</li>
                 <li>信用商店计价单位为100信用点。</li>
-                <li>
-                  若土的主要来源是1-7以外的关卡，则土系材料价值<a
-                    class="popover_color"
-                    >+6%</a
-                  >。
-                </li>
+                <li>若土的主要来源是1-7以外的关卡，则土系材料价值<a class="popover_color">+6%</a>。</li>
               </ul>
 
               <b>材料价值</b>
@@ -117,38 +80,23 @@
               <ul style="padding-left: 2em">
                 <li>绿票理智换算关系：<b>1理智=1.25绿票</b>。</li>
                 <li>
-                  数据选择范围为<a href="https://penguin-stats.cn/">企鹅物流</a
-                  >中的<b>常驻关卡</b>以保证价值的稳定性。
+                  数据选择范围为<a href="https://penguin-stats.cn/">企鹅物流</a>中的<b>常驻关卡</b>以保证价值的稳定性。
                 </li>
                 <li>定价时考虑加工站副产物，副产物掉率假设为20%。</li>
-                <li>
-                  假设重装/医疗芯片和近卫/特种芯片需求比为2:1，狙击/术师和先锋/辅助需求比为1:1
-                </li>
+                <li>假设重装/医疗芯片和近卫/特种芯片需求比为2:1，狙击/术师和先锋/辅助需求比为1:1</li>
                 <li>模组数据块以红票商店售价进行定价。</li>
                 <li>龙门币、经验书、无人机等结合其边际成本进行定价。</li>
                 <li>技巧概要依据CA-5定价，且考虑加工站副产物。</li>
                 <li>采购凭证依据AP-5定价。</li>
-                <li>
-                  理论上寻访凭证=600合成玉=3.33石=450理智，但不碎石刷图的情况下该等式无意义，仅列出以供参考。
-                </li>
+                <li>理论上寻访凭证=600合成玉=3.33石=450理智，但不碎石刷图的情况下该等式无意义，仅列出以供参考。</li>
                 <li>招募凭证的价值难以精确计算，仅供参考。</li>
-                <li>
-                  物资箱价值取<a href="https://penguin-stats.cn/">企鹅物流</a
-                  >中的以往数据进行估算。
-                </li>
-                <li>
-                  若源岩系材料的主要来源是1-7以外的关卡，则源岩系材料价值<a
-                    class="popover_color"
-                    >+6%</a
-                  >。
-                </li>
+                <li>物资箱价值取<a href="https://penguin-stats.cn/">企鹅物流</a>中的以往数据进行估算。</li>
+                <li>若源岩系材料的主要来源是1-7以外的关卡，则源岩系材料价值<a class="popover_color">+6%</a>。</li>
               </ul>
             </el-collapse-item>
             <el-collapse-item name="4" style="">
               <template slot="title">
-                <span style="font-size: large"
-                  ><i class="el-icon-s-claim"></i>&nbsp;<b>算法公示卡</b></span
-                >
+                <span style="font-size: large"><i class="el-icon-s-claim"></i>&nbsp;<b>算法公示卡</b></span>
               </template>
               <table id="al_card">
                 <tbody>
@@ -200,10 +148,7 @@
           </div>
         </a>
         <a href="https://jq.qq.com/?_wv=1027&k=ZmORnr5F"
-          ><div
-            class="foot_unit_button uni_shadow_2"
-            style="width: 186px; display: inline-block"
-          >
+          ><div class="foot_unit_button uni_shadow_2" style="width: 186px; display: inline-block">
             <img class="foot_unit_pic" src="/img/website/qq.png" />
             开发群938710832
           </div>
@@ -213,10 +158,7 @@
           如有开发/数据分析/设计/美工经验，欢迎来开发群一叙
         </div>
         <a href="https://shimo.im/sheets/dPkpKP1zQmc1PvqO/7mSBe"
-          ><div
-            class="foot_unit_button uni_shadow_2"
-            style="width: 202px; display: inline-block"
-          >
+          ><div class="foot_unit_button uni_shadow_2" style="width: 202px; display: inline-block">
             <img class="foot_unit_pic" src="/img/website/图标_源石.png" />
             查看财政状况/捐助
           </div>
@@ -226,47 +168,26 @@
       <div class="foot_unit" id="qianduan">
         <p class="foot_unit_title">-前端/UI-</p>
         <a href="https://space.bilibili.com/39109412">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/84258011?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/84258011?v=4" />
             山桜
           </div>
         </a>
         <a href="https://space.bilibili.com/10057492">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/84625349?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/84625349?v=4" />
             Zirunwang
           </div>
         </a>
         <a href="https://space.bilibili.com/12786648">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
             <img class="foot_unit_pic" src="/img/website/wmm.png" />
             無冕Crownless
           </div>
         </a>
         <a href="https://github.com/Yanstory">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/5153875?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/5153875?v=4" />
             Yanstime
           </div>
         </a>
@@ -274,38 +195,20 @@
       <div class="foot_unit" id="houduan">
         <p class="foot_unit_title">-后端-</p>
         <a href="https://github.com/hguandl">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/10684225?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/10684225?v=4" />
             hguandl
           </div>
         </a>
         <a href="https://space.bilibili.com/39109412">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/84258011?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/84258011?v=4" />
             山桜
           </div>
         </a>
         <a href="https://github.com/youcai922">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/64458943?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/64458943?v=4" />
             youcai922
           </div>
         </a>
@@ -314,27 +217,15 @@
       <div class="foot_unit">
         <p class="foot_unit_title">-游戏官网-</p>
         <a href="https://ak.hypergryph.com/"
-          ><div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle; color: gray"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://ak.hypergryph.com/favicon.ico"
-            />明日方舟
+          ><div class="foot_unit_button uni_shadow_2" style="vertical-align: middle; color: gray">
+            <img class="foot_unit_pic" src="https://ak.hypergryph.com/favicon.ico" />明日方舟
           </div></a
         >
 
         <p class="foot_unit_title">-数据源-</p>
         <a href="https://penguin-stats.cn/"
-          ><div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle; color: gray"
-          >
-            <img
-              class="foot_unit_pic"
-              src="/img/website/penguin_stats_logo.png"
-            />企鹅物流
+          ><div class="foot_unit_button uni_shadow_2" style="vertical-align: middle; color: gray">
+            <img class="foot_unit_pic" src="/img/website/penguin_stats_logo.png" />企鹅物流
           </div></a
         >
       </div>
@@ -342,43 +233,25 @@
       <div class="foot_unit" id="suanfa">
         <p class="foot_unit_title">-效率算法-</p>
         <a href="https://www.bilibili.com/video/BV1pZ4y1g7QN">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
             <img class="foot_unit_pic" src="/img/website/Erit_Lux.webp" />
             Erit_Lux
           </div>
         </a>
         <a href="https://space.bilibili.com/39109412">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/84258011?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/84258011?v=4" />
             山桜
           </div>
         </a>
         <a href="https://space.bilibili.com/10057492">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/84625349?v=4"
-            />
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/84625349?v=4" />
             Zirunwang
           </div>
         </a>
         <a href="https://www.bilibili.com/video/BV1yL4y1P7K1">
-          <div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
+          <div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
             <img class="foot_unit_pic" src="/img/website/shaobing.png" />
             一个资深的烧饼
           </div>
@@ -387,20 +260,14 @@
       <div class="foot_unit">
         <p class="foot_unit_title">-B站发布-</p>
         <a href="https://space.bilibili.com/688411531"
-          ><div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
+          ><div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
             <img class="foot_unit_pic" src="/img/website/bilibili.png" />
             罗德岛基建BETA
           </div></a
         >
         <p class="foot_unit_title">-粉丝群-</p>
         <a href="https://jq.qq.com/?_wv=1027&k=q1z3p9Yj"
-          ><div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
+          ><div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
             <img class="foot_unit_pic" src="/img/website/qq.png" />
             阿戈尔数据文献馆
           </div></a
@@ -409,46 +276,28 @@
       <div class="foot_unit">
         <p class="foot_unit_title">-友情链接-</p>
         <a href="https://viktorlab.cn/akdata"
-          ><div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
+          ><div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
             <img class="foot_unit_pic" src="/img/website/akdps.jpg" />
             DPS计算器
           </div></a
         >
 
         <a href="https://arkgacha.kwer.top/"
-          ><div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://arkgacha.kwer.top/static/icon.ico"
-            />
+          ><div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://arkgacha.kwer.top/static/icon.ico" />
             寻访记录分析
           </div></a
         >
 
         <a href="https://maa.plus/"
-          ><div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
-            <img
-              class="foot_unit_pic"
-              src="https://avatars.githubusercontent.com/u/97677443?s=200"
-            />
+          ><div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
+            <img class="foot_unit_pic" src="https://avatars.githubusercontent.com/u/97677443?s=200" />
             MAA小助手
           </div></a
         >
 
         <a href="https://apps.apple.com/cn/app/id1632810611"
-          ><div
-            class="foot_unit_button uni_shadow_2"
-            style="vertical-align: middle"
-          >
+          ><div class="foot_unit_button uni_shadow_2" style="vertical-align: middle">
             <img class="foot_unit_pic" src="/img/website/rhodes_asst.png" />
             罗德岛助理(iOS)
           </div></a

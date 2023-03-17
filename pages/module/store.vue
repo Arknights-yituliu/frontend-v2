@@ -58,10 +58,7 @@
               id="store_tag_2"
               @click="switch_store('2')"
             >
-              <div
-                style="margin: 0px 2px"
-                :class="getSpriteImg('EPGS_COIN', 0)"
-              ></div>
+              <div style="margin: 0px 2px" :class="getSpriteImg('EPGS_COIN', 0)"></div>
             </div>
             <div
               :class="tagColor[3]"
@@ -76,10 +73,7 @@
               id="store_tag_3"
               @click="switch_store('3')"
             >
-              <div
-                style="margin: 0px 5px"
-                :class="getSpriteImg('REP_COIN', 0)"
-              ></div>
+              <div style="margin: 0px 5px" :class="getSpriteImg('REP_COIN', 0)"></div>
             </div>
             <div
               :class="tagColor[4]"
@@ -94,10 +88,7 @@
               id="store_tag_4"
               @click="switch_store('4')"
             >
-              <div
-                style="margin: 3px"
-                :class="getSpriteImg('SOCIAL_PT', 0)"
-              ></div>
+              <div style="margin: 3px" :class="getSpriteImg('SOCIAL_PT', 0)"></div>
             </div>
             <div class="tab_text">*点击图标切换</div>
           </div>
@@ -110,153 +101,55 @@
         <div class="store_unit">
           <div :class="getSpriteImg(4005, 0)"></div>
         </div>
-        <div
-          v-for="(m_data, index) in storeList['green']"
-          class="store_unit"
-          :key="index"
-        >
+        <div v-for="(m_data, index) in storeList['green']" class="store_unit" :key="index">
           <!-- <img class="store_unit_pic" alt="" title=""	:src="getImgUrl(m_data.itemName)" >	 -->
           <div :class="getSpriteImg(m_data.itemId, 1)"></div>
           <p class="store_unit_text" :class="getColor(m_data.costPer, 1, 0.03)">
             {{ getEfficiency(m_data.costPer, 2) }}
           </p>
         </div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
       </div>
       <!-- 黄票商店 -->
       <div class="store_content" id="store_1" :style="storeVisiable[1]">
         <div class="store_unit">
           <div :class="getSpriteImg(4004, 0)"></div>
         </div>
-        <div
-          v-for="(m_data, index) in storeList['yellow']"
-          class="store_unit"
-          :key="index"
-        >
+        <div v-for="(m_data, index) in storeList['yellow']" class="store_unit" :key="index">
           <div :class="getSpriteImg(m_data.itemId, 1)"></div>
           <p class="store_unit_text" :class="getColor(m_data.costPer, 12, 3)">
             {{ getEfficiency(m_data.costPer, 2) }}
           </p>
         </div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
       </div>
       <!-- 橙票商店 -->
       <div class="store_content" id="store_2" :style="storeVisiable[2]">
@@ -264,231 +157,81 @@
           <!-- <img class="store_unit_pic store_unit_icon" alt="" title=""	:src="getImgUrl('寻访参数模型' ,4)">	 -->
           <div :class="getSpriteImg('EPGS_COIN', 0)"></div>
         </div>
-        <div
-          v-for="(m_data, index) in storeList['orange']"
-          class="store_unit"
-          :key="index"
-        >
+        <div v-for="(m_data, index) in storeList['orange']" class="store_unit" :key="index">
           <div :class="getSpriteImg(m_data.itemId, 1)"></div>
-          <p
-            class="store_unit_text"
-            :class="getColor(m_data.costPer, 1.6, 0.1)"
-          >
+          <p class="store_unit_text" :class="getColor(m_data.costPer, 1.6, 0.1)">
             {{ getEfficiency(m_data.costPer, 2) }}
           </p>
         </div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
       </div>
       <!-- 紫票商店 -->
       <div class="store_content" id="store_3" :style="storeVisiable[3]">
         <div class="store_unit">
           <div :class="getSpriteImg('REP_COIN', 0)"></div>
         </div>
-        <div
-          v-for="(m_data, index) in storeList['purple']"
-          class="store_unit"
-          :key="index"
-        >
+        <div v-for="(m_data, index) in storeList['purple']" class="store_unit" :key="index">
           <div :class="getSpriteImg(m_data.itemId, 1)"></div>
           <p class="store_unit_text" :class="getColor(m_data.costPer, 2, 0.4)">
             {{ getEfficiency(m_data.costPer, 2) }}
           </p>
         </div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
       </div>
       <!-- 信用商店 -->
       <div class="store_content" id="store_4" :style="storeVisiable[4]">
         <div class="store_unit">
           <div :class="getSpriteImg('SOCIAL_PT', 0)"></div>
         </div>
-        <div
-          v-for="(m_data, index) in storeList['grey']"
-          class="store_unit"
-          :key="index"
-        >
+        <div v-for="(m_data, index) in storeList['grey']" class="store_unit" :key="index">
           <div :class="getSpriteImg(m_data.itemId, 1)"></div>
           <p class="store_unit_text" :class="getColor(m_data.costPer, 8, 2)">
             {{ getEfficiency(m_data.costPer, 2) }}
           </p>
         </div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
-        <div
-          class="store_unit"
-          style="height: 0; margin-top: 0px; margin-bottom: 0px"
-        ></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
+        <div class="store_unit" style="height: 0; margin-top: 0px; margin-bottom: 0px"></div>
       </div>
     </div>
 
@@ -503,23 +246,12 @@
       </div>
       <!-- 标题区域end -->
       <!-- 内容区域 -->
-      <div
-        v-for="(singleAct, index) in actStoreList"
-        :key="index"
-        v-show="singleAct.actStartDate > 0.1"
-      >
+      <div v-for="(singleAct, index) in actStoreList" :key="index" v-show="singleAct.actStartDate > 0.1">
         <template>
           <!-- banner -->
-          <div
-            class="act_banner_background"
-            :style="getBackground(singleAct.actImgUrl)"
-          >
+          <div class="act_banner_background" :style="getBackground(singleAct.actImgUrl)">
             <div class="act_banner_img">
-              <img
-                class="act_img"
-                :src="singleAct.actImgUrl"
-                :alt="singleAct.actName"
-              />
+              <img class="act_img" :src="singleAct.actImgUrl" :alt="singleAct.actName" />
             </div>
           </div>
 
@@ -540,12 +272,7 @@
               class="act_card uni_shadow_2 act_area1_border"
               v-for="(singleItem, index) in singleAct.actStore"
               :key="index"
-              :class="
-                getDivVisible(
-                  singleItem.itemArea - 0.5,
-                  singleItem.itemArea + 0.5
-                )
-              "
+              :class="getDivVisible(singleItem.itemArea - 0.5, singleItem.itemArea + 0.5)"
             >
               <!-- <div class="act_card uni_shadow_2 act_area1_border" :class="getDivVisible(singleItem.itemArea - 0.5, singleItem.itemArea + 0.5)"> -->
               <div class="act_card_img">
@@ -560,13 +287,7 @@
                     </tr>
                     <tr
                       class="act_table_r2"
-                      :class="
-                        getColor(
-                          singleItem.itemPPR,
-                          singleAct.actPPRBase,
-                          singleAct.actPPRStair
-                        )
-                      "
+                      :class="getColor(singleItem.itemPPR, singleAct.actPPRBase, singleAct.actPPRStair)"
                     >
                       <!--故事集 合约 1.25 0.25  ss 3 1-->
                       <td>{{ getEfficiency(singleItem.itemPPR) }}</td>
@@ -579,30 +300,12 @@
               </div>
               <!-- </div> -->
             </div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
           </div>
           <!-- Area 2 -->
           <div class="act_content">
@@ -610,12 +313,7 @@
               class="act_card uni_shadow_2 act_area3_border"
               v-for="(singleItem, index) in singleAct.actStore"
               :key="index"
-              :class="
-                getDivVisible(
-                  singleItem.itemArea - 1.5,
-                  singleItem.itemArea - 0.5
-                )
-              "
+              :class="getDivVisible(singleItem.itemArea - 1.5, singleItem.itemArea - 0.5)"
             >
               <!-- <div class="act_card uni_shadow_2 act_area3_border" :class="getDivVisible(singleItem.itemArea - 1.5, singleItem.itemArea - 0.5)"> -->
               <div class="act_card_img">
@@ -629,13 +327,7 @@
                     </tr>
                     <tr
                       class="act_table_r2"
-                      :class="
-                        getColor(
-                          singleItem.itemPPR,
-                          singleAct.actPPRBase,
-                          singleAct.actPPRStair
-                        )
-                      "
+                      :class="getColor(singleItem.itemPPR, singleAct.actPPRBase, singleAct.actPPRStair)"
                     >
                       <!--故事集 合约 1.25 0.25  ss 3 1-->
                       <td>{{ getEfficiency(singleItem.itemPPR) }}</td>
@@ -648,30 +340,12 @@
               </div>
               <!-- </div> -->
             </div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
           </div>
           <!-- Area 3 -->
           <div class="act_content">
@@ -679,12 +353,7 @@
               class="act_card uni_shadow_2 act_area4_border"
               v-for="(singleItem, index) in singleAct.actStore"
               :key="index"
-              :class="
-                getDivVisible(
-                  singleItem.itemArea - 2.5,
-                  singleItem.itemArea - 1.5
-                )
-              "
+              :class="getDivVisible(singleItem.itemArea - 2.5, singleItem.itemArea - 1.5)"
             >
               <!-- <div class="act_card uni_shadow_2 act_area4_border" :class="getDivVisible(singleItem.itemArea - 2.5, singleItem.itemArea - 1.5)"> -->
               <div class="act_card_img">
@@ -698,13 +367,7 @@
                     </tr>
                     <tr
                       class="act_table_r2"
-                      :class="
-                        getColor(
-                          singleItem.itemPPR,
-                          singleAct.actPPRBase,
-                          singleAct.actPPRStair
-                        )
-                      "
+                      :class="getColor(singleItem.itemPPR, singleAct.actPPRBase, singleAct.actPPRStair)"
                     >
                       <!--故事集 合约 1.25 0.25  ss 3 1-->
                       <td>{{ getEfficiency(singleItem.itemPPR) }}</td>
@@ -717,30 +380,12 @@
               </div>
               <!-- </div> -->
             </div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
-            <div
-              class="act_card uni_shadow_2 act_area1_border"
-              style="height: 0px; margin-bottom: 0px"
-            ></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
+            <div class="act_card uni_shadow_2 act_area1_border" style="height: 0px; margin-bottom: 0px"></div>
           </div>
           <!-- 内容区域end -->
         </template>
@@ -761,13 +406,7 @@ export default {
       // storeList: storeJson.data, //常驻商店性价比集合
       storeList: [], //常驻商店性价比集合
       actStoreList: [], //活动商店的json
-      storeVisiable: [
-        "display:flex;",
-        "display:flex;",
-        "display:flex;",
-        "display:flex;",
-        "display:flex;",
-      ],
+      storeVisiable: ["display:flex;", "display:flex;", "display:flex;", "display:flex;", "display:flex;"],
       tagColor: ["n", "n", "n", "n", "n"],
       opETextTheme: "op_title_etext_light",
     };
@@ -819,15 +458,10 @@ export default {
       source = typeof source !== "undefined" ? source : 1;
       if (source > 4.1) return "/img/materials/道具_" + img + ".png";
       else if (source > 3.1) return "/img/icon/图标_" + img + ".png";
-      else if (source > 2.1)
-        return "https://image.yituliu.site/ activity_picture /" + img + ".png";
-      else if (source > 1.1)
-        return "https://image.yituliu.site/item/" + img + ".png";
+      else if (source > 2.1) return "https://image.yituliu.site/ activity_picture /" + img + ".png";
+      else if (source > 1.1) return "https://image.yituliu.site/item/" + img + ".png";
       else if (source > 0.1) return "/img/materials/" + img + ".png";
-      else
-        return (
-          "https://cdn.jsdelivr.net/gh/zirun-wang/OnePicCDN/img/" + img + ".png"
-        );
+      else return "https://cdn.jsdelivr.net/gh/zirun-wang/OnePicCDN/img/" + img + ".png";
     },
     getEfficiency(num, acc) {
       acc = typeof acc !== "undefined" ? acc : 2;
@@ -871,20 +505,13 @@ export default {
     },
 
     switch_store(index) {
-      if (
-        document.getElementById("store_tag_" + index.toString()).className ==
-        "n"
-      ) {
-        document.getElementById("store_" + index.toString()).style.display =
-          "none";
-        document.getElementById("store_tag_" + index.toString()).className =
-          "uni_gray";
+      if (document.getElementById("store_tag_" + index.toString()).className == "n") {
+        document.getElementById("store_" + index.toString()).style.display = "none";
+        document.getElementById("store_tag_" + index.toString()).className = "uni_gray";
         cookie.set("store_" + index, 0, { expires: 30 });
       } else {
-        document.getElementById("store_" + index.toString()).style.display =
-          "flex";
-        document.getElementById("store_tag_" + index.toString()).className =
-          "n";
+        document.getElementById("store_" + index.toString()).style.display = "flex";
+        document.getElementById("store_tag_" + index.toString()).className = "n";
         cookie.set("store_" + index, 1, { expires: 30 });
       }
     },

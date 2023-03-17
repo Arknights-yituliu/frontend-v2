@@ -9,47 +9,21 @@
         </div>
       </div>
       <div class="op_title_tag">
-        <div id="pack_sort_by_type" class="op_tag_1" @click="sortPackByType()">
-          礼包类型排序
-        </div>
-        <div
-          id="pack_sort_by_drawPpr"
-          class="op_tag_0"
-          @click="sortPackByPPRPerDraw()"
-        >
-          抽卡性价比
-        </div>
-        <div
-          id="pack_sort_by_oriPpr"
-          class="op_tag_0"
-          @click="sortPackByPPRPerOri()"
-        >
-          总价值性价比
-        </div>
+        <div id="pack_sort_by_type" class="op_tag_1" @click="sortPackByType()">礼包类型排序</div>
+        <div id="pack_sort_by_drawPpr" class="op_tag_0" @click="sortPackByPPRPerDraw()">抽卡性价比</div>
+        <div id="pack_sort_by_oriPpr" class="op_tag_0" @click="sortPackByPPRPerOri()">总价值性价比</div>
         <div class="op_tag_0" style="padding: 1px"></div>
         <div style="margin-top: 8px; display: inline-block">
-          <div
-            id="pack_show_once"
-            class="op_tag_0"
-            @click="switchPacks('once')"
-          >
-            隐藏一次性礼包
-          </div>
-          <div id="pack_show_ori" class="op_tag_0" @click="switchPacks('ori')">
-            源石只显示648
-          </div>
+          <div id="pack_show_once" class="op_tag_0" @click="switchPacks('once')">隐藏一次性礼包</div>
+          <div id="pack_show_ori" class="op_tag_0" @click="switchPacks('ori')">源石只显示648</div>
           <!-- <div class="tab_text">
             *点击图片查看礼包内容
           </div> -->
         </div>
       </div>
       <div class="stage_hint">
-        <div class="stage_hint_t5">
-          点击图片可查看礼包内容，注意区分"仅抽卡"/"折合成源石"
-        </div>
-        <div class="stage_hint_t5">
-          “折合成源石”即将材料的理智价值按135：1换算成源石
-        </div>
+        <div class="stage_hint_t5">点击图片可查看礼包内容，注意区分"仅抽卡"/"折合成源石"</div>
+        <div class="stage_hint_t5">“折合成源石”即将材料的理智价值按135：1换算成源石</div>
       </div>
       <!-- 标题区域end -->
 
@@ -88,13 +62,7 @@
             :key="index"
             class="pack_unit_list"
             :style="
-              getDisplayStateDrawOnly(
-                pack2.packState,
-                pack2.packType,
-                pack2.packPrice,
-                packFilter,
-                pack2.packPPRDraw
-              )
+              getDisplayStateDrawOnly(pack2.packState, pack2.packType, pack2.packPrice, packFilter, pack2.packPPRDraw)
             "
           >
             <div class="pack_unit">
@@ -105,98 +73,44 @@
                 :style="getPackPic(pack2.packImg, pack2.packType)"
                 @click="switchPackContent(pack2.packID, 'draw')"
               >
-                <div class="pack_img_text1">
-                  {{ pack2.packShowName }} ￥{{ pack2.packPrice }}
-                </div>
+                <div class="pack_img_text1">{{ pack2.packShowName }} ￥{{ pack2.packPrice }}</div>
 
                 <!-- 角标部分 -->
-                <div
-                  class="pack_corner corner_new"
-                  v-show="pack2.packType == 'limited'"
-                >
-                  New!
-                </div>
-                <div
-                  class="pack_corner corner_monthly"
-                  v-show="pack2.packType == 'monthly'"
-                >
-                  每月
-                </div>
-                <div
-                  class="pack_corner corner_monthly"
-                  v-show="pack2.packType == 'weekly'"
-                >
-                  每周
-                </div>
-                <div
-                  class="pack_corner corner_once"
-                  v-show="pack2.packType == 'once'"
-                >
-                  一次
-                </div>
-                <div
-                  class="pack_corner corner_once"
-                  v-show="pack2.packType == 'year'"
-                >
-                  双倍
-                </div>
+                <div class="pack_corner corner_new" v-show="pack2.packType == 'limited'">New!</div>
+                <div class="pack_corner corner_monthly" v-show="pack2.packType == 'monthly'">每月</div>
+                <div class="pack_corner corner_monthly" v-show="pack2.packType == 'weekly'">每周</div>
+                <div class="pack_corner corner_once" v-show="pack2.packType == 'once'">一次</div>
+                <div class="pack_corner corner_once" v-show="pack2.packType == 'year'">双倍</div>
               </div>
               <!-- 表格部分 -->
               <div class="pack_info">
                 <div class="pack_info_text">
-                  共{{ getFixed(pack2.packDraw, 1) }}抽 <br />￥{{
-                    getFixed(pack2.packRmbPerDraw, 1)
-                  }}/抽
+                  共{{ getFixed(pack2.packDraw, 1) }}抽 <br />￥{{ getFixed(pack2.packRmbPerDraw, 1) }}/抽
                 </div>
                 <div class="pack_chart">
-                  <div
-                    class="pack_chart_unit"
-                    v-show="pack2.packPPRDraw >= 1.57"
-                  >
+                  <div class="pack_chart_unit" v-show="pack2.packPPRDraw >= 1.57">
                     <div class="pack_chart_unit_text">本礼包</div>
-                    <div
-                      class="pack_chart_unit_ppr bg_red"
-                      :style="getWidth(pack2.packPPRDraw * 100, 0.75)"
-                    >
+                    <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack2.packPPRDraw * 100, 0.75)">
                       {{ getFixed(pack2.packPPRDraw * 100, 0) }}%
                     </div>
                   </div>
                   <div class="pack_chart_unit">
                     <div class="pack_chart_unit_text">大月卡</div>
-                    <div
-                      class="pack_chart_unit_ppr"
-                      :style="getWidth(157, 0.75)"
-                    >
-                      157%
-                    </div>
+                    <div class="pack_chart_unit_ppr" :style="getWidth(157, 0.75)">157%</div>
                   </div>
-                  <div
-                    class="pack_chart_unit"
-                    v-show="pack2.packPPRDraw < 1.57 && pack2.packPPRDraw >= 1"
-                  >
+                  <div class="pack_chart_unit" v-show="pack2.packPPRDraw < 1.57 && pack2.packPPRDraw >= 1">
                     <div class="pack_chart_unit_text">本礼包</div>
-                    <div
-                      class="pack_chart_unit_ppr bg_red"
-                      :style="getWidth(pack2.packPPRDraw * 100, 0.75)"
-                    >
+                    <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack2.packPPRDraw * 100, 0.75)">
                       {{ getFixed(pack2.packPPRDraw * 100, 0) }}%
                     </div>
                   </div>
                   <div class="pack_chart_unit">
                     <div class="pack_chart_unit_text">648源石</div>
-                    <div
-                      class="pack_chart_unit_ppr"
-                      :style="getWidth(100, 0.75)"
-                    >
-                      100%
-                    </div>
+                    <div class="pack_chart_unit_ppr" :style="getWidth(100, 0.75)">100%</div>
                   </div>
                   <div class="pack_chart_unit" v-show="pack2.packPPRDraw < 1">
                     <div class="pack_chart_unit_text">本礼包</div>
-                    <div
-                      class="pack_chart_unit_ppr bg_red"
-                      :style="getWidth(pack2.packPPRDraw * 100, 0.75)"
-                    >
+                    <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack2.packPPRDraw * 100, 0.75)">
                       {{ getFixed(pack2.packPPRDraw * 100, 0) }}%
                     </div>
                   </div>
@@ -206,11 +120,7 @@
               </div>
 
               <!-- 详情部分 -->
-              <div
-                class="pack_contents"
-                :id="getContentId(pack2.packID, 'draw')"
-                style="display: none"
-              >
+              <div class="pack_contents" :id="getContentId(pack2.packID, 'draw')" style="display: none">
                 <div class="pack_content_unit0" style="width: 112px">
                   <div style="width: 56px">源石</div>
                   <div style="width: 56px">x{{ pack2.gachaOriginium }}</div>
@@ -227,15 +137,9 @@
                   <div style="width: 56px">十连</div>
                   <div style="width: 60px">x{{ pack2.gachaPermit10 }}</div>
                 </div>
-                <div
-                  v-for="(packItem, index) in pack2.packContent"
-                  :key="index"
-                  class="pack_content_unit"
-                >
+                <div v-for="(packItem, index) in pack2.packContent" :key="index" class="pack_content_unit">
                   <div style="width: 135px">{{ packItem.packContentItem }}</div>
-                  <div style="width: 90px">
-                    x{{ packItem.packContentQuantity }}
-                  </div>
+                  <div style="width: 90px">x{{ packItem.packContentQuantity }}</div>
                 </div>
               </div>
             </div>
@@ -248,129 +152,55 @@
             v-for="(pack3, index) in packsPPRData"
             :key="index"
             class="pack_unit_list"
-            :style="
-              getDisplayState(
-                pack3.packState,
-                pack3.packType,
-                pack3.packPrice,
-                packFilter
-              )
-            "
+            :style="getDisplayState(pack3.packState, pack3.packType, pack3.packPrice, packFilter)"
           >
             <!-- <div v-for="(pack3, index) in packsPPRData" :key="index" class="pack_unit_list"> -->
-            <div
-              v-show="
-                pack3.packState == 1 && !FilterCriteria.includes(pack3.packType)
-              "
-              class="pack_unit"
-            >
+            <div v-show="pack3.packState == 1 && !FilterCriteria.includes(pack3.packType)" class="pack_unit">
               <!-- 图片部分 -->
               <div
                 class="pack_img"
                 :style="getPackPic(pack3.packImg, pack3.packType)"
                 @click="switchPackContent(pack3.packID, 'all')"
               >
-                <div class="pack_img_text1">
-                  {{ pack3.packShowName }} ￥{{ pack3.packPrice }}
-                </div>
+                <div class="pack_img_text1">{{ pack3.packShowName }} ￥{{ pack3.packPrice }}</div>
                 <!-- 角标部分 -->
-                <div
-                  class="pack_corner corner_new"
-                  v-show="pack3.packType == 'limited'"
-                >
-                  New!
-                </div>
-                <div
-                  class="pack_corner corner_monthly"
-                  v-show="pack3.packType == 'monthly'"
-                >
-                  每月
-                </div>
-                <div
-                  class="pack_corner corner_monthly"
-                  v-show="pack3.packType == 'weekly'"
-                >
-                  每周
-                </div>
-                <div
-                  class="pack_corner corner_once"
-                  v-show="pack3.packType == 'once'"
-                >
-                  一次
-                </div>
-                <div
-                  class="pack_corner corner_once"
-                  v-show="pack3.packType == 'year'"
-                >
-                  双倍
-                </div>
+                <div class="pack_corner corner_new" v-show="pack3.packType == 'limited'">New!</div>
+                <div class="pack_corner corner_monthly" v-show="pack3.packType == 'monthly'">每月</div>
+                <div class="pack_corner corner_monthly" v-show="pack3.packType == 'weekly'">每周</div>
+                <div class="pack_corner corner_once" v-show="pack3.packType == 'once'">一次</div>
+                <div class="pack_corner corner_once" v-show="pack3.packType == 'year'">双倍</div>
               </div>
 
               <!-- 表格部分 -->
               <div class="pack_info">
                 <div class="pack_info_text" style="color: #ff8f6e">
-                  {{ getFixed(pack3.packOriginium, 1) }}源石 <br />￥{{
-                    getFixed(pack3.packRmbPerOriginium, 1)
-                  }}/石
+                  {{ getFixed(pack3.packOriginium, 1) }}源石 <br />￥{{ getFixed(pack3.packRmbPerOriginium, 1) }}/石
                 </div>
-                <div class="pack_info_alert" v-show="!pack3.packTag == ''">
-                  含难以估价内容，点击图片查看
-                </div>
+                <div class="pack_info_alert" v-show="!pack3.packTag == ''">含难以估价内容，点击图片查看</div>
                 <div class="pack_chart">
-                  <div
-                    class="pack_chart_unit"
-                    v-show="pack3.packPPROriginium >= 1.57"
-                  >
+                  <div class="pack_chart_unit" v-show="pack3.packPPROriginium >= 1.57">
                     <div class="pack_chart_unit_text">本礼包</div>
-                    <div
-                      class="pack_chart_unit_ppr bg_red"
-                      :style="getWidth(pack3.packPPROriginium * 100, 0.75)"
-                    >
+                    <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack3.packPPROriginium * 100, 0.75)">
                       {{ getFixed(pack3.packPPROriginium * 100, 0) }}%
                     </div>
                   </div>
                   <div class="pack_chart_unit">
                     <div class="pack_chart_unit_text">大月卡</div>
-                    <div
-                      class="pack_chart_unit_ppr"
-                      :style="getWidth(157, 0.75)"
-                    >
-                      157%
-                    </div>
+                    <div class="pack_chart_unit_ppr" :style="getWidth(157, 0.75)">157%</div>
                   </div>
-                  <div
-                    class="pack_chart_unit"
-                    v-show="
-                      pack3.packPPROriginium < 1.57 &&
-                      pack3.packPPROriginium >= 1
-                    "
-                  >
+                  <div class="pack_chart_unit" v-show="pack3.packPPROriginium < 1.57 && pack3.packPPROriginium >= 1">
                     <div class="pack_chart_unit_text">本礼包</div>
-                    <div
-                      class="pack_chart_unit_ppr bg_red"
-                      :style="getWidth(pack3.packPPROriginium * 100, 0.75)"
-                    >
+                    <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack3.packPPROriginium * 100, 0.75)">
                       {{ getFixed(pack3.packPPROriginium * 100, 0) }}%
                     </div>
                   </div>
                   <div class="pack_chart_unit">
                     <div class="pack_chart_unit_text">648源石</div>
-                    <div
-                      class="pack_chart_unit_ppr"
-                      :style="getWidth(100, 0.75)"
-                    >
-                      100%
-                    </div>
+                    <div class="pack_chart_unit_ppr" :style="getWidth(100, 0.75)">100%</div>
                   </div>
-                  <div
-                    class="pack_chart_unit"
-                    v-show="pack3.packPPROriginium < 1"
-                  >
+                  <div class="pack_chart_unit" v-show="pack3.packPPROriginium < 1">
                     <div class="pack_chart_unit_text">本礼包</div>
-                    <div
-                      class="pack_chart_unit_ppr bg_red"
-                      :style="getWidth(pack3.packPPROriginium * 100, 0.75)"
-                    >
+                    <div class="pack_chart_unit_ppr bg_red" :style="getWidth(pack3.packPPROriginium * 100, 0.75)">
                       {{ getFixed(pack3.packPPROriginium * 100, 0) }}%
                     </div>
                   </div>
@@ -380,11 +210,7 @@
               </div>
 
               <!-- 详情部分 -->
-              <div
-                class="pack_contents"
-                :id="getContentId(pack3.packID, 'all')"
-                style="display: none"
-              >
+              <div class="pack_contents" :id="getContentId(pack3.packID, 'all')" style="display: none">
                 <div class="pack_contents_note">{{ pack3.packTag }}</div>
                 <div class="pack_content_unit0" style="width: 112px">
                   <div style="width: 56px">源石</div>
@@ -402,15 +228,9 @@
                   <div style="width: 56px">十连</div>
                   <div style="width: 60px">x{{ pack3.gachaPermit10 }}</div>
                 </div>
-                <div
-                  v-for="(packItem, index) in pack3.packContent"
-                  :key="index"
-                  class="pack_content_unit"
-                >
+                <div v-for="(packItem, index) in pack3.packContent" :key="index" class="pack_content_unit">
                   <div style="width: 135px">{{ packItem.packContentItem }}</div>
-                  <div style="width: 90px">
-                    x{{ packItem.packContentQuantity }}
-                  </div>
+                  <div style="width: 90px">x{{ packItem.packContentQuantity }}</div>
                 </div>
               </div>
             </div>
@@ -492,13 +312,7 @@ export default {
       }
     },
 
-    getDisplayStateDrawOnly(
-      packState,
-      packType,
-      packPrice,
-      packFilter,
-      packPPRDraw
-    ) {
+    getDisplayStateDrawOnly(packState, packType, packPrice, packFilter, packPPRDraw) {
       if (packState == 0 || packPPRDraw < 0.1) {
         return "display: none;"; //状态不对一票否决
       } else {
@@ -519,11 +333,7 @@ export default {
           }
         } else if (packFilter == 0) {
           //都隐藏
-          if (
-            packType == "year" ||
-            packType == "permanent" ||
-            packType == "once"
-          ) {
+          if (packType == "year" || packType == "permanent" || packType == "once") {
             if (packPrice == 648 && packType == "permanent") {
               return "";
             }
@@ -554,11 +364,7 @@ export default {
           }
         } else if (packFilter == 0) {
           //都隐藏
-          if (
-            packType == "year" ||
-            packType == "permanent" ||
-            packType == "once"
-          ) {
+          if (packType == "year" || packType == "permanent" || packType == "once") {
             if (packPrice == 648 && packType == "permanent") {
               return "";
             }
@@ -628,10 +434,7 @@ export default {
             this.packsPPRDataSort[j].packRmbPerDraw != "null"
           );
           // console.log(this.packsPPRDataSort[j+1].packName,this.packsPPRDataSort[j+1].packRmbPerDraw)
-          if (
-            this.packsPPRDataSort[j].packRmbPerDraw >
-            this.packsPPRDataSort[j + 1].packRmbPerDraw
-          ) {
+          if (this.packsPPRDataSort[j].packRmbPerDraw > this.packsPPRDataSort[j + 1].packRmbPerDraw) {
             const temp = this.packsPPRDataSort[j];
             this.packsPPRDataSort[j] = this.packsPPRDataSort[j + 1];
             this.packsPPRDataSort[j + 1] = temp;
@@ -661,10 +464,7 @@ export default {
       document.getElementById("pack_sort_by_oriPpr").className = "op_tag_1";
       for (let i = 0; i < this.packsPPRDataSort.length - 1; i += 1) {
         for (let j = 0; j < this.packsPPRDataSort.length - 1 - i; j += 1) {
-          if (
-            this.packsPPRDataSort[j].packRmbPerOriginium >
-            this.packsPPRDataSort[j + 1].packRmbPerOriginium
-          ) {
+          if (this.packsPPRDataSort[j].packRmbPerOriginium > this.packsPPRDataSort[j + 1].packRmbPerOriginium) {
             const temp = this.packsPPRDataSort[j];
             this.packsPPRDataSort[j] = this.packsPPRDataSort[j + 1];
             this.packsPPRDataSort[j + 1] = temp;
@@ -681,10 +481,7 @@ export default {
     sortPackById() {
       for (let i = 0; i < this.packsPPRDataSort.length - 1; i += 1) {
         for (let j = 0; j < this.packsPPRDataSort.length - 1 - i; j += 1) {
-          if (
-            this.packsPPRDataSort[j].packID >
-            this.packsPPRDataSort[j + 1].packID
-          ) {
+          if (this.packsPPRDataSort[j].packID > this.packsPPRDataSort[j + 1].packID) {
             const temp = this.packsPPRDataSort[j];
             this.packsPPRDataSort[j] = this.packsPPRDataSort[j + 1];
             this.packsPPRDataSort[j + 1] = temp;
@@ -714,16 +511,9 @@ export default {
       // console.log(true ===this.showFlag);
       if (type === "limited") {
         return (
-          "background:url(https://image.yituliu.site/pack/limited/" +
-          img +
-          ".png) 0% 0% / cover no-repeat,#444444;"
+          "background:url(https://image.yituliu.site/pack/limited/" + img + ".png) 0% 0% / cover no-repeat,#444444;"
         );
-      } else
-        return (
-          "background:url(https://image.yituliu.site/pack/" +
-          img +
-          ".png) 0% 0% / cover no-repeat,#444444;"
-        );
+      } else return "background:url(https://image.yituliu.site/pack/" + img + ".png) 0% 0% / cover no-repeat,#444444;";
     },
     getContentId(id, type) {
       return type + "_" + id;

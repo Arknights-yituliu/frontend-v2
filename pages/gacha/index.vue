@@ -2,18 +2,10 @@
   <div>
     <div class="pool_area">
       <div class="chart_pie1">
-        <div
-          id="chart_pie"
-          ref="chart_pie"
-          style="width: 500px; height: 400px"
-        ></div>
+        <div id="chart_pie" ref="chart_pie" style="width: 500px; height: 400px"></div>
       </div>
       <div class="chart_bar1">
-        <div
-          id="chart_bar"
-          ref="chart_bar"
-          style="width: 450px; height: 600px; margin: auto"
-        ></div>
+        <div id="chart_bar" ref="chart_bar" style="width: 450px; height: 600px; margin: auto"></div>
       </div>
 
       <div class="pool_table_div">
@@ -94,11 +86,7 @@
       <div class="pool_table_div">
         <table class="pool_table">
           <tbody>
-            <tr
-              v-for="(pool, index) in this.poolData_satas.char_6_list"
-              :key="index"
-              class="rarity_6"
-            >
+            <tr v-for="(pool, index) in this.poolData_satas.char_6_list" :key="index" class="rarity_6">
               <td><a v-show="pool.isNew">New</a></td>
               <td>{{ pool.name }}</td>
               <td>[{{ strSubstring(pool.pool) }}]</td>
@@ -210,30 +198,14 @@ export default {
         this.poolData_satas.char_4 = char_4;
         this.poolData_satas.char_3 = char_3;
 
-        this.poolData_satas.char_6_knock = this.floatToFixed(
-          (char_6 / this.poolDataCount) * 100
-        );
-        this.poolData_satas.char_5_knock = this.floatToFixed(
-          (char_5 / this.poolDataCount) * 100
-        );
-        this.poolData_satas.char_4_knock = this.floatToFixed(
-          (char_4 / this.poolDataCount) * 100
-        );
-        this.poolData_satas.char_3_knock = this.floatToFixed(
-          (char_3 / this.poolDataCount) * 100
-        );
-        this.poolData_satas.char_6_avg = this.floatToFixed(
-          this.poolDataCount / char_6
-        );
-        this.poolData_satas.char_5_avg = this.floatToFixed(
-          this.poolDataCount / char_5
-        );
-        this.poolData_satas.char_4_avg = this.floatToFixed(
-          this.poolDataCount / char_4
-        );
-        this.poolData_satas.char_3_avg = this.floatToFixed(
-          this.poolDataCount / char_3
-        );
+        this.poolData_satas.char_6_knock = this.floatToFixed((char_6 / this.poolDataCount) * 100);
+        this.poolData_satas.char_5_knock = this.floatToFixed((char_5 / this.poolDataCount) * 100);
+        this.poolData_satas.char_4_knock = this.floatToFixed((char_4 / this.poolDataCount) * 100);
+        this.poolData_satas.char_3_knock = this.floatToFixed((char_3 / this.poolDataCount) * 100);
+        this.poolData_satas.char_6_avg = this.floatToFixed(this.poolDataCount / char_6);
+        this.poolData_satas.char_5_avg = this.floatToFixed(this.poolDataCount / char_5);
+        this.poolData_satas.char_4_avg = this.floatToFixed(this.poolDataCount / char_4);
+        this.poolData_satas.char_3_avg = this.floatToFixed(this.poolDataCount / char_3);
 
         let char_6_list = [];
 
@@ -305,12 +277,7 @@ export default {
               labelLine: { show: true },
               color: function (params) {
                 //自定义颜色
-                var colorList = [
-                  "rgb(255, 102, 0)",
-                  "rgb(255, 255, 101)",
-                  "rgb(121, 195, 255)",
-                  "LightGreen",
-                ];
+                var colorList = ["rgb(255, 102, 0)", "rgb(255, 255, 101)", "rgb(121, 195, 255)", "LightGreen"];
                 return colorList[params.dataIndex];
               },
             },

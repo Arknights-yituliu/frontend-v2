@@ -10,23 +10,14 @@
             <td>描述图片</td>
             <td></td>
           </tr>
-          <tr
-            v-for="(feedback, index) in feedbackList"
-            :key="index"
-            class="tr-feedback"
-            :style="getBackground(index)"
-          >
+          <tr v-for="(feedback, index) in feedbackList" :key="index" class="tr-feedback" :style="getBackground(index)">
             <td class="description">
               <div>{{ feedback.description }}</div>
             </td>
             <td style="width: 130px">{{ feedback.scheduleId }}</td>
             <td style="width: 170px">{{ feedback.createdTime }}</td>
             <td style="width: 100px">
-              <img
-                style="width: 50px"
-                src="https://image.yituliu.site/feedback/test.png"
-                alt=""
-              />
+              <img style="width: 50px" src="https://image.yituliu.site/feedback/test.png" alt="" />
             </td>
           </tr>
         </tbody>
@@ -50,8 +41,7 @@ export default {
     setData() {
       for (let i = 0; i < 10; i++) {
         let feedback = {};
-        feedback.description =
-          "这是一条测试反馈语句，这是一条测试反馈语句，这是一条测试反馈语句，这是一条测试反馈语句";
+        feedback.description = "这是一条测试反馈语句，这是一条测试反馈语句，这是一条测试反馈语句，这是一条测试反馈语句";
         feedback.scheduleId = "1232141242121";
         feedback.createdTime = "2023-01-20 20:20:20";
         this.feedbackList.push(feedback);

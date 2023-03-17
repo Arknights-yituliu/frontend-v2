@@ -11,17 +11,9 @@
               <tr>
                 <td colspan="10">
                   <div class="apCost">
-                    {{ charName }}精英化消耗等效<img
-                      src="/img/materials-bak/理智.png"
-                      class="ap_image"
-                    />
-                    {{ toFixedByAcc(apCost + 756, 2) }} <br />相当于{{
-                      toFixedByAcc((apCost + 756) / 135, 2)
-                    }}个
-                    <img
-                      src="/img/materials-bak/至纯源石.png"
-                      class="ap_image"
-                    />
+                    {{ charName }}精英化消耗等效<img src="/img/materials-bak/理智.png" class="ap_image" />
+                    {{ toFixedByAcc(apCost + 756, 2) }} <br />相当于{{ toFixedByAcc((apCost + 756) / 135, 2) }}个
+                    <img src="/img/materials-bak/至纯源石.png" class="ap_image" />
                   </div>
                 </td>
               </tr>
@@ -39,48 +31,28 @@
               </tr>
               <tr v-for="(itemCost, index) in itemCosts" :key="index">
                 <td>
-                  <img
-                    :src="'/img/materials-bak/龙门币.png'"
-                    class="item_image"
-                  />
+                  <img :src="'/img/materials-bak/龙门币.png'" class="item_image" />
                 </td>
-                <td
-                  v-show="0 == index"
-                  style="text-align: left"
-                  class="itemCount"
-                >
+                <td v-show="0 == index" style="text-align: left" class="itemCount">
                   <a>X{{ 30000 }}</a>
                 </td>
-                <td
-                  v-show="1 == index"
-                  style="text-align: left"
-                  class="itemCount"
-                >
+                <td v-show="1 == index" style="text-align: left" class="itemCount">
                   <a>X{{ 180000 }}</a>
                 </td>
                 <td>
-                  <img
-                    :src="'/img/materials-bak/' + itemCost[0].itemName + '.png'"
-                    class="item_image"
-                  />
+                  <img :src="'/img/materials-bak/' + itemCost[0].itemName + '.png'" class="item_image" />
                 </td>
                 <td class="itemCount">
                   <a>X{{ itemCost[0].count }}</a>
                 </td>
                 <td>
-                  <img
-                    :src="'/img/materials-bak/' + itemCost[1].itemName + '.png'"
-                    class="item_image"
-                  />
+                  <img :src="'/img/materials-bak/' + itemCost[1].itemName + '.png'" class="item_image" />
                 </td>
                 <td class="itemCount">
                   <a>X{{ itemCost[1].count }}</a>
                 </td>
                 <td>
-                  <img
-                    :src="'/img/materials-bak/' + itemCost[2].itemName + '.png'"
-                    class="item_image"
-                  />
+                  <img :src="'/img/materials-bak/' + itemCost[2].itemName + '.png'" class="item_image" />
                 </td>
                 <td class="itemCount">
                   <a>X{{ itemCost[2].count }}</a>
@@ -176,23 +148,17 @@ export default {
 
         if (i + 1 < itemCostR6.length)
           background =
-            "url(/skin/" +
-            itemCostR6[i].charId +
-            "_1b.png),url(/skin/" +
-            itemCostR6[i + 1].charId +
-            "_1b.png)";
+            "url(/skin/" + itemCostR6[i].charId + "_1b.png),url(/skin/" + itemCostR6[i + 1].charId + "_1b.png)";
         // console.log(background)
         document.getElementById("char").style.background = background;
-        document.getElementById("char").style.backgroundPosition =
-          "0 0,-1000px -1000px";
+        document.getElementById("char").style.backgroundPosition = "0 0,-1000px -1000px";
         document.getElementById("char").style.backgroundRepeat = "no-repeat";
         document.getElementById("char").style.backgroundSize = "95%,95%";
 
         await this.sleep(2000);
       }
       console.log(document.getElementById("char").style.background);
-      document.getElementById("char").style.backgroundPosition =
-        "-1000px -1000px,0 0";
+      document.getElementById("char").style.backgroundPosition = "-1000px -1000px,0 0";
       //  console.log(background)
       //  console.log(backgroundPosition)
     },

@@ -8,11 +8,7 @@
         :style="getWidth2(singleAgent.cost, 0.8)"
       >
         <!-- <div class="agent_pic" :style="getBackground(singleAgent.ref)"></div> -->
-        <div
-          class="agent"
-          :class="getBranch(singleAgent.branch)"
-          :style="getWidth(singleAgent.cost, 0.8)"
-        >
+        <div class="agent" :class="getBranch(singleAgent.branch)" :style="getWidth(singleAgent.cost, 0.8)">
           <div
             class="star_battle"
             style="
@@ -92,11 +88,7 @@ export default {
       return "/img/packs/" + img + ".png";
     },
     getPackPic(img) {
-      return (
-        "background:url(/img/packs/" +
-        img +
-        ".png) 00% 110% / cover no-repeat,#e4e7ed;"
-      );
+      return "background:url(/img/packs/" + img + ".png) 00% 110% / cover no-repeat,#e4e7ed;";
     },
   },
 };

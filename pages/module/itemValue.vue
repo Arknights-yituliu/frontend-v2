@@ -25,7 +25,7 @@
           <div class="tab_text">
             <a
               style="color: rgb(65, 105, 240)"
-              href="https://houduan.yituliu.site/file/export/item/value/excel"
+              href="https://backend.yituliu.site/api/item/export/excel"
             >
               导出Excel</a
             >
@@ -33,7 +33,7 @@
           <div class="tab_text">
             <a
               style="color: rgb(65, 105, 240)"
-              href="https://houduan.yituliu.site/file/export/item/value/json"
+              href="https://backend.yituliu.site/api/item/export/json"
             >
               导出Json</a
             >

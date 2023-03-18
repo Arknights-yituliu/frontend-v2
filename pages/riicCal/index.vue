@@ -126,7 +126,7 @@
           </el-button>
           <div
             id="export_cover"
-            style="position: absolute; width: 235px; height: 40px; margin: -38px 18px 18px 137px; background: #ffffff80"
+            style="position: absolute; width: 230px; height: 40px; margin: -38px 18px 18px 137px; background: #ffffff80"
           ></div>
           <a :href="exportUrl">
             <el-button size="medium" type="primary" round style="width: 108px; margin-left: 12px">

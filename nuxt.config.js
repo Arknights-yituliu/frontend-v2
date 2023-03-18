@@ -25,15 +25,15 @@ module.exports = {
     ],
     script: [
       {
-        src: "https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js",
+        src: "https://unpkg.com/echarts@5.4.1/dist/echarts.min.js",
         body: true,
       },
       {
-        src: "https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js",
+        src: "https://unpkg.com/echarts@5.4.1/dist/echarts.min.js",
         body: true,
       },
       {
-        src: "https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js",
+        src: "https://unpkg.com/axios@0.21.1/dist/axios.min.js",
         body: true,
       },
     ],

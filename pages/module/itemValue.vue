@@ -89,7 +89,7 @@ export default {
       tag_class_green: "yituliu_title_moudule_button",
       tag_class_sanity: "yituliu_title_moudule_button",
       opETextTheme: "op_title_etext_light",
-      valueVerison: 0.625,
+      valueVersion: 0.625,
     };
   },
   created() {
@@ -106,7 +106,7 @@ export default {
       this.opETextTheme = "op_title_etext_" + theme;
     },
     findAllItemValue() {
-      storeApi.findAllItem(this.valueVerison).then((response) => {
+      storeApi.findAllItem(this.valueVersion).then((response) => {
         this.itemList = [];
         // for (let i in response.data) {
         //   this.itemList.push(response.data[i]);
